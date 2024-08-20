@@ -81,8 +81,7 @@ A loss function applies to a single training example, whereas a cost function (o
  1. Classification loss function (for discrete numeric values): e.g. Binary cross entropy loss, categorical Mean Absolute Error (MAE) / L1 Loss cross entropy loss, hinge loss, log loss.
  2. Regression loss function (for continuous numeric values): e.g. Mean squared error/L2 loss, Mean absolute error/L1 loss, Huber loss/smooth mean absolute error.
 
-
-# 4. Gradient Descent 
+# 5. Gradient Descent 
 is an iterative first order optimization algorithm that finds local minima by differentiating a given cost function. Gradient descent aims to find the minimum of a cost function, which measures the difference between the predicted and actual values. The algorithm updates the model’s parameters (weights and biases) to reduce this error.
 
 Gradient descent has an analogy in which we have to imagine ourselves at the top of a mountain valley and left stranded and blindfolded, our objective is to reach the bottom of the hill. Feeling the slope of the terrain around you is what everyone would do. Well, this action is analogous to calculating the gradient descent, and taking a step is analogous to one iteration of the update to the parameters.
@@ -90,7 +89,7 @@ Gradient descent has an analogy in which we have to imagine ourselves at the top
 Choosing a perfect learning rate is a very important task as it depends on how large of a step we take downhill during each iteration.
 If we take too large of a step, we may step over the minimum. However, if we take small steps, it will require many iterations to arrive at the minimum.
 
-# 5. Challenges and Considerations
+# 6. Challenges and Considerations
 - Learning Rate:     
 Choosing an appropriate learning rate is crucial. A high learning rate can cause the algorithm to overshoot the minimum, while a low learning rate can make the convergence process slow.
 
@@ -100,7 +99,7 @@ Gradient descent can get stuck in local minima or saddle points, especially in n
 - Vanishing and Exploding Gradients: 
 In deep networks, gradients can become very small (vanishing) or very large (exploding), making training difficult. Techniques like gradient clipping and normalization can help mitigate these issues.
 
-# 6. Types of Gradient Descent
+# 7. Types of Gradient Descent
 - Batch Gradient Descent: 
 Uses the entire training dataset to compute the gradient and update the parameters. It is computationally expensive for large datasets but provides a stable convergence.
 
@@ -143,6 +142,21 @@ is an adaptive learning rate optimization algorithm designed to address some of 
 
 - Adam(Adaptive Moment Estimation):
 is an optimization algorithm that combines the best properties of the AdaGrad and RMSProp algorithms to provide an efficient and adaptive learning rate. It is particularly well-suited for problems involving large datasets and highdimensional parameter spaces
+
+# 7. Activation functions: 
+in neural networks is a mathematical function applied to the output of a neuron. Its primary purpose is to introduce non-linearity into the model, enabling the network to learn and represent complex patterns in the data. Here are four common activation functions:
+- The sigmoid function: 
+maps any input to a value between 0 and 1. It’s often used in binary classification problems. `y = 1 / 1 + e ^ -x`
+	- Pros: Smooth gradient, output range (0, 1).
+	- Cons: Can cause vanishing gradient problems, slow convergence.
+- Tanh function: 
+is very similar to the sigmoid/logistic activation function, and even has the same S-shape with the difference in output range of -1 to 		1. In Tanh, the larger the input (more positive), the closer the output value will be to 1.0, whereas the smaller the input (more 			negative), the closer 	the output will be to - 1.0. `f(x) = (ex - e-x) / (ex +e-x)`
+-  ReLU:
+is one of the most popular activation functions. It outputs the input directly if it is positive; otherwise, it outputs zero. `f(x) = max(0, x)`
+	- Pros: Computationally efficient, helps mitigate the vanishing gradient problem.
+	- Cons: Can cause “dying ReLU” problem where neurons can become inactive.
+- Leaky ReLU (Leaky Rectified Linear Unit):
+is a variation of the ReLU activation function designed to address the “dying ReLU” problem, where neurons can become inactive and only output zero for any input. `f(x) = max(0.1x, x)`
 
 
 # 7. Feedforward Neural Network: 
