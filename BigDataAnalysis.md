@@ -28,13 +28,9 @@ Illustrate MapReduce to perform the relational algebraic operations of grouping 
 
 List transaction properties of NoSQL. 
 
- Business drivers behind the NoSQL. 
+Business drivers behind the NoSQL. 
 
- Key-value pair database architecture pattern. 
-
-How do the strategies employed by NoSQL databases solve the challenges associated with    managing big data? 
-
-NoSQL case studies. 
+Key-value pair database architecture pattern. 
 
 Shared nothing architecture in detail. 
 
@@ -202,7 +198,38 @@ While YARN improves resource management, it can still be challenging to optimize
 
 > These limitations have led to the development of other frameworks like Apache Spark and Apache Flink, which address some of these issues.
 
-# 7. Node failures in Hadoop
+# 7. JobTracker and TaskTracker
+
+In Hadoop version 1 (MRv1), JobTracker and TaskTracker are two essential components for executing MapReduce jobs:
+> JobTracker
+
+- Role: 
+Manages the entire lifecycle of a MapReduce job.
+
+- Functionality: 
+Receives job submissions from clients.
+Communicates with the NameNode to determine the location of data.
+Assigns tasks to TaskTrackers based on data locality and available slots.
+Monitors the progress of tasks and handles task failures by reassigning them to other TaskTrackers.
+
+- Location: 
+Runs on a separate node, not typically on a DataNode.
+
+> TaskTracker
+
+- Role: 
+Executes individual tasks (Mapper and Reducer) assigned by the JobTracker.
+
+- Functionality: 
+Runs on DataNodes.
+Executes tasks and reports progress back to the JobTracker.
+Handles task failures by notifying the JobTracker, which then reassigns the task.
+- Location: 
+Runs on every DataNode in the cluster.
+
+> In Hadoop version 2, these components have been replaced by ResourceManager, ApplicationMaster, and NodeManager to improve scalability and resource management
+
+# 8. Node failures in Hadoop
 In Hadoop, node failure is managed through several mechanisms to ensure data reliability and availability. Here’s how it works:
 
 > Handling DataNode Failure
@@ -241,7 +268,7 @@ Hadoop can run multiple instances of the same task on different nodes. The first
 
 These mechanisms ensure that Hadoop can handle node failures gracefully, maintaining data integrity and availability.
 
-# 8. HDFS Architecture
+# 9. HDFS Architecture
 Hadoop Distributed File System (HDFS) is designed to store large datasets reliably and to stream those data sets at high bandwidth to user applications. Here’s a detailed look at its architecture: Key Components
 
 > NameNode
@@ -287,7 +314,7 @@ Each block is replicated across multiple DataNodes (default replication factor i
     - The client reads the data directly from the DataNodes.
     ![hdfs](image-1.png)
 
-# 9. The CAP theorem: 
+# 10. The CAP theorem: 
 also known as Brewer’s theorem, is a fundamental principle in distributed systems, particularly relevant to big data. It states that a distributed data store can only provide two out of the following three guarantees simultaneously:
 
 - Consistency: 
@@ -301,3 +328,118 @@ A partition is a communications break within a distributed system—a lost or te
 
 > In the context of big data, the CAP theorem helps in designing and understanding the trade-offs in distributed systems. For example, NoSQL databases often prioritize availability and partition tolerance over consistency to handle large volumes of data and ensure system reliability.
 
+# 11. How NoSql systems handle the big data problems ?
+NoSQL systems are designed to handle big data problems effectively by leveraging several key strategies:
+
+- Horizontal Scalability: 
+NoSQL databases can scale out by adding more servers to handle increased loads, rather than scaling up by adding more power to a single server. This allows them to manage large volumes of data efficiently.
+- Distributed Architecture: 
+Data is distributed across multiple nodes, which helps in balancing the load and ensuring high availability. This architecture also supports fault tolerance, as the failure of one node doesn’t affect the overall system.
+- Flexible Data Models: 
+Unlike traditional relational databases, NoSQL databases can handle unstructured or semi-structured data. This flexibility allows them to adapt to changing data requirements without needing a predefined schema.
+- Efficient Query Handling: 
+NoSQL systems often move queries to the data rather than moving data to the queries. This reduces the amount of data transferred over the network, making query processing faster.
+- Replication and Consistency: 
+NoSQL databases use replication to create multiple copies of data across different nodes. This not only ensures data availability but also helps in scaling read requests. Some NoSQL systems offer tunable consistency levels, allowing users to balance between consistency and performance based on their needs.
+- MapReduce and Parallel Processing: 
+Many NoSQL databases support MapReduce, a programming model that allows for processing large data sets with a distributed algorithm on a cluster. This enables efficient data analysis and transformation.
+
+> Popular NoSQL databases like MongoDB, Cassandra, CouchDB, and Neo4j utilize these strategies to handle big data challenges effectively
+
+# 12. Explain MapReduce execution pipeline with suitable example.
+MapReduce model has three major and one optional phase.​
+
+- Mapping:  
+It is the first phase of MapReduce programming. Mapping Phase accepts key-value pairs as input as (k, v), where the key represents the Key address of each record and the value represents the entire record content.​The output of the Mapping phase will also be in the key-value format (k’, v’).
+
+- Shuffling and Sorting:  
+The output of various mapping parts (k’, v’), then goes into Shuffling and Sorting phase.​ All the same values are deleted, and different values are grouped together based on same keys.​ The output of the Shuffling and Sorting phase will be key-value pairs again as key and array of values (k, v[ ]).
+
+- Reducer:  
+The output of the Shuffling and Sorting phase (k, v[]) will be the input of the Reducer phase.​ In this phase reducer function’s logic is executed and all the values are Collected against their corresponding keys. ​Reducer stabilize outputs of various mappers and computes the final output.​
+
+# 13. Properties of NoSQL databases:
+- Atomicity: 
+A transaction is all-or-nothing. It either completes fully or fails completely, ensuring no partial transactions.
+- Consistency: 
+The database remains in a consistent state before and after the transaction. This means that any transaction will bring the database from one valid state to another.
+- Isolation: 
+Transactions are isolated from each other. This ensures that the outcome of a transaction is not affected by other concurrent transactions.
+- Durability: 
+Once a transaction is committed, it remains so, even in the event of a system failure. The changes made by the transaction are permanently recorded.
+
+These properties are often referred to as the ACID properties, which are crucial for maintaining the reliability and integrity of data in NoSQL databases.
+
+# 14. Key-Value Pair Database Architecture
+A key-value pair database is a type of NoSQL database that stores data as a collection of key-value pairs. Here’s a concise overview of its architecture pattern:
+> Structure:
+- Key: 
+A unique identifier for the data. It can be a string, integer, or any other data type.
+- Value: 
+The data associated with the key. This can be a simple data type (like a string or integer) or a complex object (like JSON, BLOB, etc.).
+- Storage:
+Data is stored in a hash table where each key is unique. The value can be any type of data, making it flexible for various applications.
+
+> Operations:
+
+- Create: 
+Add a new key-value pair.
+- Read: 
+Retrieve the value associated with a key.
+- Update: 
+Modify the value associated with a key.
+- Delete: 
+Remove a key-value pair.
+
+> Advantages:
+
+- Scalability: 
+Can handle large amounts of data and high traffic loads.
+- Performance: 
+Fast data retrieval using keys.
+- Flexibility: 
+Supports various data types for values.
+
+> Limitations:
+
+- Complex Queries: 
+Not suitable for complex queries involving multiple keys.
+- Relationships: 
+Handling many-to-many relationships can be challenging.
+
+> Use Cases:
+- Caching: 
+Frequently accessed data can be stored for quick retrieval.
+- Session Management: 
+Storing user session data in web applications.
+- Shopping Carts: 
+Managing user-specific shopping cart data in e-commerce applications.
+
+This architecture pattern is particularly useful in scenarios where quick data retrieval and scalability are crucial.
+
+# 15. Shared Nothing Architecture (SNA) 
+is a distributed computing model where each node in the system operates independently, without sharing memory or disk storage with other nodes. Here are the key details:
+
+> Core Concepts
+- Independence: 
+Each node has its own memory, storage, and processing power.
+- No Shared Resources: 
+Nodes do not share memory or disk storage, reducing contention and bottlenecks.
+- Communication: 
+Nodes communicate through a high-speed interconnect network, ensuring low latency and high bandwidth.
+
+> Advantages
+- Scalability: 
+Easily add new nodes to handle increased workloads.
+- Fault Tolerance: 
+Failure of one node doesn’t affect others.
+- Performance: 
+Reduced contention leads to better performance.
+
+> Challenges
+- Complexity: 
+Implementing and maintaining the architecture can be complex.
+- Data Consistency: 
+Ensuring data consistency across nodes can be challenging.
+- Network Dependency: 
+Performance heavily depends on the network quality.
