@@ -162,6 +162,25 @@ A programming model for processing large datasets with a parallel, distributed a
 Manages and schedules resources in the cluster.
 - Hadoop Common: 
 Provides common utilities and libraries that support the other Hadoop modules
+- Ecosystem Tools
+    - Hive: 
+    Data warehousing and SQL-like query language.
+    - Pig: 
+    High-level platform for creating MapReduce programs.
+    - HBase: 
+    NoSQL database for real-time read/write access to large datasets.
+    - Spark: 
+    In-memory data processing engine.
+    - Mahout: 
+    Machine learning library.
+    - Sqoop: 
+    Tool for transferring data between Hadoop and relational databases.
+    - Flume: 
+    Service for collecting and moving large amounts of log data.
+    - Oozie: 
+    Workflow scheduler to manage Hadoop jobs.
+    - Zookeeper: 
+    Coordination service for distributed applications
 
 # 6. Limitations of Hadoop
 > Despite its advantages, Hadoop has several limitations:
@@ -193,6 +212,7 @@ Each DataNode sends a heartbeat signal to the NameNode at regular intervals (typ
 
 - Block Reports: 
 DataNodes also send block reports to the NameNode, detailing all the blocks they store.
+> Blocks: files are split into blocks (default size is 128 MB) and stored across DataNodes.
 
 - Detection of Failure: 
 If the NameNode does not receive a heartbeat from a DataNode for a specified period (usually 10 minutes), it marks the DataNode as dead.
@@ -265,3 +285,19 @@ Each block is replicated across multiple DataNodes (default replication factor i
 - Read Operation:
     - The client contacts the NameNode to get the locations of the data blocks.
     - The client reads the data directly from the DataNodes.
+    ![hdfs](image-1.png)
+
+# 9. The CAP theorem: 
+also known as Brewer’s theorem, is a fundamental principle in distributed systems, particularly relevant to big data. It states that a distributed data store can only provide two out of the following three guarantees simultaneously:
+
+- Consistency: 
+means that all clients see the same data at the same time, no matter which node they connect to. For this to happen, whenever data is written to one node, it must be instantly forwarded or replicated to all the other nodes in the system before the write is deemed ‘successful.’
+
+- Availability: 
+means that any client making a request for data gets a response, even if one or more nodes are down. Another way to state this—all working nodes in the distributed system return a valid response for any request, without exception.
+
+- Partition tolerance
+A partition is a communications break within a distributed system—a lost or temporarily delayed connection between two nodes. Partition tolerance means that the cluster must continue to work despite any number of communication breakdowns between nodes in the system.
+
+> In the context of big data, the CAP theorem helps in designing and understanding the trade-offs in distributed systems. For example, NoSQL databases often prioritize availability and partition tolerance over consistency to handle large volumes of data and ensure system reliability.
+
