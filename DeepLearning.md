@@ -159,6 +159,23 @@ is one of the most popular activation functions. It outputs the input directly i
 is a variation of the ReLU activation function designed to address the “dying ReLU” problem, where neurons can become inactive and only output zero for any input. `f(x) = max(0.1x, x)`
 
 
+# 8. Dropout: 
+is a regularization technique used in deep learning to prevent overfitting. During training, dropout randomly deactivates a fraction of neurons in a layer, effectively creating a sparse network. This randomness forces the network to learn more robust features that are not overly reliant on specific neurons.
+- Random Deactivation: 
+During each training iteration, a specified percentage of neurons are randomly “dropped out” or deactivated.
+- Scaling: 
+The outputs of the remaining active neurons are scaled up to maintain the overall output level.
+- Reactivation: 
+In the next iteration, a different set of neurons may be deactivated.
+#### Advantages:
+- Prevents Overfitting: 
+By not allowing the network to rely too heavily on any single neuron, dropout reduces the risk of overfitting to the training data2.
+- Ensemble Effect: 
+Dropout simulates training multiple different neural networks and averaging their predictions, which improves generalization1.
+- Improved Data Representation: 
+The introduction of noise through dropout helps the network learn more generalized features
+
+
 # 7. Feedforward Neural Network: 
 is a type of artificial neural network where connections between the nodes do not form cycles. This characteristic differentiates it from recurrent neural networks (RNNs). The network consists of an input layer, one or more hidden layers, and an output layer. Information flows in one direction—from input to output—hence the name “feedforward.”
 Structure of a Feedforward Neural Network
