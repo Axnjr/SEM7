@@ -1,11 +1,15 @@
 // TO BE DONE
-3. Explain Porter’s Stemming algorithm with  example.
-4. Explain with suitable example following relationships between word meanings: Homonymy, Polysemy, Synonymy,Hyponomy,Hypernomy,Meronomy,Antonomy.
+
+
 11. Explain edit distance algorithm with an example. Show working of the minimum no of operations required to transform “kitten” into  “sitting”.
 
 // DONE
 
 2. Discuss various challenges in processing natural languages.
+
+3. Explain Porter’s Stemming algorithm with  example.
+
+4. Explain with suitable example following relationships between word meanings: Homonymy, Polysemy, Synonymy,Hyponomy,Hypernomy,Meronomy,Antonomy.
 
 10. What is POS tagging? List different approaches of POS tagging. Explain anyone in brief.
 
@@ -84,6 +88,37 @@ Example: The sentence “Can you pass the salt?” is understood as a request ra
 
 These stages work together to enable machines to process and understand human language effectively
 
+# 1.1 Challenges in NLP: 
+
+due to the complexity and diversity of human language. Here are some of the key challenges:
+
+- Ambiguity: 
+Words and sentences can have multiple meanings depending on the context. For example, the word “bank” can refer to a financial institution or the side of a river. Resolving such ambiguities is a significant challenge.
+    - Homonyms: 
+
+- Contextual Understanding: 
+Understanding the context in which words are used is crucial for accurate interpretation. This includes recognizing idiomatic expressions, sarcasm, and cultural references.
+
+- Data Quality and Quantity: 
+High-quality, annotated data is essential for training NLP models. However, obtaining such data can be expensive and time-consuming. Additionally, some languages and dialects have limited available data.
+
+- Multilingualism and Language Variation: 
+There are thousands of languages and dialects, each with its own grammar, vocabulary, and cultural nuances. Developing NLP systems that can handle multiple languages and variations is a complex task.
+
+- Syntax and Grammar Complexity: 
+Human languages have intricate syntactic structures and grammatical rules. Parsing these structures accurately is challenging, especially for languages with free word order or complex morphology.
+
+- Semantic Knowledge Representation: 
+Capturing the meaning of words and sentences in a way that machines can understand is difficult. This involves understanding relationships between words, such as synonyms, antonyms, and hierarchical relationships.
+
+- Real-Time Processing and Efficiency: 
+Many NLP applications, such as chatbots and voice assistants, require real-time processing. Ensuring that NLP models are efficient and can handle large volumes of data quickly is a significant challenge.
+
+- Errors in Text & Speech
+Text Errors: Misspelled words or missing words can hinder text analysis.
+Mispronunciations and different accents can pose challenges for understanding spoken language.
+
+
 # 2. Ambiguity in Natural Languages
 Ambiguity in natural languages occurs when a word, phrase, or sentence has multiple meanings. This can make it challenging for both humans and machines to understand the intended meaning without additional context. Here are some common types of ambiguities with examples:
 
@@ -112,7 +147,7 @@ WordNet provides more than just lists of synonyms. It organizes words based on t
 WordNet is widely used in natural language processing (NLP) and computational linguistics for tasks such as word sense disambiguation, information retrieval, and text analysis.
 
 # 4. Affix: 
-is a morpheme that is attached to a word stem to form a new word or word form. Affixes can modify the meaning or grammatical function of a word12.
+is a morpheme that is attached to a word stem to form a new word or word form. Affixes can modify the meaning or grammatical function of a word.
 
 > There are four main types of affixes:
 
@@ -177,7 +212,29 @@ Stemming is a more straightforward process that cuts off prefixes and suffixes (
 Stemming algorithms apply a series of rules to strip affixes from words. The most common stemming algorithms include:
 
 - Porter Stemmer: 
-Uses a set of heuristic rules to iteratively remove suffixes.
+Uses a set of heuristic rules to iteratively remove suffixes. Porter’s stemming algorithm is a widely used method in natural language processing (NLP) for reducing words to their root form, known as the “stem.” This process helps in normalizing text data, making it easier to analyze and process.
+
+    > How Porter’s Stemming Algorithm Works
+    The algorithm works by applying a series of rules to remove common suffixes from words. These rules are applied in a specific order to ensure that the stemming process is consistent and accurate. Here are the main steps:
+
+        - Step 1a: Remove common suffixes like “sses” -> “ss”, “ies” -> “i”, “ss” -> “ss”, “s” -> “”.
+        - Step 1b: Remove “eed” -> “ee” if the word has a vowel before “eed”; otherwise, remove “ed” or “ing” if the word has a vowel     before them.
+        - Step 1c: If the word ends with “y” and has a vowel before it, replace “y” with “i”.
+        - Step 2: Replace suffixes like “ational” -> “ate”, “tional” -> “tion”, etc.
+        - Step 3: Replace suffixes like “icate” -> “ic”, “ative” -> “”, “alize” -> “al”, etc.
+        - Step 4: Remove suffixes like “al”, “ance”, “ence”, “er”, “ic”, etc., if the word has a vowel before them.
+        - Step 5: Remove “e” if the word has a vowel before it, and remove “l” if the word ends with “ll”.
+
+    > Example: Let’s take the word “running” as an example:
+
+        - Step 1a: No change, as “running” does not end with “sses”, “ies”, “ss”, or “s”.
+        - Step 1b: “running” ends with “ing” and has a vowel before it, so “ing” is removed, leaving “runn”.
+        - Step 1c: No change, as “runn” does not end with “y”.
+        - Step 2: No applicable suffixes in “runn”.
+        - Step 3: No applicable suffixes in “runn”.
+        - Step 4: No applicable suffixes in “runn”.
+        - Step 5: No change, as “runn” does not end with “e” or “ll”.
+    > So, the stemmed form of “running” is “run”.
 
 - Snowball Stemmer: 
 An extension of the Porter Stemmer with more robust rules.
