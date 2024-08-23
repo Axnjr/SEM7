@@ -116,5 +116,40 @@ If one confesses and the other stays silent, the confessor goes free, and the si
 
 Since both Alice and Bob’s best responses are to confess regardless of the other’s choice, (C, C) is a pure strategy Nash Equilibrium. Neither Alice nor Bob can improve their situation by unilaterally changing their strategy.
 
-# 10. 
+# 10. Classification of Game Theory: 
+> Game theory can be classified based on various criteria: 
+
+**1. By Number of Players**: 
+- Two-Player Games: Games involving exactly two players (e.g., Prisoner’s Dilemma). 
+- N-Player Games: Games involving more than two players (e.g., Public Goods Games). 
+
+**2. By Type of Strategies**: 
+- Pure Strategy Games: Each player chooses a single strategy with certainty 
+(e.g., Rock-Paper-Scissors). 
+
+- Mixed Strategy Games: Players choose among strategies with certain probabilities (e.g., randomized strategies in games like poker). 
+
+- Dominant Strategy: A dominant strategy is one that always provides a better outcome for a player, regardless of what the other players do. It is the best choice in every possible scenario. 
+
+    - Example: Prisoner’s Dilemma 
+        Defect (betray) is a dominant strategy for both players because it leads to a better or equal outcome compared to cooperating, regardless of the other player’s action. 
+
+**3. By Information Availability**: 
+- **Complete / perfect Information**: games where all players have 
+complete knowledge of the game's structure and all previous actions taken by other players. There are no hidden information or unknown moves; each player isfully informed about the game's state at all times. 
+
+- Incomplete Information: Players have limited knowledge about other players' payoffs or strategies (e.g., auctions with unknown valuations). 
+
+**4. By Timing of Moves**: 
+- Simultaneous-Move Games: Players make decisions without knowing the other players’ choices (e.g., The Prisoner’s Dilemma). 
+
+- Sequential-Move Games: Players make decisions one after another, with later players having knowledge of earlier moves (e.g., Chess). 
+
+**5. By Type of Payoff Structure**: 
+- Zero-Sum Games: One player’s gain is exactly balanced by the losses of others (e.g., Poker). 
+- Non-Zero-Sum Games: The total gains and losses are not necessarily balanced, allowing for mutually beneficial outcomes (e.g., Trade Negotiations). 
+
+
+
+
 
