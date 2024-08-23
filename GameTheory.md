@@ -1,4 +1,5 @@
 # 1. Essential elements of a game in game theory. 
+Game theory is a branch of mathematics that studies strategic interactions between decision-makers, known as “players.” It analyzes situations where the outcome for each participant depends on the choices made by all involved. This field provides tools to model and predict the behavior of players in competitive and cooperative scenarios
 In game theory, the essential elements of a game are: 
 1. Players: Decision-makers in the game. 
 2. Strategies: The complete plan of action a player can take. 
@@ -49,7 +50,7 @@ of a lesser offense. The criminals are offered a deal:
 4. If both remain silent, they each get 1 year for the lesser offense. 
 
 # 6. Game theory Applications:
-Game theory is a branch of mathematics that studies strategic interactions between decision-makers, known as “players.” It analyzes situations where the outcome for each participant depends on the choices made by all involved. This field provides tools to model and predict the behavior of players in competitive and cooperative scenarios. Below are two notable applications:
+Below are two notable applications:
 
 - **Auction Design and Bidding Strategies**: 
 
