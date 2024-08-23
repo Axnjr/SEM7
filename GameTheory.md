@@ -150,6 +150,30 @@ complete knowledge of the game's structure and all previous actions taken by oth
 - Non-Zero-Sum Games: The total gains and losses are not necessarily balanced, allowing for mutually beneficial outcomes (e.g., Trade Negotiations). 
 
 
+# 11. Saddle point:
+In game theory, a saddle point (or minimax point) is a crucial concept in zero-sum games. It represents a situation where the chosen strategies of both players intersect, leading to an optimal outcome for both, given the constraints of the game. 
+
+A saddle point in a payoff matrix is an entry that is:
+The smallest value in its row (minimizing the maximum loss for the row player).
+The largest value in its column (maximizing the minimum gain for the column player).
 
 
+# 12. Oligopoly: 
+is a market structure characterized by a small number of firms that have significant market power. Each firm's decisions affect the others, leading to strategic 
+interactions. Oligopoly models analyze how firms in such markets make decisions regarding pricing, output, and other strategic variables. 
+> Here are some key oligopoly models: 
 
+1. Cournot Model: 
+The Cournot Model focuses on quantity competition. Firms decide how much to produce, and the market price is determined by the total quantity produced. 
+
+    > Key Features: 
+    - Firms produce a homogeneous product. 
+    - Each firm chooses its output level to maximize profit, assuming the output levels of other firms are fixed. 
+    - Firms have complete information about market demand and production costs. 
+    > The equilibrium is reached when no firm can increase its profit by changing its output, given the output of the other firms.
+
+2. Bertrand Model: 
+The Bertrand Model focuses on price competition. Firms compete by setting prices rather than quantities. The model assumes that firms produce identical products. 
+
+    > Key Features: 
+    
