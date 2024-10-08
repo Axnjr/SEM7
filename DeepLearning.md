@@ -256,7 +256,7 @@ Artificial neural networks that do not have looping nodes are called feed forwar
 Generative Adversarial Networks (GANs) are a class of machine learning frameworks designed for generating new data samples that resemble a given training dataset. Introduced by Ian Goodfellow and his colleagues in 2014, GANs have revolutionized fields like computer vision, natural language processing, and more due to their ability to create highly realistic synthetic data.
 
 
-![alt text](image-3.png)
+![gan image](image-3.png)
 
 > ## Core Components of GANs
 
