@@ -185,5 +185,68 @@ consists of neurons that receive the input data. Each neuron in the input layer 
 One or more hidden layers are placed between the input and output layers. These layers are responsible for learning the complex patterns in the data. Each neuron in a hidden layer applies a weighted sum of inputs followed by a non-linear activation function.
 - Output Layer: 
 provides the final output of the network. The number of neurons in this layer corresponds to the number of classes in a classification problem or the number of outputs in a regression problem.
+<br>
+<br>
 
+> # UNIT - 2
 
+# 1. RNN with diagram.
+are a type of neural network designed to handle sequential data. They are particularly useful for tasks where the order of the data is important, such as time series prediction, natural language processing, and speech recognition. 
+
+In traditional neural networks, all the inputs and outputs are independent of each other. Still, in cases when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words. Thus RNN came into existence, which solved this issue with the help of a Hidden Layer. 
+
+The main and most important feature of RNN is its Hidden state, which remembers some information about a sequence. The state is also referred to as Memory State.
+
+> ### Architecture & working of RNN
+
+The key feature of RNNs is their ability to maintain a hidden state that captures information about previous inputs. This is achieved through a feedback loop that allows information to persist. Here’s a basic diagram of an RNN architecture:
+
+![rnn image](image-2.png)
+
+- Input Layer: 
+Takes the input data at each time step.
+- Hidden Layer: 
+Maintains a hidden state that is updated at each time step based on the current input and the previous hidden state.
+- Output Layer: 
+Produces the output at each time step.
+- Structure: 
+An RNN consists of units with fixed activation functions, each corresponding to a time step. Each unit has an internal state called the hidden state, which represents the network’s knowledge of past inputs.
+- Hidden State Update: 
+The hidden state is updated at each time step using the previous hidden state and the current input:
+`ht​=f(ht−1​,xt​), where:
+ht -> current state
+ht-1 -> previous state
+xt -> input state`
+- Activation Function: 
+Typically, the tanh function is used to update the hidden state:
+`ht​=tanh(Whh*​ht−1​+Wxh*​xt​), where:
+whh -> weight at recurrent neuron.
+wxh -> weight at input neuron`
+- Output Calculation: 
+The output at each time step is calculated using the current hidden state: `yt​=Why​*ht​, where: 
+Yt -> output.
+Why -> weight at output layer`
+- Training: 
+Parameters (weights) are updated using Backpropagation Through Time (BPTT), an adaptation of backpropagation for sequential data.
+
+This process allows RNNs to maintain and update a memory of past inputs, making them suitable for tasks involving sequential data.
+
+> ### How RNN differs from Feedforward Neural Network?
+
+Artificial neural networks that do not have looping nodes are called feed forward neural networks. Because all information is only passed forward,
+
+> ### Advantages
+- An RNN remembers each and every piece of information through time. It is useful in time series prediction only because of the feature to remember previous inputs as well. This is called Long Short Term Memory.
+- Recurrent neural networks are even used with convolutional layers to extend the effective pixel neighborhood.
+
+> ### Disadvantages
+- Gradient vanishing and exploding problems.
+- Training an RNN is a very difficult task.
+- It cannot process very long sequences if using tanh or relu as an activation function.
+
+> ### Applications of Recurrent Neural Network
+- Language Modelling and Generating Text
+- Speech Recognition
+- Machine Translation
+- Image Recognition, Face detection
+- Time series Forecasting
