@@ -509,17 +509,16 @@ Protecting sensitive data in streams and ensuring compliance with privacy regula
 Bloom filters are incredibly useful in big data analytics due to their space-efficient and probabilistic nature. Here are some key benefits:
 
 - Space Efficiency: 
-Bloom filters use a bit array and multiple hash functions to represent a set, which requires significantly less memory compared to storing the actual data12.
+Bloom filters use a bit array and multiple hash functions to represent a set, which requires significantly less memory compared to storing the actual data.
 
 - Fast Membership Testing: 
-They allow for quick checks to determine if an element is definitely not in a set or possibly in a set. This is particularly useful for filtering out non-relevant data early in the processing pipeline2.
+They allow for quick checks to determine if an element is definitely not in a set or possibly in a set. This is particularly useful for filtering out non-relevant data early in the processing pipeline.
 
 - Handling Large Datasets: 
-In big data scenarios, where datasets can be enormous, Bloom filters help in reducing the amount of data that needs to be processed by eliminating duplicates and irrelevant entries efficiently2.
+In big data scenarios, where datasets can be enormous, Bloom filters help in reducing the amount of data that needs to be processed by eliminating duplicates and irrelevant entries efficiently.
 
 - Applications in Various Domains: 
 They are used in databases for indexing, in network security for detecting malicious URLs, and in distributed systems for efficient data synchronization
-
 
 
 # 4. The CURE (Clustering Using Representatives) algorithm:
