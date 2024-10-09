@@ -548,3 +548,35 @@ Here’s a block diagram to illustrate these steps:
 
 ![cure](image-5.png)
 
+# 5. Distance measures
+
+- Euclidean Distance
+Euclidean distance is the most widely used distance measure. It calculates the straight-line distance between two points in an n-dimensional space. The formula for Euclidean distance between two points ( p ) and ( q ) is:
+`d(p,q) = sqrt of (∑n​(pi​−qi​)^2​)`
+
+- Manhattan Distance
+Manhattan distance, also known as Taxicab or City Block distance, calculates the distance between two points by summing the absolute differences of their coordinates. The formula for Manhattan distance between two points ( p ) and ( q ) is: `d(p,q) = ∑n ​∣pi​−qi​∣`
+
+
+# 6. Sampling methods: 
+
+are techniques used to select a subset of individuals or elements from a larger population for research purposes. Here are some common sampling methods:
+
+- Simple Random Sampling: 
+Every member of the population has an equal chance of being selected. This can be done using random number generators or drawing names from a hat.
+
+- Stratified Sampling: 
+The population is divided into subgroups (strata) based on specific characteristics, and random samples are taken from each stratum.
+
+- Cluster Sampling: 
+The population is divided into clusters, usually based on geographical areas or institutions. Entire clusters are randomly selected, and all members of the chosen clusters are included in the sample.
+
+- Systematic Sampling: 
+Every nth member of the population is selected after a random starting point. For example, selecting every 10th person on a list.
+
+- Convenience Sampling: 
+Samples are taken from a group that is conveniently accessible to the researcher. This method is quick and easy but may not be representative of the entire population.
+
+- Quota Sampling: 
+The researcher ensures that certain characteristics are represented in the sample to a predetermined extent. For example, ensuring that the sample includes a specific number of males and females.
+
