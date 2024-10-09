@@ -309,3 +309,6 @@ This adversarial process continues iteratively, with the Generator improving its
 - Text-to-Image Synthesis
 - Video Generation
 - Medical Imaging
+
+# 3. Autoencoders: 
+are a type of artificial neural network used primarily for unsupervised learning tasks, particularly in the fields of data compression, feature learning, and dimensionality reduction. They are designed to learn efficient codings of input data by compressing it into a lower-dimensional representation and then reconstructing the original input from this compressed form.
