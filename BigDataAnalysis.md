@@ -580,3 +580,21 @@ Samples are taken from a group that is conveniently accessible to the researcher
 - Quota Sampling: 
 The researcher ensures that certain characteristics are represented in the sample to a predetermined extent. For example, ensuring that the sample includes a specific number of males and females.
 
+
+# 7. Counting distinct elements in a stream: 
+is a common problem in computer science, particularly in the context of big data and data streams. The goal is to determine the number of unique elements in a potentially infinite stream of data, where storing all elements is impractical due to memory constraints.
+
+- Naive Approach:
+Store all elements in a set and count the size of the set.
+Requires significant memory, making it impractical for large data streams.
+
+- Probabilistic Algorithms:
+    - Flajolet-Martin Algorithm Uses hash functions and bit patterns to estimate the number of distinct elements. It is efficient in terms of memory usage.
+
+    - HyperLogLog: An improvement over Flajolet-Martin, providing more accurate estimates with even less memory.
+
+### Applications
+
+- Network Traffic Analysis: Counting unique IP addresses.
+- Database Management: Estimating the number of distinct queries.
+- Web Analytics: Counting unique visitors to a website.
