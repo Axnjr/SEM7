@@ -520,3 +520,31 @@ In big data scenarios, where datasets can be enormous, Bloom filters help in red
 - Applications in Various Domains: 
 They are used in databases for indexing, in network security for detecting malicious URLs, and in distributed systems for efficient data synchronization
 
+
+
+# 4. The CURE (Clustering Using Representatives) algorithm:
+
+is a hierarchical clustering technique designed to handle large datasets efficiently. Here are the six steps involved in the CURE algorithm:
+
+- Random Sampling: 
+A random sample of the dataset is selected to reduce the computational complexity.
+
+- Partitioning: 
+The random sample is partitioned into smaller subsets.
+
+- Partial Clustering: 
+Each partition is partially clustered independently.
+
+- Outlier Removal: 
+Outliers are identified and removed from each partition.
+
+- Merging: 
+The partially clustered partitions are merged to form the final clusters.
+
+- Labeling: 
+The remaining data points are assigned to the nearest cluster.
+
+Here’s a block diagram to illustrate these steps:
+
+![cure](image-5.png)
+
