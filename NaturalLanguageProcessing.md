@@ -376,3 +376,33 @@ A relationship where one word denotes a part of something that is denoted by ano
 Words that have opposite meanings.
     - Example: 
     “Hot” and “cold” are antonyms because they describe opposite temperatures.
+
+
+> # UNIT - 2
+
+# 1. Word Sense Disambiguation (WSD): 
+is a process in natural language processing (NLP) that determines which meaning of a word is being used in a given context. Many words have multiple meanings, and WSD helps to identify the correct one based on the surrounding text. For example, the word “bank” can refer to a financial institution or the side of a river. WSD uses contextual clues to disambiguate such words. This technique is crucial for improving the accuracy of various NLP applications like machine translation, sentiment analysis, and information retrieval
+
+
+# 2. ML approch of WSD:
+
+The Naive Bayes approach for Word Sense Disambiguation (WSD) is a supervised machine learning method that uses probabilistic models to determine the most likely sense of a word based on its context. Here’s a step-by-step explanation of how it works:
+
+- Training Data: 
+The model is trained on a corpus of text where words are annotated with their correct senses. This annotated data is crucial for learning the relationships between words and their contexts.
+
+- Feature Extraction: 
+For each instance of an ambiguous word, features are extracted from the surrounding context. Common features include neighboring words, part-of-speech tags, and syntactic dependencies.
+
+- Probability Calculation: 
+The Naive Bayes classifier calculates the probability of each possible sense of the word given the extracted features. It assumes that the features are conditionally independent, which simplifies the computation.
+
+- Sense Assignment: 
+The sense with the highest probability is assigned to the ambiguous word. This is done using Bayes’ theorem:<br>
+`P(sense ∣ context) = P(context ∣ sense) * P(sense)​ / P(context)` <br>
+Here, `P(sense|context)` is the probability of a sense given the context, `P(context|sense)` is the probability of the context given the sense, `P(sense)` is the prior probability of the sense, and `P(context)` is the probability of the context.
+
+- Evaluation: 
+The performance of the Naive Bayes classifier is evaluated using metrics like accuracy, precision, recall, and F1-score on a separate test set.
+
+The Naive Bayes approach is popular due to its simplicity and effectiveness, especially when there is a large amount of annotated training data available
