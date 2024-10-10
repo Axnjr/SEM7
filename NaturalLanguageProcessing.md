@@ -426,3 +426,16 @@ U.K. as a Location
 $1 billion as a Monetary Value
 NER is a foundational tool in NLP that enhances the ability to process and understand human language by focusing on the most relevant parts of the text.
 
+# 4. WordNet: 
+is a large lexical database of English, developed at Princeton University. It groups English words into sets of synonyms called synsets, provides short definitions and usage examples, and records various semantic relations between these synonym sets.
+## Key Features:
+- Synsets: 
+Collections of synonymous words that express the same concept.
+- Semantic Relations: 
+Includes hypernyms (general terms), hyponyms (specific terms), meronyms (part-whole relationships), and antonyms (opposites).
+- Applications: 
+Widely used in NLP tasks such as word sense disambiguation, information retrieval, and machine translation.
+- Structure: 
+Organized into nouns, verbs, adjectives, and adverbs, each forming a separate network of meaningfully related words.
+
+
