@@ -473,4 +473,18 @@ Context and Ambiguity: Accurately translating idiomatic expressions, cultural re
 Quality and Fluency: Ensuring translations are not only accurate but also natural and fluent.
 
 
+# 7. The dictionary-based approach for WSD:
+relies on lexical resources like dictionaries, thesauri, and lexical databases to determine the correct sense of a word in context. One of the most well-known dictionary-based methods is the Lesk algorithm. Here’s how it works:
+
+- Sense Definitions: 
+The algorithm uses the definitions (or glosses) of the ambiguous word and its possible senses from a dictionary or lexical database like WordNet.
+- Context Overlap: 
+For each possible sense of the word, the algorithm compares the definition of that sense with the context in which the word appears. It looks for overlaps between the words in the context and the words in the sense definitions.
+- Sense Selection: 
+The sense with the highest overlap (i.e., the most shared words between the context and the sense definition) is selected as the correct sense.
+
+For example, consider the word `“bank”` in the sentence `“I went to the bank to deposit money.”` The Lesk algorithm would compare the context words (“went,” “deposit,” “money”) with the definitions of “bank” `(e.g., financial institution, riverbank)`. The sense with the most overlapping words (likely the financial institution) would be chosen.
+
+
+
 
