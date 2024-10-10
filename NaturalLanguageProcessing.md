@@ -406,3 +406,23 @@ Here, `P(sense|context)` is the probability of a sense given the context, `P(con
 The performance of the Naive Bayes classifier is evaluated using metrics like accuracy, precision, recall, and F1-score on a separate test set.
 
 The Naive Bayes approach is popular due to its simplicity and effectiveness, especially when there is a large amount of annotated training data available
+
+# 3. Named Entity Recognition (NER): 
+is a crucial task in Natural Language Processing (NLP) that involves identifying and classifying key elements in text into predefined categories. These categories typically include names of people, organizations, locations, dates, quantities, monetary values, and more. NER helps in extracting meaningful information from unstructured text, making it easier to analyze and understand large volumes of data.
+
+## Applications: 
+It is widely used in various fields such as information retrieval, question answering, machine translation, and text summarization.
+
+## Techniques: 
+Modern NER systems often use machine learning models, including deep learning techniques like transformers, to achieve high accuracy.
+
+## Challenges: 
+NER must handle ambiguities and variations in language, such as different spellings, abbreviations, and context-dependent meanings.
+
+## Example:
+In the sentence `“Apple Inc. is looking at buying U.K. startup for $1 billion,”` NER would identify:
+Apple Inc. as an Organization
+U.K. as a Location
+$1 billion as a Monetary Value
+NER is a foundational tool in NLP that enhances the ability to process and understand human language by focusing on the most relevant parts of the text.
+
