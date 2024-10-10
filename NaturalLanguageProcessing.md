@@ -438,4 +438,20 @@ Widely used in NLP tasks such as word sense disambiguation, information retrieva
 - Structure: 
 Organized into nouns, verbs, adjectives, and adverbs, each forming a separate network of meaningfully related words.
 
+# 5. Reference Resolution: 
+is a fundamental task in Natural Language Processing (NLP) that involves determining what entities pronouns and other referring expressions in a text refer to. This task is crucial for understanding and generating coherent text.
+`Types of References:` Includes pronouns (he, she, it), definite descriptions (the car), and demonstratives (this, that).
+`Challenges:` Ambiguity in language, varying contexts, and the need for world knowledge to resolve references accurately.
+## Techniques:
+- Rule-based Methods:
+ Use linguistic rules to resolve references.
+- Machine Learning Approaches:
+ Employ algorithms trained on annotated corpora to predict references.
+- Deep Learning Models:
+ Utilize neural networks, especially transformers, to improve accuracy by capturing complex patterns in data.
+
+`Example:`
+In the sentence “John took his dog to the park because it was a sunny day,” reference resolution identifies “his” as referring to “John” and “it” as referring to “the park.”
+
+
 
