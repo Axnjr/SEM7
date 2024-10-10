@@ -654,3 +654,7 @@ Netflix and Spotify use it to recommend movies and music.
 
 - Social Media: 
 Platforms like Facebook and Twitter use it to recommend friends and content.
+
+
+# 9. Clique Percolation Method (CPM): 
+is a popular algorithm for detecting overlapping communities within networks
