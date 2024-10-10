@@ -439,7 +439,7 @@ Widely used in NLP tasks such as word sense disambiguation, information retrieva
 Organized into nouns, verbs, adjectives, and adverbs, each forming a separate network of meaningfully related words.
 
 # 5. Reference Resolution: 
-is a fundamental task in Natural Language Processing (NLP) that involves determining what entities pronouns and other referring expressions in a text refer to. This task is crucial for understanding and generating coherent text.
+is a fundamental task in Natural Language Processing (NLP) that involves determining what entities pronouns and other referring expressions in a text refer to. `(It involves identifying when different expressions in a text refer to the same entity)` This task is crucial for understanding and generating coherent text.
 `Types of References:` Includes pronouns (he, she, it), definite descriptions (the car), and demonstratives (this, that).
 `Challenges:` Ambiguity in language, varying contexts, and the need for world knowledge to resolve references accurately.
 ## Techniques:
@@ -449,6 +449,20 @@ is a fundamental task in Natural Language Processing (NLP) that involves determi
  Employ algorithms trained on annotated corpora to predict references.
 - Deep Learning Models:
  Utilize neural networks, especially transformers, to improve accuracy by capturing complex patterns in data.
+
+## Chalanges
+Discourse reference resolution can be particularly challenging due to the complexity of different types of referents. Here are three types that often complicate the process:
+
+- Pronouns: 
+Pronouns like “he,” “she,” “it,” “they,” etc., are common in text and can refer to various entities. The challenge lies in determining the correct antecedent, especially in sentences with multiple potential referents. For example, in “Alice told Bob that she would help him,” resolving “she” and “him” requires understanding the context and relationships between Alice and Bob.
+
+- Definite Descriptions: 
+These are phrases that refer to a specific entity, often using “the” (e.g., “the president,” “the book”). The difficulty arises when there are multiple entities that fit the description. For instance, “the book on the table” could refer to different books if there are several tables with books on them.
+
+- Anaphoric and Cataphoric References: 
+Anaphoric references point back to something mentioned earlier in the text, while cataphoric references point forward to something mentioned later. Anaphoric references are more common and can be tricky when the antecedent is far back in the text. Cataphoric references, though less common, can be confusing because the referent hasn’t been introduced yet. `For example, “When he arrived, John was tired” (cataphoric)` versus `“John was tired when he arrived” (anaphoric)`
+
+These types of referents require sophisticated algorithms and models to accurately resolve, often combining syntactic, semantic, and contextual information.
 
 `Example:`
 In the sentence “John took his dog to the park because it was a sunny day,” reference resolution identifies “his” as referring to “John”.
@@ -526,3 +540,37 @@ Use supervised learning to train models on labeled datasets. Examples include Hi
 - Deep learning models: 
 Utilize neural networks, particularly sequence-to-sequence (seq2seq) models with attention mechanisms. Popular models include BERT, GPT, and T5.
 
+
+# 9. Information Retrieval vs Information Extraction:
+
+## Information Retrieval (IR)
+- Purpose: 
+IR focuses on finding and retrieving relevant documents or pieces of information from a large collection based on user queries.
+- Process: 
+It involves indexing documents, processing queries, and ranking documents based on relevance to the query.
+- Output: 
+The output is typically a ranked list of documents or links that match the query terms.
+- Applications: 
+Commonly used in search engines, digital libraries, and recommendation systems.
+- Example: 
+When you search for “machine learning tutorials” on a search engine, the IR system retrieves and ranks web pages that contain relevant information.
+
+## Information Extraction (IE)
+- Purpose: 
+IE aims to extract specific pieces of structured information from unstructured or semi-structured text.
+- Process: 
+It involves identifying and extracting entities, relationships, and attributes from text. Techniques include named entity recognition, co-reference resolution, and event extraction.
+- Output: 
+The output is structured data, such as a database of entities and their relationships.
+- Applications: 
+Used in data mining, knowledge management, and natural language processing tasks.
+- Example: 
+Extracting names of people, organizations, and dates from a collection of news articles to populate a database.
+
+## Key Differences
+- Focus: 
+IR is about finding relevant documents, while IE is about extracting specific information from those documents.
+- Output: 
+IR provides a list of documents, whereas IE provides structured data.
+- Complexity: 
+IE is generally more complex and knowledge-intensive than IR, as it requires understanding the context and semantics of the text
