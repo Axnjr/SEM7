@@ -451,7 +451,7 @@ is a fundamental task in Natural Language Processing (NLP) that involves determi
  Utilize neural networks, especially transformers, to improve accuracy by capturing complex patterns in data.
 
 `Example:`
-In the sentence “John took his dog to the park because it was a sunny day,” reference resolution identifies “his” as referring to “John” and “it” as referring to “the park.”
+In the sentence “John took his dog to the park because it was a sunny day,” reference resolution identifies “his” as referring to “John”.
 
 # 6. Machine Translation (MT): 
 is the process of using artificial intelligence to automatically translate text or speech from one language to another. It leverages natural language processing (NLP) and deep learning techniques to understand and generate translations.
@@ -486,5 +486,43 @@ The sense with the highest overlap (i.e., the most shared words between the cont
 For example, consider the word `“bank”` in the sentence `“I went to the bank to deposit money.”` The Lesk algorithm would compare the context words (“went,” “deposit,” “money”) with the definitions of “bank” `(e.g., financial institution, riverbank)`. The sense with the most overlapping words (likely the financial institution) would be chosen.
 
 
+# 8. Text summarization: 
+is a natural language processing (NLP) task that involves condensing a lengthy text document into a shorter version while retaining the most important information and meaning. There are two main approaches to text summarization: `extractive and abstractive`.
 
+## Extractive Summarization
+
+works by identifying and extracting key sentences or phrases from the original text. The summary is composed of these selected parts, ensuring that the most critical information is included. This method relies heavily on the original text structure and wording.
+
+- Advantages:
+
+    - Simplicity: Easier to implement and often produces grammatically correct summaries.
+    - Preservation of original meaning: Since it uses the exact sentences from the text, the risk of misinterpretation is low.
+
+- Disadvantages:
+    - Lack of coherence: The extracted sentences may not flow well together.
+    - Redundancy: Important points might be repeated if they appear in multiple sentences.
+
+## Abstractive Summarization
+on the other hand, involves generating new sentences that convey the main ideas of the original text. This method uses advanced techniques like deep learning models to understand the context and rephrase the content.
+
+- Advantages:
+
+    - Coherence: The generated summaries are usually more coherent and readable.
+    - Conciseness: Can provide more concise summaries by merging information from different parts of the text.
+
+- Disadvantages:
+
+    - Complexity: More challenging to implement and requires sophisticated models.
+    - Risk of inaccuracies: The generated text might misinterpret or omit important details.
+
+## Techniques and Models
+
+- Frequency-based methods: 
+Identify the most frequent words or phrases in the text and select sentences containing them.
+- Graph-based methods: 
+Represent the text as a graph where sentences are nodes, and edges represent similarities. Algorithms like TextRank are used to rank and select sentences.
+- Machine learning models: 
+Use supervised learning to train models on labeled datasets. Examples include Hidden Markov Models (HMM) and Conditional Random Fields (CRF).
+- Deep learning models: 
+Utilize neural networks, particularly sequence-to-sequence (seq2seq) models with attention mechanisms. Popular models include BERT, GPT, and T5.
 
