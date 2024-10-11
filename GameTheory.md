@@ -206,3 +206,19 @@ A simple example of an extensive-form game is the classic sequential game of che
 ## Subgame Perfect Nash Equilibrium (SPNE)
 A subgame perfect Nash equilibrium is a refinement of Nash equilibrium applicable to extensive form games. It ensures that players’ strategies constitute a Nash equilibrium in every subgame of the original game. This concept is crucial because it eliminates non-credible threats and ensures rational behavior at every stage of the game.
 
+
+
+# 3. A normal form game: 
+is a way to represent strategic interactions among players where each player’s strategies and payoffs are outlined in a matrix format. This representation is particularly useful for analyzing games where players make decisions simultaneously.
+
+ex: `Matching Pennies`
+Two players simultaneously place a penny on the table. Each player can choose Heads or Tails. The payoffs are:
+> Table
+
+    Player 2: Heads	Player 2: Tails
+    Player 1: Heads	(1, -1)	(-1, 1)
+    Player 1: Tails	(-1, 1)	(1, -1)
+
+- If the pennies match, Player 1 wins (+1) and Player 2 loses (-1).
+- If the pennies do not match, Player 2 wins (+1) and Player 1 loses (-1).
+
