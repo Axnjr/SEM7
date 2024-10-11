@@ -258,3 +258,17 @@ Providing bidders with tools to help them formulate and adjust their bids can re
 Combinatorial auctions hold great potential for improving resource allocation and increasing auction revenues, but they require careful design to address these challenges effectively.
 
 
+# 5. Protocols for strategic agents
+
+Protocols for strategic agents, particularly in the context of mechanism design, are rules or systems designed to govern how agents interact with a mechanism, such as an auction or voting system, when those agents may have incentives to act strategically. The goal of these protocols is often to ensure that agents reveal their true preferences that reflect their actual interests—despite the potential incentives to misrepresent them.
+
+Mechanism design, which is a subfield of `game theory and economics`, focuses on creating systems that align the incentives of strategic agents in such a way that their `best option is to be truthful`. This process is sometimes referred to as `incentive compatibility`. Protocols or mechanisms that achieve this goal use a variety of tools and techniques. Below are key concepts and mechanisms that help ensure agents reveal their true preferences:
+
+- Revelation Principle:
+A fundamental concept in mechanism design, the revelation principle states that for any desired outcome achievable by a mechanism, there exists a direct mechanism where agents truthfully report their preferences. This principle simplifies the analysis of mechanisms by focusing on those where truth-telling is a dominant strategy
+- Incentive Compatibility:
+A mechanism is incentive-compatible if every participant’s best strategy is to truthfully reveal their preferences. This ensures that the mechanism functions correctly even when agents are strategic.
+- Dominant Strategy Implementation:
+This refers to mechanisms where truth-telling is the best strategy for each agent, regardless of what others do. However, achieving this universally can be challenging due to various impossibility results
+- Strategic Voting:
+In voting systems, protocols can be designed to discourage strategic voting and encourage voters to reveal their true preferences. This can be achieved through specific voting rules and structures
