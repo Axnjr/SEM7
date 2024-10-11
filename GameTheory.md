@@ -193,3 +193,16 @@ A probability distribution over the possible types, representing the players’ 
 ## Example of a Bayesian Game: 
 Let’s consider a simple sealed-bid auction in which two players (Player 1 and Player 2) are bidding for an object. Each player has a private valuation of the object, which is unknown to the other player. The players bid without knowing each other's valuation and the highest bid wins the auction. If a player wins, they get the object and pay the amount they bid, and if they lose, they get nothing.
 
+
+# 2. Extensive-form games and perfect subgame Nash equilibrium: 
+(also known as subgame perfect equilibrium or SPE) are key concepts in game theory, but they address different aspects of strategic interaction.
+
+## Extensive Form Games
+is a representation of a game that captures the sequential nature of decision-making. Unlike normal-form games (which represent simultaneous decisions in a matrix), extensive-form games explicitly account for the order in which players make their moves, as well as the information available to them at each decision point. These games are typically represented by a game tree, where nodes represent decision points, branches represent possible actions, and terminal nodes represent the outcomes/payoffs for each player. 
+
+Example:
+A simple example of an extensive-form game is the classic sequential game of chess or a negotiation game, where one player moves first and the second player reacts based on that move.
+
+## Subgame Perfect Nash Equilibrium (SPNE)
+A subgame perfect Nash equilibrium is a refinement of Nash equilibrium applicable to extensive form games. It ensures that players’ strategies constitute a Nash equilibrium in every subgame of the original game. This concept is crucial because it eliminates non-credible threats and ensures rational behavior at every stage of the game.
+
