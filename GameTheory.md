@@ -175,5 +175,21 @@ The Cournot Model focuses on quantity competition. Firms decide how much to prod
 2. Bertrand Model: 
 The Bertrand Model focuses on price competition. Firms compete by setting prices rather than quantities. The model assumes that firms produce identical products. 
 
-    > Key Features: 
+> # UNIT - 2
+
+# 1. Bayesian games: 
+are a type of game in game theory where players have incomplete information about the other players. This means that each player has private information that others do not know, such as their preferences, payoffs, or strategies. The concept was introduced by John C. Harsanyi, who won the Nobel Prize in Economics for his contributions to game theory. Key Elements of Bayesian Games:
+- Players (N): 
+The set of players involved in the game.
+- Actions (A): 
+The set of actions available to each player.
+- Types (T): 
+The set of possible types for each player, representing their private information.
+- Payoff Functions (u): 
+The payoffs each player receives, which depend on their type and the actions taken.
+- Prior (p): 
+A probability distribution over the possible types, representing the players’ beliefs about each other’s types.
     
+## Example of a Bayesian Game: 
+Let’s consider a simple sealed-bid auction in which two players (Player 1 and Player 2) are bidding for an object. Each player has a private valuation of the object, which is unknown to the other player. The players bid without knowing each other's valuation and the highest bid wins the auction. If a player wins, they get the object and pay the amount they bid, and if they lose, they get nothing.
+
