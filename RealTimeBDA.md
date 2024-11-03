@@ -36,3 +36,24 @@ Initially, each page is given an equal PageRank. Through iterative calculations,
 - Social Networks: Analyzing the importance and influence of individuals within a network.
 
 PageRank revolutionized the way search engines worked by focusing on link structure rather than just content, providing more relevant and reliable search results.
+
+
+# 2. Working outline of `pageRank`:
+
+- Construct the Graph of Pages:
+    - Each webpage is a node.
+    - Each hyperlink from one page to another is a directed edge.
+- Convert the Graph to a Sparse Matrix:
+    - Build an adjacency matrix (link matrix) `𝐿`, where: 
+    - `𝐿[𝑖][𝑗] = 1`if page j links to page i; otherwise, it’s 0.
+    - Transform `L` into a transition matrix `T` by 
+    normalizing each column, so each column sums to 1. 
+    This represents the probability of "jumping" to each 
+    linked page.
+- Construct the PageRank Matrix with Damping:
+    - Define the PageRank matrix `𝑀` with damping factor `𝛼`
+    - same `pageRank` formula.
+- Assign an initial PageRank to each page, typically 1/N, 
+where N is the total number of pages. Update PageRank values 
+using the formula.
+
