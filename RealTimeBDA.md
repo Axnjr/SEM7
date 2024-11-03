@@ -90,3 +90,48 @@ For very large graphs, parallel and distributed computing techniques are employe
 - MapReduce: Implement the PageRank algorithm using the MapReduce programming model to distribute the computations across multiple nodes.
 - Graph Processing Systems: Use specialized graph processing frameworks like Apache Giraph or Pregel that are optimized for handling large-scale graph computations.
 
+# 4. PageRank using MapReduce:
+MapReduce is a programming model for processing large-scale data across a distributed computing environment. It consists 
+of two main phases:
+- Map Phase: Processes input data and produces intermediate key-value pairs.
+- Reduce Phase: Merges intermediate values associated with the same key.
+
+### Step-by-Step Process
+
+- Mapper Phase: For each page `𝑃` with current PageRank 
+`𝑃𝑅(𝑃)` and a list of `outbound links out(p)`, the mapper:
+Emits contributions to each linked page based on `PR(p) / out(p)`. 
+Example output from a mapper for page 
+`A` linking to pages `𝐵`, and `𝐶`:
+    - Input: (Page A, [Page B, Page C])
+    - Output: (Page B, PR(A) / 2), (Page C, PR(A) / 2)
+
+- Reducer Phase:
+Sum the PageRank contributions from all inbound links to a page.
+Apply the damping factor `d` and adjust for random jump factor `1 - d / n`
+Example:
+    - Input: (Page B, [PR(A)/2, PR(C)/3])
+    - Output: PR(B) = `(1 - d / N) + d (PR(A)/2 + PR(C)/3)`
+
+- Iteration:
+Repeat the Map and Reduce steps for a fixed number of iterations or until the PageRank values converges.
+
+- Pseudo-code for PageRank using MapReduce:
+    ```py
+    # Map Function
+    def map(url, links, rank):
+        for link in links:
+            yield (link, rank / len(links))
+        yield (url, 0)
+
+    # Reduce Function
+    def reduce(url, ranks):
+        new_rank = (1 - d) / N + d * sum(ranks)
+        return new_rank
+    ```
+### Benefits of Using MapReduce
+- Scalability: Can handle large datasets by distributing the computation across multiple machines.
+- Efficiency: Parallel processing reduces computation time significantly.
+- Fault Tolerance: Built-in fault tolerance mechanisms handle failures in a distributed environment.
+
+By leveraging MapReduce, computing PageRank for a massive web graph becomes feasible and efficient, ensuring that the ranking algorithm can keep up with the ever-growing size of the internet.
