@@ -57,3 +57,36 @@ PageRank revolutionized the way search engines worked by focusing on link struct
 where N is the total number of pages. Update PageRank values 
 using the formula.
 
+# 3. Efficient computation of PageRank: 
+is crucial for handling large-scale web graphs. Here are a few methods to achieve this: 
+
+## 1: Power Iteration Method
+This is the most common method for computing PageRank. It involves iteratively updating the PageRank values until convergence. 
+Initialization: Assign an initial PageRank to each page, typically `1/N`, where `N` is the total number of pages.
+Iteration: Update PageRank values using the formula:
+![page rank formula](image-8.png)
+
+## 2: The sparse matrix method: 
+is an efficient way to store and manipulate matrices that contain a large number of zero elements. In a sparse matrix, only the 
+non-zero elements are stored along with their row and column indices. This reduces memory usage significantly compared to storing 
+all elements, including zeros. This methods is particularly usefull in Calculating `pageRank` of pages in serach engines, as  
+most pages only link to a small fraction of other pages in the real-wrold scenario.
+
+### Storage Formats:
+- Compressed Sparse Row (CSR): Stores non-zero elements along with the row pointers and column indices. This format is efficient for row slicing and matrix-vector multiplication.
+- Compressed Sparse Column (CSC): Similar to CSR but optimized for column slicing operations.
+- Coordinate List (COO): Stores a list of (row, column, value) tuples. It's easy to construct but less efficient for arithmetic operations compared to CSR and CSC.
+
+### Advantages
+- Memory Efficiency: Only non-zero elements are stored, reducing memory usage.
+- Computational Efficiency: Sparse matrix operations are faster due to reduced data access and manipulation.
+
+### Applications
+- Search Engines: Efficiently computing PageRank for large web graphs.
+- Graph Algorithms: Handling large-scale networks in social media, transportation, and biological networks.
+
+## 3: Parallel and Distributed Computing
+For very large graphs, parallel and distributed computing techniques are employed.
+- MapReduce: Implement the PageRank algorithm using the MapReduce programming model to distribute the computations across multiple nodes.
+- Graph Processing Systems: Use specialized graph processing frameworks like Apache Giraph or Pregel that are optimized for handling large-scale graph computations.
+
