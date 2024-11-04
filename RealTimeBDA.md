@@ -96,39 +96,62 @@ of two main phases:
 - Map Phase: Processes input data and produces intermediate key-value pairs.
 - Reduce Phase: Merges intermediate values associated with the same key.
 
-### Step-by-Step Process
+## Step-by-Step Process of PageRank with MapReduce
 
-- Mapper Phase: For each page `𝑃` with current PageRank 
-`𝑃𝑅(𝑃)` and a list of `outbound links out(p)`, the mapper:
-Emits contributions to each linked page based on `PR(p) / out(p)`. 
-Example output from a mapper for page 
-`A` linking to pages `𝐵`, and `𝐶`:
-    - Input: (Page A, [Page B, Page C])
-    - Output: (Page B, PR(A) / 2), (Page C, PR(A) / 2)
+Let's go through each step of the PageRank algorithm with MapReduce using a simple example of three pages, **A**, **B**, and **C**.
 
-- Reducer Phase:
-Sum the PageRank contributions from all inbound links to a page.
-Apply the damping factor `d` and adjust for random jump factor `1 - d / n`
-Example:
-    - Input: (Page B, [PR(A)/2, PR(C)/3])
-    - Output: PR(B) = `(1 - d / N) + d (PR(A)/2 + PR(C)/3)`
+### Problem Setup
 
-- Iteration:
-Repeat the Map and Reduce steps for a fixed number of iterations or until the PageRank values converges.
+We have three web pages with the following links:
+- **A** links to **B** and **C**.
+- **B** links to **C**.
+- **C** links to **A**.
 
-- Pseudo-code for PageRank using MapReduce:
-    ```py
-    # Map Function
-    def map(url, links, rank):
-        for link in links:
-            yield (link, rank / len(links))
-        yield (url, 0)
+Assume each page starts with an initial PageRank of 1/3 (since we have three pages).
 
-    # Reduce Function
-    def reduce(url, ranks):
-        new_rank = (1 - d) / N + d * sum(ranks)
-        return new_rank
-    ```
+### 1. Mapper Phase
+
+Each page emits contributions to the pages it links to, based on its current PageRank divided by the number of outbound links.
+
+- **Input for Page A**: `(Page A, [Page B, Page C])`  
+  - **Output**: `(Page B, 1/6)`, `(Page C, 1/6)`
+
+- **Input for Page B**: `(Page B, [Page C])`  
+  - **Output**: `(Page C, 1/3)`
+
+- **Input for Page C**: `(Page C, [Page A])`  
+  - **Output**: `(Page A, 1/3)`
+
+### 2. Reducer Phase
+
+The reducer sums all contributions from inbound links, applies the damping factor \( d \), and adds a random jump factor.
+
+Using \( `d = 0.85` \) and \( `N = 3` \):
+  
+For **`Page B`** (with contributions `1/6` from `A` and `1/3` from `C`):
+
+`PR(B) = ((1 - 0.85) / 3) + 0.85 * (1/6 + 1/3) = 0.05 + 0.425 = 0.475`
+
+
+### 3. Iteration
+
+The Map and Reduce steps are repeated for a fixed number of iterations or until the PageRank values converge.
+
+## Pseudo-code for PageRank using MapReduce
+
+```python
+# Map Function
+def map(url, links, rank):
+    for link in links:
+        yield (link, rank / len(links))
+    yield (url, 0)
+
+# Reduce Function
+def reduce(url, ranks):
+    new_rank = (1 - d) / N + d * sum(ranks)
+    return new_rank
+```
+
 ### Benefits of Using MapReduce
 - Scalability: Can handle large datasets by distributing the computation across multiple machines.
 - Efficiency: Parallel processing reduces computation time significantly.
