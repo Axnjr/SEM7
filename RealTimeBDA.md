@@ -158,3 +158,45 @@ def reduce(url, ranks):
 - Fault Tolerance: Built-in fault tolerance mechanisms handle failures in a distributed environment.
 
 By leveraging MapReduce, computing PageRank for a massive web graph becomes feasible and efficient, ensuring that the ranking algorithm can keep up with the ever-growing size of the internet.
+
+# 5. Social networks: 
+are the networks that depict the relations between people in the form of a graph for different kinds of analysis. The graph to store the relationships of people is known as Sociogram. All the graph points and lines are stored in the matrix data structure called Sociomatrix. 
+A social network can be represented as a graph where:
+  - Nodes represent individuals or entities.
+  - Edges represent the relationships or connections between these nodes.
+### Types of Graphs
+- Undirected Graphs: 
+Connections have no direction. Example: Friendships on Facebook.
+- Directed Graphs: 
+Connections have a direction. Example: Followers on Twitter.
+- Weighted Graphs: 
+Edges have weights representing the strength or frequency of interactions.
+
+### Key Techniques of Analyzing such social graphs:
+
+- Community Detection: 
+Identifying groups or clusters of nodes that are more densely connected internally than with the rest of the network. Example: 
+Finding interest groups in social media.
+
+- Centrality Measures:
+  - Degree Centrality: Number of connections a node has.
+  - Betweenness Centrality: Number of times a node acts as a bridge along the shortest path between two other nodes.
+  - Closeness Centrality: Measure of how close a node is to all other nodes in the network.
+
+- Link Prediction: 
+Predicting future connections between nodes based on current network structure.
+
+- Sentiment Analysis: 
+Analyzing the sentiment of communications (e.g., tweets, posts) to gauge public opinion or mood.
+
+- Influence Analysis: 
+Identifying influential nodes (people) who can propagate information effectively.
+
+### Applications
+- Marketing: 
+Targeting influential users to spread messages and products.
+- Epidemiology: 
+Understanding how diseases spread through populations.
+- Recommender Systems: 
+Suggesting friends, content, or products based on network analysis.
+
