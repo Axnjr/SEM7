@@ -111,7 +111,7 @@ Assume each page starts with an initial PageRank of 1/3 (since we have three pag
 
 ### 1. Mapper Phase
 
-Each page emits contributions to the pages it links to, based on its current PageRank divided by the number of outbound links.
+Each page emits contributions to the pages it links to, based on its current `PageRank` divided by the number of `outbound links`.
 
 - **Input for Page A**: `(Page A, [Page B, Page C])`  
   - **Output**: `(Page B, 1/6)`, `(Page C, 1/6)`
@@ -307,7 +307,7 @@ Platforms like Facebook and Twitter use it to recommend friends and content.
 
 
 # 1. Distance measures: 
-are the backbone of clustering algorithms. Distance measures are mathematical functions that determine how similar or different two data points are. The choice of distance measure can significantly impact the clustering results, as it influences the shape and structure of the clusters.
+are the backbone of clustering algorithms. `Distance measures are mathematical functions that determine how similar or different two data points are`. The choice of distance measure can significantly impact the clustering results, as it influences the shape and structure of the clusters.
 (Clustering is a fundamental concept in data analysis and machine learning, where the goal is to group similar data points into clusters based on their characteristics.)
 ### Common Distance Measures
 - **Euclidean Distance**
@@ -333,8 +333,8 @@ is derived from cosine similarity and is used to measure dissimilarity. It's cal
 `cosine distance = 1 − cosine similarity`
 
 - **Jaccard distance**: 
-measures the dissimilarity between two sets. It’s complementary to Jaccard similarity.
-is the ratio of the size of the intersection of the sets to the size of their union.
+measures the dissimilarity between two sets. It’s complementary to `Jaccard similarity:
+is the ratio of the size of the intersection of the sets to the size of their union.`
 Jaccard distance is used in various applications, such as clustering and classification, especially in scenarios involving binary or categorical data.
 Here's the formula for Jaccard distance:
 `Jaccard distance = 1 − ∣ A ∩ B ∣ / ∣ A ∪ B∣`, where
@@ -347,7 +347,5 @@ measures the number of differing positions between two strings of equal length. 
 It's particularly useful in error detection and correction coding. If two binary codes differ in a small number of bits, it’s easier to correct errors caused by transmission or storage.
 
 - **Edit Distance**: 
-often referred to as `Levenshtein Distance`, measures how many single-character edits (insertions, deletions, or substitutions) are needed to change one string into another. It's vital for applications like spell checking, DNA sequencing, and natural language processing.
-
-
+often referred to as `Levenshtein Distance`, measures how many single-character edits `(insertions, deletions, or substitutions)` are needed to change one string into another. It's vital for applications like spell checking, DNA sequencing, and natural language processing.
 
