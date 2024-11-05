@@ -349,3 +349,33 @@ It's particularly useful in error detection and correction coding. If two binary
 - **Edit Distance**: 
 often referred to as `Levenshtein Distance`, measures how many single-character edits `(insertions, deletions, or substitutions)` are needed to change one string into another. It's vital for applications like spell checking, DNA sequencing, and natural language processing.
 
+# 2. The CURE (Clustering Using Representatives) algorithm:
+- is a clustering method designed to handle large datasets and outliers. 
+- It is an improvement over traditional hierarchical clustering methods and works well with clusters of arbitrary shapes and sizes.
+- CURE reduces the time complexity of hierarchical clustering while being robust to outliers.
+- It is a hierarchical based clustering technique, that adopts a middle ground between the centroid based and the all-point extremes. 
+- Hierarchical clustering is a type of clustering, that starts with a single point cluster, and moves to merge with another cluster, until the desired number of clusters are formed.
+- It is used for identifying the spherical and non-spherical clusters.
+- It is useful for discovering groups and identifying interesting distributions in the underlying data.
+- Instead of using one point centroid, as in most of data mining algorithms,
+- CURE uses a set of well-defined representative points, for efficiently handling the clusters and eliminating the outliers.
+
+### Here are the six steps involved in the CURE algorithm:
+
+- Random Sampling: 
+A random sample of the dataset is selected to reduce the computational complexity.
+- Partitioning: 
+The random sample is partitioned into smaller subsets.
+- Partial Clustering: 
+Each partition is partially clustered independently.
+- Outlier Removal: 
+Outliers are identified and removed from each partition.
+- Merging: 
+The partially clustered partitions are merged to form the final clusters.
+- Labeling: 
+The remaining data points are assigned to the nearest cluster.
+
+### Here’s a block diagram to illustrate these steps:
+
+![cure](image-5.png)
+
