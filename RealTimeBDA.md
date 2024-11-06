@@ -498,3 +498,26 @@ Detecting values that deviate from an expected range in real-time data.
 Continuously monitoring metrics for dashboards.
   - Example: Real-time dashboard of website traffic, showing the number of active users and page views.
 
+# 3. Querying large data streams presents several challenges:
+
+- High Throughput and Low Latency: 
+Data streams often require real-time processing, meaning the system must handle high volumes of data with minimal delay. This necessitates efficient algorithms and optimized hardware.
+
+- Data Heterogeneity: 
+Streams can come from various sources and in different formats, making it difficult to standardize and process the data uniformly.
+
+- Dynamic and Unbounded Nature: 
+Unlike static datasets, data streams are continuous and potentially infinite. This requires the system to manage memory and storage efficiently, often using techniques like windowing to process manageable chunks of data.
+
+- Complex Query Processing: 
+Queries on data streams can be complex, involving joins, aggregations, and other operations that are computationally intensive. Ensuring these queries run efficiently in real-time is a significant challenge.
+
+- Fault Tolerance and Reliability: 
+Ensuring the system can recover from failures without losing data or processing time is crucial. This involves implementing robust fault-tolerance mechanisms.
+
+- Scalability: 
+As data volumes grow, the system must scale horizontally (adding more machines) or vertically (upgrading existing machines) to maintain performance.
+
+- Security and Privacy: 
+Protecting sensitive data in streams and ensuring compliance with privacy regulations adds another layer of complexity.
+
