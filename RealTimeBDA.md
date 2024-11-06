@@ -521,3 +521,21 @@ As data volumes grow, the system must scale horizontally (adding more machines) 
 - Security and Privacy: 
 Protecting sensitive data in streams and ensuring compliance with privacy regulations adds another layer of complexity.
 
+# 4. Sampling data in a stream: 
+is essential when dealing with large or continuous data flows that are too fast or vast to process and store in their entirety. Sampling techniques allow us to select a representative subset of the data for analysis, monitoring, and decision-making without overwhelming computational resources. Here are some key techniques used for sampling data in a stream:
+
+- **Random Sampling**: 
+Randomly selects elements from the stream with equal probability. This is simple and effective but may not work well if the stream is biased or if some data patterns are only apparent in specific segments of the stream.
+
+- **Systematic Sampling**:
+In systematic sampling, every `𝑘𝑡ℎ` element from the stream is selected, where `𝑘` is a fixed interval. For example, if `𝑘 = 10`, then the 10th, 20th, 30th, and so on elements would be chosen. This approach is simple but may miss important trends if the data has periodic patterns.
+
+- **Stratified Sampling**: 
+In stratified sampling, the stream is divided into "strata" (sub-groups) based on some characteristic, and random samples are taken from each group. This ensures that each stratum is represented, which is useful when the stream has known, heterogeneous segments.
+
+- **Time-Based Sampling**:
+This method samples data points at regular time intervals (e.g., every second or every minute). It’s particularly useful in streaming applications where data frequency fluctuates over time.
+
+- **Adaptive Sampling**:
+dynamically adjusts the sampling rate based on the characteristics of the stream, such as data volume, rate of change, or significance of events. For example, during peak data rates, the sampling rate can be increased, else, it can be decreased.
+
