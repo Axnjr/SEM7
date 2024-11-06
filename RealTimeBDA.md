@@ -636,3 +636,30 @@ Needs good hash functions to minimize collisions.
 - Variance: 
 Can have high variance; thus, combining multiple estimates (e.g., through harmonic mean) is recommended.
 
+# 8. The decaying window algorithm: 
+is a technique used in data stream processing to keep track of recent information while gradually `forgetting` older data. It’s particularly useful in situations where data streams are continuous and unbounded, `and the latest data points are more relevant than the older ones`. The algorithm applies a decay factor to older data so that its influence on the overall calculation diminishes over time.
+### Key Concepts
+- **Decay Factor:** 
+The algorithm applies a decay factor (usually a number between 0 and 1) that determines how quickly older data fades. A smaller decay factor means older data is weighted less over time, while a larger factor keeps the data `alive` longer.
+- **Exponential Decay:** 
+The decaying window algorithm often relies on exponential decay, where each data point’s weight diminishes exponentially over time. For a given data point at time 
+`𝑡`, the weight could be represented as `𝑤 = 𝛼𝑡`, where 𝛼 is the decay factor.
+
+### To implement a decaying window average, you’d generally follow this formula:
+
+`new_value = 𝛼 × current_value + (1 − 𝛼) × previous_average`<br>
+
+### How it Works
+
+- With each new data point, the algorithm `recalculates the moving average` by `forgetting` some of the older data at a rate determined by `𝛼`.
+- Every time a new data point is processed, `older data is multiplied by the decay factor`, reducing its weight in the final computation.
+
+### Advantages
+- **Low Memory Usage:** Unlike sliding window algorithms that need to store every data point in a set window, the decaying window algorithm only needs to store the current average.
+- **Quick Adaptability:** The method can adapt quickly to new trends or changes, making it suitable for real-time data.
+
+### Use Cases
+- **Streaming Data:** For real-time analysis where retaining historical data isn’t feasible.
+- **Network Monitoring:** To track statistics like packet loss or latency.
+- **Anomaly Detection:** Identifying trends and sudden changes in data to flag unusual behavior.
+
