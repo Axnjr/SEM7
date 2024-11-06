@@ -577,3 +577,62 @@ In big data scenarios, where datasets can be enormous, Bloom filters help in red
 - **Applications in Various Domains:** 
 They are used in databases for indexing, in network security for detecting malicious URLs, and in distributed systems for efficient data synchronization.
 
+# 6. Counting distinct elements in a stream: 
+is a common problem in computer science, particularly in the context of big data and data streams. The goal is to determine the number of unique elements in a potentially infinite stream of data, where storing all elements is impractical due to memory constraints.
+
+- Naive Approach:
+Store all elements in a set and count the size of the set.
+Requires significant memory, making it impractical for large data streams.
+
+- Probabilistic Algorithms:
+    - Flajolet-Martin Algorithm Uses hash functions and bit patterns to estimate the number of distinct elements. It is efficient in terms of memory usage.
+
+    - HyperLogLog: An improvement over Flajolet-Martin, providing more accurate estimates with even less memory.
+### Applications
+- Network Traffic Analysis: Counting unique IP addresses.
+- Database Management: Estimating the number of distinct queries.
+- Web Analytics: Counting unique visitors to a website.
+
+# 7. The Flajolet-Martin Algorithm:
+is a **probabilistic algorithm** for estimating the number of distinct elements `(also called the cardinality)` in a large data stream. It’s useful for applications where it’s impractical to store all elements due to memory constraints, like web traffic analysis or unique user counts.
+
+### Working
+
+- Hashing and Bit Patterns:
+Each element in the stream is hashed to produce a unique hash value, which converts each `element into a pseudo-random binary string`.
+- Counting Leading Zeros: For each hash, the algorithm tracks the maximum number of leading zeros observed denoted as `R`.
+- Estimate Cardinality:
+The observed maximum number of leading zeros, `𝑅`, gives an estimate of the number of unique elements in the stream and is approximated as `D ~= 2^R`
+
+### Example
+Example
+Let’s say we have a stream of elements, and each is hashed to binary values. Assume the hash values for elements in the stream are:
+
+"apple" → 001010<br>
+"banana" → 000110<br>
+"cherry" → 001001<br>
+
+For "apple," the position of the first 1 after leading zeros is 2.<br>
+For "banana," it’s 3.<br>
+For "cherry," it’s 2.
+
+The maximum number of leading `0's` observed is `3`, so `estimate of distinct elements = 2^3 = 8`
+
+### Advantages:
+
+- Memory-Efficient: 
+Uses minimal memory compared to counting all elements.
+- Scalable: 
+Works well with large data streams.
+- Fast: 
+Only requires hashing and a bitwise operation, making it computationally efficient.
+
+### Limitations:
+
+- Approximation: 
+Provides an estimate, not an exact count.
+- Dependent on Quality of Hashing: 
+Needs good hash functions to minimize collisions.
+- Variance: 
+Can have high variance; thus, combining multiple estimates (e.g., through harmonic mean) is recommended.
+
