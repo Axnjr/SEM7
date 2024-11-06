@@ -663,3 +663,9 @@ The decaying window algorithm often relies on exponential decay, where each data
 - **Network Monitoring:** To track statistics like packet loss or latency.
 - **Anomaly Detection:** Identifying trends and sudden changes in data to flag unusual behavior.
 
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# `UNIT - 3` 
+
+<br>
+
