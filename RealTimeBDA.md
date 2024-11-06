@@ -301,7 +301,7 @@ Platforms like Facebook and Twitter use it to recommend friends and content.
 
 <br>
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 
 # `UNIT - 5`
 
@@ -431,5 +431,41 @@ Identifying specific events (e.g., identifying peaks in network traffic).
 - Predictive Analytics: 
 Using algorithms to forecast future events based on current data trends.
 
+------------------------------------------------------------------------------------------------------------------------------------------
 
-# 6. 
+# `UNIT - 4` 
+
+<br>
+
+# 1. Data Stream Management System
+DSMS stands for data stream management system. It is nothing but a software application just like DBMS (database management system) but it involves processing and management of a continuously flowing data stream rather than static data like Excel PDF or other files. It is generally used to deal data streams from with various sources which include sensor data, social media fields, financial reports, etc.
+
+Just like DBMS, DSMS also provides a wide range of operations like storage, processing, analyzing, integration also helps to generate the visualization and report only used for data streams.
+
+There are wide range of DSMS applications available in the market among them Apache Flint, Apache Kafka, Apache Storm, Amazon kinesis, etc. DSMS processes 2 types of queries standard queries and ad hoc queries.
+
+![dsms](image-4.png)
+
+DSMS consists of various layer which are dedicated to perform particular operation which are as follows:
+
+- Data Source Layer: 
+Collects data from various sources like sensors, social media, and financial markets.
+
+- Data Ingestion Layer: 
+Manages data flow between the source and processing layers, handling buffering and routing.
+
+- Processing Layer: 
+The core of DSMS, processes data streams in real-time using engines like Apache Flink or Storm, 
+performing tasks like filtering, transforming, and aggregating data.
+- Storage Layer: 
+Stores processed data in systems like NoSQL or distributed databases, ensuring durability and 
+availability.
+- Querying Layer: 
+Provides tools for querying and analyzing stored data, supporting both ad hoc and standard queries.
+
+- Visualization and Reporting Layer: 
+Offers tools for visualizing data (charts, histograms) and generating reports.
+
+- Integration Layer: 
+Integrates DSMS with traditional systems, BI tools, data warehouses, and ML/NLP applications.
+
