@@ -727,3 +727,30 @@ Many NoSQL databases support MapReduce, a programming model that allows for proc
 
 **Popular NoSQL databases like MongoDB, Cassandra, CouchDB, and Neo4j utilize these strategies to handle big data challenges effectively.**
 
+# 4. Shared Nothing Architecture (SNA) 
+is a distributed computing model where each node in the system operates independently, without sharing memory or disk storage with other nodes. Here are the key details:
+
+### Core Concepts
+- **Independence:** 
+Each node has its own memory, storage, and processing power.
+- **No Shared Resources:** 
+Nodes do not share memory or disk storage, reducing contention and bottlenecks.
+- **Communication:** 
+Nodes communicate through a high-speed interconnect network, ensuring low latency and high bandwidth.
+
+### Advantages
+- **Scalability:** 
+Easily add new nodes to handle increased workloads.
+- **Fault Tolerance:** 
+Failure of one node doesn’t affect others.
+- **Performance:** 
+Reduced contention leads to better performance.
+
+### Challenges
+- **Complexity:** 
+Implementing and maintaining the architecture can be complex.
+- **Data Consistency:** 
+Ensuring data consistency across nodes can be challenging.
+- **Network Dependency:** 
+Performance heavily depends on the network quality.
+
