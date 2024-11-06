@@ -539,3 +539,41 @@ This method samples data points at regular time intervals (e.g., every second or
 - **Adaptive Sampling**:
 dynamically adjusts the sampling rate based on the characteristics of the stream, such as data volume, rate of change, or significance of events. For example, during peak data rates, the sampling rate can be increased, else, it can be decreased.
 
+# 5. Bloom filters:
+is a **space-efficient probabilistic data structure** that is used to test whether an element is a member of a set. The price we pay for efficiency is that it is probabilistic in nature that means, `there might be some False Positive results`. False positive means, it might tell that given username is already taken but actually it’s not. `Bloom filters never generate false negative result, i.e., telling you that a username doesn’t exist when it actually exists.`
+
+### Working
+
+- **Array of Bits**: 
+A Bloom filter consists of a fixed-size bit array initialized to all 0s. The size of the array is determined based on the expected number of elements to be added and the desired false positive rate.
+
+
+- **Hash Functions:**
+The Bloom filter uses multiple hash functions, each of which takes an input (an element) and produces an index in the bit array. The number of hash functions affects the probability of false positives.
+
+
+- **Inserting an Element:**
+When an element `𝑋` is added to the Bloom filter, the following steps occur:
+  - Each hash function is applied to the element `𝑋` to generate multiple indices in the bit array.
+  - For each generated index, the corresponding bit in the array is set to 1. This process marks that the element might be present in the set.
+
+- **Checking Membership:**
+To check if an element `𝑌` is in the Bloom filter:
+  - Each hash function is applied to `𝑌` to generate the same number of indices.
+  - If all the bits at these indices are 1, it indicates that `𝑌` is possibly in the set `(though it could be a false positive)`.
+  - If any of the bits is 0, it confirms that `𝑌` is definitely not in the set.
+
+#### Bloom filters are incredibly useful in big data analytics due to their space-efficient and probabilistic nature. Here are some key benefits:
+
+- **Space Efficiency:** 
+Bloom filters use a bit array and multiple hash functions to represent a set, which requires significantly less memory compared to storing the actual data.
+
+- **Fast Membership Testing:** 
+They allow for quick checks to determine if an element is definitely not in a set or possibly in a set. This is particularly useful for filtering out non-relevant data early in the processing pipeline.
+
+- **Handling Large Datasets:** 
+In big data scenarios, where datasets can be enormous, Bloom filters help in reducing the amount of data that needs to be processed by eliminating duplicates and irrelevant entries efficiently.
+
+- **Applications in Various Domains:** 
+They are used in databases for indexing, in network security for detecting malicious URLs, and in distributed systems for efficient data synchronization.
+
