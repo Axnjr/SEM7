@@ -77,3 +77,26 @@ During forward propagation, the RNN moves through the sequence one step at a tim
 - Image Recognition, Face detection
 - Time series Forecasting
 
+# 6. Limitations of vanilla RNN:
+Vanilla Recurrent Neural Networks (RNNs) do face significant limitations, primarily due to the phenomena of vanishing and exploding gradients. These issues are particularly problematic when dealing with long-term dependencies in sequential data. Here’s a closer look:
+
+### Vanishing Gradients
+- **Definition:** Occurs when the gradients used to update the weights during training become exceedingly small, effectively preventing the network from learning.
+- **Consequence:** The network struggles to learn long-range dependencies because the earlier layers receive almost negligible gradient updates.
+- **Why It Happens:** In each layer, gradients are multiplied by the weights. If these weights are small, the gradients exponentially decrease as they propagate back through the layers.
+
+### Exploding Gradients
+- **Definition:** When the gradients grow excessively large, causing the weights to update too drastically, which can lead to network instability.
+- **Consequence:** This can result in numerical overflow and erratic changes in the weights, making the model difficult to train and causing it to diverge.
+- **Why It Happens:** If the weights are large, the gradients can grow exponentially as they are propagated back through the network, leading to overflow.
+
+### Impact on Vanilla RNNs
+
+- **Training Difficulty:** Both vanishing and exploding gradients make training vanilla RNNs challenging, especially for tasks that require learning from long sequences of data.
+- **Performance:** These issues significantly impact the model's ability to retain information from earlier time steps, resulting in poor performance on tasks that involve long-term dependencies.
+
+### Mitigation Strategies
+
+- **Gradient Clipping:** Limiting the size of gradients to prevent them from getting too large.
+- **LSTM and GRU:** Long Short-Term Memory (LSTM) networks and Gated Recurrent Units (GRUs) are advanced variants of RNNs designed to mitigate these issues by maintaining more stable gradients over long sequences.
+
