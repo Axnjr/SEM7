@@ -115,3 +115,25 @@ At each time step, the hidden states from both the forward and backward RNNs are
 - For each time step `𝑡`, combine the forward and backward hidden states, resulting in a bidirectional representation 
 `ℎ𝑡 = [ℎ𝑡forward ; ℎ𝑡backward]`
 Output Generation: Use this combined hidden state to produce the output `𝑦𝑡` at each time step.
+
+# 8. Backpropagation Through Time (BPTT): 
+is the process used to train Recurrent Neural Networks (RNNs) by applying backpropagation over each time step in a sequence. Unlike feedforward networks, which have a straightforward backpropagation process, RNNs require a more complex approach because they maintain a hidden state that evolves across time steps. BPTT adapts the standard backpropagation algorithm to account for this sequence-based dependency.
+
+### Key Steps in BPTT
+- **Unrolling the RNN:**
+In BPTT, the RNN is `"unrolled" across the sequence length`, creating a separate `copy` of the network for `each time step`.
+This unrolling allows the RNN to be visualized as a feedforward network with one layer for each time step in the sequence.
+- **Forward Pass Through Time:**
+The forward pass is computed for `each time step` in the sequence, `storing the hidden states and outputs at each step`.
+This allows the model to `capture dependencies`, as each hidden state depends on both the current input and the previous hidden state.
+- **Backward Pass Through Time:**
+After the forward pass, BPTT calculates `gradients` by propagating errors backward `through each time step`, starting from the final time step.
+`Gradients are computed for each weight with respect to each hidden state and each output`.
+The weight updates are `accumulated` and applied after calculating gradients over all time steps in the sequence.
+- **Weight Update:**
+Once gradients are calculated for each time step, they are summed and applied to update the shared weights of the network, allowing it to learn dependencies across the entire sequence.
+
+### Challenges in BPTT
+- Vanishing and Exploding Gradients
+- Computational Cost: BPTT is computationally intensive, as it requires storing and processing multiple copies of the network for each time step.
+
