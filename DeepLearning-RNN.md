@@ -177,3 +177,28 @@ data with a lot of noise`.
 
 LSTMs effectively handle the vanishing gradient problem by controlling the flow of information with gates, allowing gradients to remain stable over long sequences. They can capture both short-term and long-term dependencies, making them suitable for a variety of sequence-based tasks.
 
+# 11. The Gated Recurrent Unit (GRU): 
+is a type of Recurrent Neural Network (RNN) architecture that was introduced to address some of the limitations of traditional RNNs and LSTMs (Long Short-Term Memory networks). GRUs are similar to LSTMs but with a simpler structure, using fewer gates and parameters while maintaining comparable performance for many sequential tasks.
+
+### Key Features of GRU
+The GRU architecture includes two main gates: 
+`the reset gate` and `the update gate`. These gates control the flow of information and help the network maintain relevant information over time while forgetting irrelevant data.
+
+- Update Gate (`𝑧𝑡`):
+The update gate decides how much of the previous hidden state should be retained.
+It ranges from 0 to 1, where 0 means completely forget the previous state, and 1 means completely retain the previous state.
+The update gate is computed using the sigmoid function:
+    `z𝑡 = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏z)`
+- Reset Gate (`𝑟𝑡`):
+The reset gate controls how much of the previous hidden state should be ignored when calculating the candidate hidden state.
+It is computed similarly to the update gate:
+`r𝑡 = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏r)`
+
+- The `candidate hidden state` is a new potential memory influenced by the reset gate.
+- The `final hidden state` is a weighted combination of the previous hidden state and the candidate state, with the update gate determining how much of the new information to retain.
+
+### Advantages of GRU
+
+- Simpler Architecture: Fewer parameters than LSTMs, which makes them computationally more efficient and easier to train.
+- Good Performance: Despite their simplicity, GRUs achieve performance comparable to LSTMs on many tasks, making them a popular choice for sequence modeling.
+- Faster Training: Due to fewer parameters, GRUs are faster to train compared to LSTMs, especially on large datasets.
