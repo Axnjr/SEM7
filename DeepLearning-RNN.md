@@ -137,3 +137,8 @@ Once gradients are calculated for each time step, they are summed and applied to
 - Vanishing and Exploding Gradients
 - Computational Cost: BPTT is computationally intensive, as it requires storing and processing multiple copies of the network for each time step.
 
+# 9. Truncated BPTT
+To address the challenges of long sequences, Truncated Backpropagation Through Time is often used:
+- Instead of backpropagating through the entire sequence, `the sequence is divided into shorter segments`, and BPTT is applied within each segment.
+- This reduces computation and mitigates the vanishing/exploding gradient problem while still capturing some dependencies.
+
