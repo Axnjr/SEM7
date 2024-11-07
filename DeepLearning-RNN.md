@@ -142,3 +142,38 @@ To address the challenges of long sequences, Truncated Backpropagation Through T
 - Instead of backpropagating through the entire sequence, `the sequence is divided into shorter segments`, and BPTT is applied within each segment.
 - This reduces computation and mitigates the vanishing/exploding gradient problem while still capturing some dependencies.
 
+# 10. Long Short-Term Memory (LSTM): 
+is a type of Recurrent Neural Network (RNN) architecture designed to better capture long-term dependencies in sequential data, addressing the common issues of vanishing and exploding gradients that standard RNNs face. 
+it incorporate special gating mechanisms that regulate information flow, making them particularly effective for tasks with long-term dependencies like language modeling, time-series prediction, and more.
+
+### Key Components of an LSTM
+
+An LSTM cell has several components, including three gates `(forget, input, and output)` and a cell state. Together, these elements allow it to selectively retain or discard information, improving the network’s ability to learn dependencies over long sequences.
+- **Cell State (`𝐶𝑡`):**
+The cell state acts as the "memory" of the LSTM, allowing information to flow unchanged across time steps unless modified by the gates. It is crucial for retaining long-term information.
+- **Hidden State (`ℎ𝑡`):**
+The hidden state is the short-term output of the LSTM at each time step. This hidden state is also used as input for predictions and is updated at every time step.
+- ### **Gates:**
+    - **Forget Gate (`𝑓𝑡`):** Decides which information from the cell state should be kept or discarded. It takes the current input 
+    `𝑥𝑡`and previous hidden state `ℎ𝑡−1` ​to produce a value between 0 (forget) and 1 (retain).<br>
+        `𝑓𝑡 = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏𝑓)`
+    - **Input Gate (`𝑖𝑡`):** Controls how much of the new input `𝑥𝑡`should be added to the cell state. It also uses the current input and previous hidden state to decide what to update.<br>
+        `it = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏i)`
+    - **Output Gate (`ot`):** It Decideswhich part of the `cell state` will be in the output.
+        `ot = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏o)`
+
+### Pitfalls:
+- First, they are `more complicated` than traditional RNNs and
+require more training data in order to learn effectively.
+- Second, they are `not well-suited` for online `learning tasks, such
+as prediction or classification` tasks where the input data is not a
+sequence.
+- Third, LSTMs can be `slow to train` on large datasets. This is due
+to the fact that they must learn the parameters of the LSTM
+cells, which can be `computationally intensive`.
+- Finally, LSTMs may not be appropriate for all types of data. For
+example, they may not work well with `highly nonlinear data or
+data with a lot of noise`.
+
+LSTMs effectively handle the vanishing gradient problem by controlling the flow of information with gates, allowing gradients to remain stable over long sequences. They can capture both short-term and long-term dependencies, making them suitable for a variety of sequence-based tasks.
+
