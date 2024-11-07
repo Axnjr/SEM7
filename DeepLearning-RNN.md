@@ -100,3 +100,18 @@ Vanilla Recurrent Neural Networks (RNNs) do face significant limitations, primar
 - **Gradient Clipping:** Limiting the size of gradients to prevent them from getting too large.
 - **LSTM and GRU:** Long Short-Term Memory (LSTM) networks and Gated Recurrent Units (GRUs) are advanced variants of RNNs designed to mitigate these issues by maintaining more stable gradients over long sequences.
 
+# 7. Bidirectional Recurrent Neural Networks (BRNNs) 
+is an extension of the standard RNN that processes sequential data in both forward and backward directions. This architecture allows the network to access both past and future information about a particular time step, making it more effective for tasks where context from both directions is useful.
+
+### Key Characteristics of BRNNs
+
+- BRNNs have two RNN layers: 
+one processes the input sequence in a forward direction (from start to end), and the other processes it in a backward direction (from end to start).
+Each time step’s output is influenced by information from both the previous and future states.
+
+- Concatenated Outputs:
+At each time step, the hidden states from both the forward and backward RNNs are concatenated (or otherwise combined), allowing the BRNN to generate a more contextually rich representation of each time step. This combined representation is then used as input to the output layer for predictions.
+
+- For each time step `𝑡`, combine the forward and backward hidden states, resulting in a bidirectional representation 
+`ℎ𝑡 = [ℎ𝑡forward ; ℎ𝑡backward]`
+Output Generation: Use this combined hidden state to produce the output `𝑦𝑡` at each time step.
