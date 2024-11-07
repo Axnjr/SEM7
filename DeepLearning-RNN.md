@@ -27,48 +27,53 @@ There are four types of RNNs based on the number of inputs and outputs in the ne
 - Many to One 
 - Many to Many 
 
-### Recurrent Neural Network Architecture
-RNNs have the same input and output architecture as any other deep neural architecture. However, differences arise in the way information flows from input to output. Unlike Deep neural networks where we have different weight matrices for each Dense network, in RNN the weight across the network remains the same. The hidden state at time step `t` for input `xi` is calculated as: <br>
-`h= σ(UX + Wh-1 + B)`
-`Y = O(Vh + C)`
+### Key Components of an RNN Architecture
 
-Hence 
-`Y = f (X, h , W, U, V, B, C)`
+- **Input Layer:** 
+accepts sequential data. Each step in the sequence has a set of features (for example, words in a sentence or data points in a time series).
+- **Hidden Layer (Recurrent Layer):**
+The hidden layer is the core of the RNN, where the recurrent connections are present.
+Each hidden state `ℎ𝑡`​at time step `𝑡` depends not only on the current input `𝑥𝑡` ​but also on the previous hidden state `ℎ𝑡 − 1`, creating a `feedback loop`.
+The recurrent layer uses an activation function, often a `hyperbolic tangent (tanh) or ReLU`.
 
-Here S is the State matrix which has element si as the state of the network at timestep i
-The parameters in the network are W, U, V, c, b which are shared across timestep
+- **Output Layer:**
+The output layer generates predictions, which can vary based on the problem.
+In classification, it might have a softmax activation to produce probabilities for different classes. For regression, it might have a linear activation function.
+- **Weight Sharing:**
+RNNs share the same weights across all time steps, making them efficient for long sequences.
+
+### Key Equations in a Basic RNN For a given time step `𝑡`, Hidden State Update:
+### `ℎ𝑡 = 𝑓(𝑊𝑥ℎ * 𝑥𝑡 + 𝑊ℎℎ * ℎ𝑡−1 + 𝑏ℎ)`, **Where:** (**xh, hh, hy, t, h are in subscripts**)
+- `ht` is the current hidden state.
+- `𝑊𝑥ℎ` and `𝑊ℎℎ` are the weight matrices for the input-to-hidden and hidden-to-hidden connections 
+- `bh` is the bias term
+- `f` is the activation function (often tanh or ReLU).
+
+### Output Generation: `𝑦𝑡 = 𝑔(𝑊ℎ𝑦 * ℎ𝑡 + 𝑏𝑦)`, **where:**<br>
+- `yt`is the output at time step `t`,
+- `Why` is the weight matrix from hidden to output,
+- `by` is the output bias,
+- `g` is the output activation function (e.g., softmax for classification).
+
+### Forward Propagation in a Nutshell
+During forward propagation, the RNN moves through the sequence one step at a time, updating the hidden state and producing an output at each time step. Each hidden state `ℎ𝑡` contains information from all previous inputs in the sequence, enabling the RNN to make context-aware predictions based on the entire input sequence up to that point. This sequential processing is what allows RNNs to handle tasks with temporal dependencies, such as language and time-series prediction.
 
 ### Advantages
 
-    An RNN remembers each and every piece of information through time. 
-    It is useful in time series prediction only because of the feature to remember previous inputs as well. This is called Long Short Term Memory.
-    Recurrent neural networks are even used with convolutional layers to extend the effective pixel neighborhood.
+- An RNN remembers each and every piece of information through time. 
+- It is useful in time series prediction only because of the feature to remember previous inputs as well. This is called Long Short Term Memory.
+- Recurrent neural networks are even used with convolutional layers to extend the effective pixel neighborhood.
 
 ### Disadvantages
 
-    Gradient vanishing and exploding problems.
-    Training an RNN is a very difficult task.
-    It cannot process very long sequences if using tanh or relu as an activation function.
+- Gradient vanishing and exploding problems.
+- Training an RNN is a very difficult task.
+- It cannot process very long sequences if using tanh or relu as an activation function.
 
 ### Applications of Recurrent Neural Network
-    Language Modelling and Generating Text
-    Speech Recognition
-    Machine Translation
-    Image Recognition, Face detection
-    Time series Forecasting
+- Language Modelling and Generating Text
+- Speech Recognition
+- Machine Translation
+- Image Recognition, Face detection
+- Time series Forecasting
 
-# 6. Issues of Standard RNNs
-- Vanishing Gradient:
-Text generation, machine translation, and stock market prediction are just a few examples of the time-dependent and sequential data problems that can be modelled with recurrent neural networks. You will discover, though, that the gradient problem makes training RNN difficult.
-- Exploding Gradient: 
-An Exploding Gradient occurs when a neural network is being trained and the slope tends to grow exponentially rather than decay. Large error gradients that build up during training lead to very large updates to the neural network model weights, which is the source of this issue.
-
-# 7. Bidirectional Recurrent Neural Networks (BRNNs) 
-are an extension of the standard RNNs that allow for information to flow in both forward and backward directions. This helps the network capture context from both past and future states, making it particularly useful for tasks where the context is essential for understanding.
-
-### How BRNNs Work
-- Forward Pass: One RNN processes the sequence from start to end.
-- Backward Pass: Another RNN processes the sequence from end to start.
-For each time step `t`:
-
-![alt text](image-7.png)
