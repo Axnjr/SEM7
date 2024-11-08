@@ -266,3 +266,22 @@ As the filter moves (slides or "convolves") over the input, it applies these sam
 - Reduced Number of Parameters:
 - Lower Memory and Computation Requirements
 
+# 5. FCNN vs CNN 
+- **Architecture**
+    - **Fully Connected Neural Network (FCNN):**
+        - In an `FCNN`, every neuron in one layer is connected to every neuron in the next layer. These layers are called fully connected or dense layers.
+        - Each layer contains `independent weights and biases`, meaning a large number of parameters as each neuron must learn its own set of weights for every connection.
+
+    - **Convolutional Neural Network (CNN):**
+        - `CNNs` have specialized layers, primarily convolutional layers and pooling layers, followed by fully connected layers at the end.
+        - Instead of connecting each neuron to every pixel, CNNs use a `small filter (kernel) that slides across the input`, allowing the network to focus on local spatial patterns.
+
+- **Parameter Efficiency** 
+`CNNs` use `weight sharing` in convolutional layers, significantly reducing the number of parameters compared to `FCNNs`, which are more memory-intensive.
+- **Best Use Cases**
+`FCNNs` are ideal for `tabular data and tasks without spatial structure`. `CNNs` are well-suited for `image, video, and other tasks with spatial patterns`, as they can recognize features regardless of position.
+- **Computational Cost and Memory Usage**
+`FCNN` Has `high` computational cost and memory usage due to the large number of parameters, especially for high-dimensional inputs like images, as each pixel has a unique weight.
+`CNN` Is much more memory-efficient due to weight sharing and smaller filter sizes, which reduces computational cost while maintaining performance, especially for tasks involving spatial patterns.
+- **Translation invarience:** CNNs are translation `invariant`, meaning they `can detect features at different positions` within the input, unlike FCNNs.
+
