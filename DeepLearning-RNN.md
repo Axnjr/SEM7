@@ -216,3 +216,13 @@ It is computed similarly to the update gate:
     - **Maintain Output Size:** Padding can be used to keep the output the same size as the input.
     - **Reduce Information Loss:** By padding the borders, all parts of the input have the opportunity to contribute to the feature map, including the edges.
 
+# 2. Relation Between Input, Output, and Filter Size
+The output size of a convolutional layer depends on the input size, the filter size, stride, and padding. For a given 2D input matrix with dimensions `Hin * Win`, the output dimensions `Hout * Wout` can be calculated with the following formulas:
+
+![](image-10.png), where:
+
+- `Hin` and `Win` Height and width of the input.
+- K: Size of the filter (kernel) (assuming a square kernel like 3×3).
+- P: Padding size (how many pixels are added around the input).
+- S: Stride.
+
