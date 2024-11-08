@@ -226,3 +226,30 @@ The output size of a convolutional layer depends on the input size, the filter s
 - P: Padding size (how many pixels are added around the input).
 - S: Stride.
 
+# 3. CNN Architecture :
+is a specialized type of neural network that is particularly effective for processing `grid-like data`, such as images. CNNs are commonly used for image classification, object detection, and other visual recognition tasks.
+
+![cnnimage](image-11.png)
+
+### Core Layers of a CNN
+
+- **Convolutional Layer:** 
+This layer performs the convolution operation. `It applies several filters` (kernels) to the input image, producing multiple feature maps. Each filter is a small matrix that slides over the input image and captures specific patterns (e.g., edges, textures). The output of the convolutional layer, called the `activation map` or feature map, `highlights areas where specific patterns are detected`.
+
+- **Activation Layer:** 
+By adding an activation function to the output of the preceding layer, activation layers add `nonlinearity` to the network. it will apply an element-wise activation function to the output of the convolution layer. Some common activation functions are RELU: max(0, x),  Tanh, Leaky RELU, etc.
+
+- **Pooling layer:** 
+reduces the `spatial dimensions` of the feature map (height and width) while `retaining important features`. This decreases the computational load and `helps prevent overfitting`. A `2×2` max pooling operation with a `stride of 2` on a `32×32` feature map reduces it to `16×16`.
+
+- **Fully Connected Layer:**
+Flattening is used to convert all the resultant 2-Dimensional arrays from
+pooled feature maps into a single long continuous linear vector. The
+flattened matrix is fed as input to the fully connected layer to classify the
+image.
+`(These layers are used after a sequence of convolutional and pooling layers to perform classification based on the features extracted.
+Each neuron in a fully connected layer is connected to every neuron in the previous layer.)`
+
+- **Output Layer:**
+uses an activation function `(usually softmax for multi-class classification or sigmoid for binary classification)` to convert the final outputs into probabilities.
+
