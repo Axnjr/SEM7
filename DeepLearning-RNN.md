@@ -285,3 +285,9 @@ As the filter moves (slides or "convolves") over the input, it applies these sam
 `CNN` Is much more memory-efficient due to weight sharing and smaller filter sizes, which reduces computational cost while maintaining performance, especially for tasks involving spatial patterns.
 - **Translation invarience:** CNNs are translation `invariant`, meaning they `can detect features at different positions` within the input, unlike FCNNs.
 
+# 6. Convolution Types:
+- Multichannel Convolution: Used for images with multiple channels (like RGB). Each filter matches the image's depth (e.g., 3 for RGB), applies separately to each channel, and then sums the results to produce one feature map.
+
+- 2D Convolution: Most common for images, sliding a 2D filter over the height and width of the image to capture spatial features. Typically used for image processing where data is in two dimensions.
+
+- 3D Convolution: Extends 2D convolution to include depth, allowing the filter to slide over height, width, and depth. It’s useful for video data (where depth could represent time) or 3D medical scans, capturing patterns across all three dimensions.
