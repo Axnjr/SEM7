@@ -150,22 +150,22 @@ it incorporate special gating mechanisms that regulate information flow, making 
 
 An LSTM cell has several components, including three gates `(forget, input, and output)` and a cell state. Together, these elements allow it to selectively retain or discard information, improving the network’s ability to learn dependencies over long sequences.
 - **Cell State (`𝐶𝑡`):**
-The cell state acts as the "memory" of the LSTM, allowing information to flow unchanged across time steps unless modified by the gates. It is crucial for retaining long-term information.
+The cell state acts as the `"memory"` of the LSTM, allowing information to flow unchanged across `time-steps` unless modified by the gates. It is crucial for retaining long-term information.
 - **Hidden State (`ℎ𝑡`):**
-The hidden state is the short-term output of the LSTM at each time step. This hidden state is also used as input for predictions and is updated at every time step.
+The hidden state is the `short-term output` of the LSTM at each `time-step`. This hidden state is also used as input for predictions and is updated at every time step.
 - ### **Gates:**
     - **Forget Gate (`𝑓𝑡`):** Decides which information from the cell state should be kept or discarded. It takes the current input 
-    `𝑥𝑡`and previous hidden state `ℎ𝑡−1` ​to produce a value between 0 (forget) and 1 (retain).<br>
+    `𝑥𝑡` and previous hidden state `ℎ𝑡−1` ​to produce a value between 0 (forget) and 1 (retain).<br>
         `𝑓𝑡 = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏𝑓)`
-    - **Input Gate (`𝑖𝑡`):** Controls how much of the new input `𝑥𝑡`should be added to the cell state. It also uses the current input and previous hidden state to decide what to update.<br>
+    - **Input Gate (`𝑖𝑡`):** Controls how much of the new input `𝑥𝑡` should be added to the cell state. It also uses the current input and previous hidden state to decide what to update.<br>
         `it = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏i)`
-    - **Output Gate (`ot`):** It Decideswhich part of the `cell state` will be in the output.
+    - **Output Gate (`ot`):** It Decides which part of the `cell state` will be in the output.<br>
         `ot = 𝜎(𝑊𝑓 ⋅ [ℎ𝑡−1,𝑥𝑡] + 𝑏o)`
 
 ### Pitfalls:
 - First, they are `more complicated` than traditional RNNs and
 require more training data in order to learn effectively.
-- Second, they are `not well-suited` for online `learning tasks, such
+- Second, they are `not well-suited` for `learning tasks, such
 as prediction or classification` tasks where the input data is not a
 sequence.
 - Third, LSTMs can be `slow to train` on large datasets. This is due
