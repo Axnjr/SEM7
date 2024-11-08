@@ -202,3 +202,8 @@ It is computed similarly to the update gate:
 - Simpler Architecture: Fewer parameters than LSTMs, which makes them computationally more efficient and easier to train.
 - Good Performance: Despite their simplicity, GRUs achieve performance comparable to LSTMs on many tasks, making them a popular choice for sequence modeling.
 - Faster Training: Due to fewer parameters, GRUs are faster to train compared to LSTMs, especially on large datasets.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# `UNIT - 4`
+
