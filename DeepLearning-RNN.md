@@ -253,3 +253,16 @@ Each neuron in a fully connected layer is connected to every neuron in the previ
 - **Output Layer:**
 uses an activation function `(usually softmax for multi-class classification or sigmoid for binary classification)` to convert the final outputs into probabilities.
 
+# 4. What is Weight Sharing?
+In CNNs, weight sharing means that the same set of weights (the filter or kernel) is applied across different regions of the input image. Instead of having unique weights for every pixel (as in a fully connected layer), the same filter is "shared" across the entire input. This allows the CNN to detect the same pattern or feature (e.g., edges, textures) at different locations in the image.
+
+### For example:
+If a CNN has a 3×3 filter, it will use the same 
+3×3 weights across the whole input image.
+As the filter moves (slides or "convolves") over the input, it applies these same weights at each position, resulting in a feature map.
+
+#### Advantages:
+
+- Reduced Number of Parameters:
+- Lower Memory and Computation Requirements
+
