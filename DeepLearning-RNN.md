@@ -207,3 +207,12 @@ It is computed similarly to the update gate:
 
 # `UNIT - 4`
 
+# 1. What is Convolution, stride, padding in CNN?
+- **Convolution:** is a `mathematical operation` that involves `sliding a small matrix`, called a filter or kernel, over an input image or feature map. Each position of the filter computes a `weighted sum`, which generates a new matrix called a feature map or activation map. This feature map captures important spatial features from the input, such as edges, textures, and shapes.
+
+- **Stride:** refers to the number of pixels the filter moves after each operation. Stride influences the size of the output feature map.
+
+- **Padding:** is the process of adding extra pixels around the border of an image or input matrix. Padding helps control the output's spatial dimensions and has two main purposes:
+    - **Maintain Output Size:** Padding can be used to keep the output the same size as the input.
+    - **Reduce Information Loss:** By padding the borders, all parts of the input have the opportunity to contribute to the feature map, including the edges.
+
