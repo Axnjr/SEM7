@@ -367,3 +367,24 @@ helps prevent the model from simply memorizing or copying the input data (especi
 
 - **L2 Regularization:** Penalizes large weights to reduce overfitting and promote generalization.
 
+# 4. Denoising Autoencoders `DAEs`: 
+are a type of autoencoder specifically designed to make the `learned representations robust to noise`. They are trained to `reconstruct the original, clean input from a corrupted version`, effectively `forcing` the network to `focus on the most essential features` in the data.
+
+### How Denoising Autoencoders Work:
+
+- **Add Noise to Input:** During training, random noise (such as Gaussian noise or masking noise) is added to the input data. This corrupts the input while the output remains the original, clean data.
+- **Reconstruction Objective:** The autoencoder then tries to reconstruct the original, noise-free input from this noisy version, minimizing the difference between the reconstructed output and the clean input.
+- **Learning Robust Features:** By reconstructing the clean data from noisy input, the DAE learns features that are resilient to irrelevant variations, capturing important patterns and structures in the data.
+
+### Benefits of Denoising Autoencoders
+
+- **Noise Reduction:** DAEs are effective for removing noise from data, like enhancing low-quality images.
+- **Feature Learning:** By ignoring noise, DAEs learn robust, high-quality features for downstream tasks (e.g., classification, clustering).
+- **Anomaly Detection:** High reconstruction errors for unusual inputs make DAEs useful for identifying anomalies.
+
+### Applications
+
+- **Image Denoising:** DAEs are often used to clean up noisy images.
+- **Speech Enhancement:** Improve speech quality by reducing background noise.
+- **Anomaly Detection:** Detecting unusual patterns by comparing reconstruction errors for typical vs. anomalous data.
+
