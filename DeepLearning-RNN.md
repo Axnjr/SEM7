@@ -345,3 +345,11 @@ The hidden layers progressively increase the dimensionality and aim to reconstru
 Considering the applications for `data-compression`, `autoencoders are preferred 
 over PCA`. PCA makes one stringent but powerful assumption that is linearity i.e. there 
 must be linearity in the data set; which is not the case in real-life datasets. However, an autoencoder can learn non-linear transformations with a non linear activation function and multiple layers.
+
+# 2. Types of AutoEncoders `AE's`:
+- **Linear Autoencoder:** is a specific type of autoencoder where both the encoder and decoder are linear transformations, meaning they use only linear functions (without activation functions like ReLU or sigmoid) to map the input to the latent space and back. This simple structure makes it mathematically equivalent to Principal Component Analysis (PCA) in terms of its ability to perform dimensionality reduction.
+
+- **Undercomplete Autoencoder:** has a latent space dimension (bottleneck) that is smaller than the input dimension `(the hidden layer has fewer neurons than the input layer)`. The `goal` is to `force the autoencoder` to learn an `efficient, compressed representation` of the data by capturing its `most significant features` and discarding redundant or unimportant information.
+
+- **Overcomplete Autoencoder:** has a latent space dimension that is equal to or larger than the input dimension. `(the hidden layer has more units than the input layer.)` The Model expands the input data into a higher dimensional space, which allows for a potentially richer and detailed representation of the data. These `AE's` have `more capacity to learn a wide range of features`, sometimes even allowing it to reconstruct the input perfectly by learning an identity function.
+
