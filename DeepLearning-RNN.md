@@ -416,3 +416,27 @@ The `sparsity constraint` forces the autoencoder to only activate `specific neur
 - Anomaly Detection: Anomalous inputs may have larger reconstruction errors as they don’t align with the learned stable features.
 - Image and Signal Processing: Commonly used to extract robust features in images or signals where minor variations need to be ignored.
 
+# 7. Applications of `AE's`:
+- **Medical Imaging:**
+Autoencoders have shown great promise in medical imaging applications such as 
+Magnetic Resonance Imaging (MRI), Computed Tomography (CT), and X-Ray imaging. The ability of
+autoencoders to learn feature representations from high-dimensional data has made them useful for
+compressing medical images while preserving diagnostic information.
+- **Video Compression:**
+Autoencoders have also been used for video compression, where the
+goal is to compress a sequence of images into a compact
+representation that can be transmitted or stored efficiently. One
+example of this is the video codec AV1, which uses a combination of
+autoencoders and traditional compression methods to achieve higher
+compression rates while maintaining video quality
+- **Autonomous Vehicles:**
+Autoencoders are also useful for autonomous vehicle applications, where the goal
+is to compress high-resolution camera images captured by the vehicle’s sensors
+while preserving critical information for navigation and obstacle detection.
+- **Social Media and Web Applications:**
+Autoencoders have also been used in social media and web applications, where
+the goal is to reduce the size of image files to improve website loading times and
+reduce bandwidth usage. For example, Facebook uses an autoencoder-based
+approach for compressing images uploaded to their platform, which achieves high
+compression ratios while preserving image quality. This has led to faster loading
+times for images on the platform and reduced data usage for users.
