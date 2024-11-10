@@ -353,3 +353,17 @@ must be linearity in the data set; which is not the case in real-life datasets. 
 
 - **Overcomplete Autoencoder:** has a latent space dimension that is equal to or larger than the input dimension. `(the hidden layer has more units than the input layer.)` The Model expands the input data into a higher dimensional space, which allows for a potentially richer and detailed representation of the data. These `AE's` have `more capacity to learn a wide range of features`, sometimes even allowing it to reconstruct the input perfectly by learning an identity function.
 
+# 3. Regularization in autoencoders: 
+helps prevent the model from simply memorizing or copying the input data (especially in cases with high capacity, like overcomplete autoencoders). Regularization encourages the model to learn meaningful, generalizable representations of the data. Here are several common regularization techniques used in autoencoders:
+- **Sparsity Regularization:** forces only a small number of neurons in the hidden layer to be active for a given input, encouraging the network to capture only the most salient features of the data.
+
+- **Denoising:** Adds noise to input data, forcing the autoencoder to learn robust features that resist noise.
+
+- **Contractive:**  add a penalty term to the loss function that encourages the network to resist changes in the input, making the learned representations less sensitive to small input variations.
+
+- **Dropout:** Randomly deactivates neurons during training, helping prevent overfitting and encouraging redundancy.
+
+- **VAE Regularization:** a regularization term is added to make the latent space more continuous and structured, allowing for more controlled generation of new samples.
+
+- **L2 Regularization:** Penalizes large weights to reduce overfitting and promote generalization.
+
