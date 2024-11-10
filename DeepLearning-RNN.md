@@ -299,3 +299,30 @@ It consists of seven layers that alternate between convolutional and pooling lay
 - Output Layer: 10 neurons for classifying digits (0-9).
 
 **All layers from `C1` to `F6` use `tanH` activation function and output layer uses `softmax` activation function.**
+
+# 8. AlexNet:
+It consists of `8 layers` in total, out of which the `first 5 are convolutional` layers and the `last
+3 are fully-connected`. 
+- The first `two convolutional` layers are connected to `overlapping max-pooling layers` to
+extract a `maximum number of features`. 
+- The third, fourth, and fifth convolutional layers are directly connected to the `fully-connected layers`.
+- All the outputs of the convolutional and fully-connected layers are connected to ReLu
+non-linear activation function.
+- The `final output layer` is connected to a `softmax activation layer`, which produces a distribution of `1000 class labels`.
+- The input dimensions of the network are (256 × 256 × 3), meaning that AlexNet is capable of taking
+input an RGB (3 channels) image of size upto (256 × 256) pixels.
+- If the input image is `grayscale`, it is `converted to an RGB` image by `replicating the single channel` to
+obtain a `3-channel` RGB image. 
+- There are more than `60 million parameters` and `6,50,000 neurons` involved in the architecture.
+
+### Key Innovations in AlexNet
+
+- **ReLU Activation:**
+AlexNet was one of the first networks to use ReLU (Rectified Linear Unit) as the activation function, speeding up training.
+- **Dropout:**
+Introduced dropout in fully connected layers to reduce overfitting.
+- **Data Augmentation:**
+Applied techniques like random cropping and flipping to increase data diversity.
+- **Use of GPUs:**
+Trained on dual GPUs, allowing the model to handle larger architectures and datasets.
+
