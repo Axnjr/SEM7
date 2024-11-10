@@ -330,3 +330,18 @@ Trained on dual GPUs, allowing the model to handle larger architectures and data
 
 # `UNIT - 3`
 
+# 1. Autoencoders `AE's`: 
+are a type of artificial neural network used primarily for unsupervised learning, specifically for `feature learning` and `dimensionality reduction`. They are designed to `learn efficient, compressed representations` of input data and are often used to remove noise, compress data, or even generate new data samples. The general architecture of an autoencoder includes an encoder, decoder, and bottleneck layer.
+- **Encoder:**
+Input layer take raw input data. The hidden layers progressively reduce the dimensionality of the input, capturing important features and patterns. These layer compose the encoder.
+- **Bottleneck layer:** `(latent space:  lower-dimensional representation of the input data)` is the final hidden layer, where the `dimensionality is significantly reduced`. This layer represents the compressed encoding of the input data.
+- **Decoder:**
+The hidden layers progressively increase the dimensionality and aim to reconstruct the original input. The output layer produces the reconstructed output, which ideally should be as close as possible to the input data.
+
+- The loss function used during training is typically a `reconstruction loss`, measuring the difference between the input and the reconstructed output. Common choices include `mean squared error (MSE)` for continuous data or `binary cross-entropy` for binary data.
+
+- During training, the autoencoder learns to `minimize the reconstruction loss`, forcing the network to capture the most important features of the input data in the bottleneck layer.
+
+Considering the applications for `data-compression`, `autoencoders are preferred 
+over PCA`. PCA makes one stringent but powerful assumption that is linearity i.e. there 
+must be linearity in the data set; which is not the case in real-life datasets. However, an autoencoder can learn non-linear transformations with a non linear activation function and multiple layers.
