@@ -326,3 +326,7 @@ Applied techniques like random cropping and flipping to increase data diversity.
 - **Use of GPUs:**
 Trained on dual GPUs, allowing the model to handle larger architectures and datasets.
 
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# `UNIT - 3`
+
