@@ -33,7 +33,7 @@ There are four types of RNNs based on the number of inputs and outputs in the ne
 accepts sequential data. Each step in the sequence has a set of features (for example, words in a sentence or data points in a time series).
 - **Hidden Layer (Recurrent Layer):**
 The hidden layer is the core of the RNN, where the recurrent connections are present.
-Each hidden state `ℎ𝑡`​at time step `𝑡` depends not only on the current input `𝑥𝑡` ​but also on the previous hidden state `ℎ𝑡 − 1`, creating a `feedback loop`.
+Each hidden state `ℎ𝑡` ​at time step `𝑡` depends not only on the current input `𝑥𝑡` ​but also on the previous hidden state `ℎ𝑡 − 1`, creating a `feedback loop`.
 The recurrent layer uses an activation function, often a `hyperbolic tangent (tanh) or ReLU`.
 
 - **Output Layer:**
@@ -50,7 +50,7 @@ RNNs share the same weights across all time steps, making them efficient for lon
 - `f` is the activation function (often tanh or ReLU).
 
 ### Output Generation: `𝑦𝑡 = 𝑔(𝑊ℎ𝑦 * ℎ𝑡 + 𝑏𝑦)`, **where:**<br>
-- `yt`is the output at time step `t`,
+- `yt` is the output at time step `t`,
 - `Why` is the weight matrix from hidden to output,
 - `by` is the output bias,
 - `g` is the output activation function (e.g., softmax for classification).
@@ -122,7 +122,7 @@ is the process used to train Recurrent Neural Networks (RNNs) by applying backpr
 ### Key Steps in BPTT
 - **Unrolling the RNN:**
 In BPTT, the RNN is `"unrolled" across the sequence length`, creating a separate `copy` of the network for `each time step`.
-This unrolling allows the RNN to be visualized as a feedforward network with one layer for each time step in the sequence.
+This `unrolling allows the RNN to be visualized as a feedforward network` with one layer for each time step in the sequence.
 - **Forward Pass Through Time:**
 The forward pass is computed for `each time step` in the sequence, `storing the hidden states and outputs at each step`.
 This allows the model to `capture dependencies`, as each hidden state depends on both the current input and the previous hidden state.
@@ -279,8 +279,23 @@ In CNNs, weight sharing means that the `same set of weights` (the filter or kern
 - **Translation invarience:** CNNs are translation `invariant`, meaning they `can detect features at different positions` within the input, unlike FCNNs.
 
 # 6. Convolution Types:
-- Multichannel Convolution: Used for images with multiple channels (like RGB). Each filter matches the image's depth (e.g., 3 for RGB), applies separately to each channel, and then sums the results to produce one feature map.
+- Multichannel Convolution: Used for images with multiple channels (like RGB). `Each filter` matches the image's depth, `applies separately to each channel`, and then `sums the results to produce one feature map`.
 
 - 2D Convolution: Most common for images, sliding a 2D filter over the height and width of the image to capture spatial features. Typically used for image processing where data is in two dimensions.
 
 - 3D Convolution: Extends 2D convolution to include depth, allowing the filter to slide over height, width, and depth. It’s useful for video data (where depth could represent time) or 3D medical scans, capturing patterns across all three dimensions.
+
+# 7. LeNet: 
+is one of the `earliest` and most famous Convolutional Neural Network (CNN) architectures, developed by `Yann LeCun` in the late `1980s`. Originally created to recognize handwritten digits, LeNet laid the groundwork for modern deep learning applications in image processing.
+It consists of seven layers that alternate between convolutional and pooling layers, followed by fully connected layers for classification:
+![lenet-5architecture](image-12.png)
+- Input Layer: 28x28 sized image from MNIST are resized (augmented) into 32x32 to give as input to LeNet-5
+- C1 - Convolutional Layer: 6 filters, 5x5 each, output size 28x28x6.
+- S2 - Pooling Layer: 2x2 average pooling, output size 14x14x6.
+- C3 - Convolutional Layer: 16 filters, 5x5 each, output size 10x10x16.
+- S4 - Pooling Layer: 2x2 average pooling, output size 5x5x16.
+- C5 - Fully Connected Layer: 120 neurons.
+- F6 - Fully Connected Layer: 84 neurons.
+- Output Layer: 10 neurons for classifying digits (0-9).
+
+**All layers from `C1` to `F6` use `tanH` activation function and output layer uses `softmax` activation function.**
