@@ -113,35 +113,38 @@ Updates weights based on the gradient from a single training example at each ite
 	<img width="265" alt="image" src="https://github.com/user-attachments/assets/20a34c74-cbb2-41f9-8710-ca3a5e59bde9">
 
 - **Momentum gradient descent:** 
-enhances the standard gradient descent by adding a momentum term. This helps accelerate the convergence of the training process, reduces oscillations and better handle the local minima / smooth out the updates.
+enhances the standard gradient descent by adding a `momentum term`. This helps accelerate the convergence of the training process, reduces oscillations and better handle the local minima / smooth out the updates.
 	<img width="350" alt="image" src="https://github.com/user-attachments/assets/f7e9e64a-de87-4de7-b5c8-d7f173dedab7">
 
-- **Nesterov Accelerated GD (NAG):**
-NAG modifies the Momentum-based Gradient Descent by calculating the gradient not at the current parameters but with a look-ahead based on the velocity.
-	1. **Look-Ahead:** Instead of calculating the gradient at the current parameters, NAG first performs a look-ahead step to estimate where the parameters will be if the current velocity were applied.
-	2. **Gradient Calculation:** The gradient is then computed at this look-ahead point, providing a more accurate estimate of the direction in which the parameters should be updated.
-	3. **Velocity Update:** The velocity term is updated using this more accurate gradient, making the updates more informed and potentially more 	efficient.
-	4. **Parameter Update:** Finally, the parameters are updated using the updated velocity.
-	- <img width="317" alt="image" src="https://github.com/user-attachments/assets/746bb2e1-7849-458e-b442-c247eeeedb50">
-	- By considering the future position of the parameters, NAG often converges faster than momentum-based gradient descent.
-	- The look-ahead mechanism provides more informed updates, which can lead to better convergence properties
+- **Nesterov Accelerated GD (`NAG`):**
+modifies the Momentum-based Gradient Descent by calculating the gradient `not at the current parameters` but with a `look-ahead step` based on the `velocity`.
+	- **Look-Ahead:** Instead of calculating the gradient at the current parameters, NAG first performs a look-ahead step to estimate where the parameters will be if the current velocity were applied.
+	- **Gradient Calculation:** The gradient is then computed at this look-ahead point, providing a more accurate estimate of the direction in which the parameters should be updated.
+	- **Velocity Update:** The velocity term is updated using this more accurate gradient, making the updates more informed and potentially more 	efficient.
+	- **Parameter Update:** Finally, the parameters are updated using the updated velocity.
+		<img width="317" alt="image" src="https://github.com/user-attachments/assets/746bb2e1-7849-458e-b442-c247eeeedb50">
+		- By considering the future position of the parameters, NAG often converges faster than momentum-based gradient descent.
+		- The look-ahead mechanism provides more informed updates, which can lead to better convergence properties
 
 - **AdaGrad:**
-is an optimization algorithm designed to adapt the learning rate for each parameter individually based on the historical gradients. This adaptive nature allows AdaGrad to perform well in scenarios with sparse data and features, where different parameters may have different  degrees of importance and frequency.
+is an optimization algorithm `designed to adapt the learning rate for each parameter individually based on the historical gradients`. This adaptive nature allows AdaGrad to perform well in scenarios with sparse data and features, where different parameters may have different  degrees of importance and frequency.
   - Key Concepts
 	1. **Adaptive Learning Rate:** Unlike traditional gradient descent, which uses a single learning rate for all parameters, AdaGrad adjusts the 		learning rate for each parameter dynamically.
 	2. **Accumulation of Squared Gradients:** AdaGrad keeps track of the sum of the squares of the gradients for each parameter. This accumulated value 	is then used to adjust the learning rate.
   - <img width="446" alt="image" src="https://github.com/user-attachments/assets/4c63dfc5-2e70-498b-b97a-3fb775f250f3">
   -  **Advantages**
-		1. **Adaptivity:** Automatically adjusts learning rates for each parameter, making it effective for problems with sparse features.
-		2. **Stability:** Reduces the learning rate over time for frequently updated parameters, which can help stabilize convergence.
-  - **Disadvantages:** Aggressive Decay:** For some problems, the learning rate might decay too aggressively, causing the learning process to stop too early 	 before reaching the optimal solution
+		- **Adaptivity:** Automatically adjusts learning rates for each parameter, making it effective for problems with sparse features.
+		- **Stability:** Reduces the learning rate over time for frequently updated parameters, which can help stabilize convergence.
+  - **Disadvantages:** 
+  	- **Aggressive Decay:** For some problems, the learning rate might decay too aggressively, causing the learning process to stop too early 	 before reaching the optimal solution
 
-- **RMSProp (Root Mean Square Propagation):**
-is an adaptive learning rate optimization algorithm designed to address some of the limitations of AdaGrad, particularly the issue of rapidly decaying learning rates. RMSProp aims to maintain a balance by controlling the learning rate decay, which allows for more stable and faster convergence, especially in deep learning applications.
+- **RMSProp (Root Mean Square Propagation):** 
+Modifies AdaGrad by `decaying the sum of past gradients`, preventing the `learning rate from decaying too quickly.`<br>
+(is an adaptive learning rate optimization algorithm `designed to address some of the limitations of AdaGrad`, particularly the `issue of rapidly decaying learning rates`. RMSProp aims to maintain a balance by controlling the learning rate decay, which allows for more stable and faster convergence, especially in deep learning applications.)
+![rmsformula](image-14.png)
 
 - **Adam(Adaptive Moment Estimation):**
-is an optimization algorithm that combines the best properties of the AdaGrad and RMSProp algorithms to provide an efficient and adaptive learning rate. It is particularly well-suited for problems involving large datasets and highdimensional parameter spaces
+is an optimization algorithm that `combines the best properties of the AdaGrad and RMSProp` algorithms to provide an efficient and adaptive learning rate. It is particularly `well-suited for` problems involving `large datasets and highdimensional parameter spaces`.
 
 # 7. Activation functions: 
 in neural networks is a mathematical function applied to the output of a neuron. Its primary purpose is to introduce non-linearity into the model, enabling the network to learn and represent complex patterns in the data. Here are four common activation functions:
