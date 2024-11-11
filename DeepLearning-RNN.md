@@ -389,7 +389,7 @@ are a type of autoencoder specifically designed to make the `learned representat
 - **Anomaly Detection:** Detecting unusual patterns by comparing reconstruction errors for typical vs. anomalous data.
 
 # 5. Sparse Autoencoders: 
-are a type of autoencoder that introduces `sparsity constraints` on the hidden layer, `encouraging` the network to learn more `distinct, compressed representations` by activating `only a few neurons for each input`. This sparsity promotes learning of important features without redundancy, making sparse autoencoders especially useful for feature extraction.
+are a type of autoencoder that introduces `sparsity constraints` on the hidden layer, `encouraging` the network to learn more `distinct, compressed representations` by activating `only a few neurons for each input`. This sparsity promotes learning of important features `without redundancy`, making sparse autoencoders especially useful for feature extraction.
 
 ### How Sparse Autoencoders Work
 
@@ -405,8 +405,8 @@ The `sparsity constraint` forces the autoencoder to only activate `specific neur
 
 # 6. Contractive Autoencoders (CAEs): 
 - are a type of autoencoder that introduce a "contractive" regularization term to make the learned representations less sensitive to small variations in the input.
-- In addition to the reconstruction loss, CAEs add a regularization term to the loss function based on the Jacobian matrix of the encoder’s output with respect to the input. The Jacobian measures how much the hidden layer activations change when the input changes.
-- This regularization penalizes large changes in the hidden layer activations for small input changes, making the latent representation "contractive," or resistant to variations in input.
+- In addition to the reconstruction loss, CAEs add a `regularization term` to the `loss function` based on the `Jacobian matrix` of the `encoder’s output with respect to the input`. The Jacobian measures `how much the hidden layer activations change when the input changes`.
+- This regularization `penalizes large changes in the hidden layer activations for small input changes`, making the latent representation "contractive," or resistant to variations in input.
 ### Benefits of Contractive Autoencoders
 - Robustness to Noise: CAEs learn features that are less affected by small input variations, which helps with denoising and robustness to input perturbations.
 - Smoother Latent Space: The latent space becomes more stable and continuous, where similar inputs map closely in the representation space, which is useful for interpretability and clustering.
@@ -470,4 +470,87 @@ provides the final output of the network. The number of neurons in this layer co
 - **Hyperparameter Tuning:** Finding optimal settings (e.g., learning rate, batch size) improves performance.
 
 
-# 
+# 3. Activation functions: 
+in neural networks is a mathematical function applied to the output of a neuron. Its primary purpose is to introduce non-linearity into the model, enabling the network to learn and represent complex patterns in the data. Here are four common activation functions:
+- **The sigmoid function:** 
+`(logistic function)` maps any input to a value between 0 and 1. It’s often used in binary classification problems. `y = 1 / 1 + e ^ -x`
+	- **Pros:** Smooth gradient, output range (0, 1).
+	- **Cons:** Can cause vanishing gradient problems, slow convergence.
+- **Tanh function:** 
+is very similar to the sigmoid/logistic activation function, and even has the same S-shape with the difference in output range of -1 to 1. In Tanh, the larger the input (more positive), the closer the output value will be to `1.0`, whereas the smaller the input (more negative), the closer the output will be to `-1.0`. `f(x) = (e^x - e^-x) / (e^x +e^-x)`
+-  **ReLU:**
+is one of the most popular activation functions. It outputs the input directly if it is positive; otherwise, it outputs zero. `f(x) = max(0, x)`
+	- **Pros:** Computationally efficient, helps mitigate the vanishing gradient problem.
+	- **Cons:** Can cause “dying ReLU” problem where neurons can become inactive.
+- **Leaky ReLU (Leaky Rectified Linear Unit):**
+is a variation of the ReLU activation function designed to address the “dying ReLU” problem, where neurons can become inactive and only output zero for any input. `f(x) = max(0.1x, x)`
+	- The amount of leak is determined by the value of `hyper-parameter α`. It’s value is small and generally varies between 0.01 to 0.1-0.2.
+- **Softmax:** 
+Primarily used in the output layer for multi-class classification. It converts the input into probability range between 0 to 1. `f(x) = e^xi / ∑ e^xj`
+
+# 4. Types of Gradient Descent
+- **Batch Gradient Descent:** 
+Uses the entire training dataset to compute the gradient and update the parameters. It is computationally expensive for large datasets but provides a stable convergence.
+
+- **Mini-Batch Gradient Descent:** 
+A compromise between batch and stochastic gradient descent. It uses a small batch of training examples to compute the gradient and update the parameters. It balances the efficiency and stability of the updates.
+<img width="218" alt="image" src="https://github.com/user-attachments/assets/1f5e8a4b-10be-4422-a000-95870c35e4c8">
+
+- **Stochastic Gradient Descent (SGD):** 
+Updates weights based on the gradient from a single training example at each iteration. It is faster and can escape local minima but introduces more noise in the updates.
+<img width="272" alt="image" src="https://github.com/user-attachments/assets/49d6ac6a-f1d8-4c2f-a4d9-aeb73dbed6a6">
+	<img width="265" alt="image" src="https://github.com/user-attachments/assets/20a34c74-cbb2-41f9-8710-ca3a5e59bde9">
+
+- **Momentum gradient descent:** 
+enhances the standard gradient descent by adding a `momentum term`. This helps accelerate the convergence of the training process, reduces oscillations and better handle the local minima / smooth out the updates.
+	<img width="350" alt="image" src="https://github.com/user-attachments/assets/f7e9e64a-de87-4de7-b5c8-d7f173dedab7">
+
+- **Nesterov Accelerated GD (`NAG`):**
+modifies the Momentum-based Gradient Descent by calculating the gradient `not at the current parameters` but with a `look-ahead step` based on the `velocity`.
+	- **Look-Ahead:** Instead of calculating the gradient at the current parameters, NAG first performs a look-ahead step to estimate where the parameters will be if the current velocity were applied.
+	- **Gradient Calculation:** The gradient is then computed at this look-ahead point, providing a more accurate estimate of the direction in which the parameters should be updated.
+	- **Velocity Update:** The velocity term is updated using this more accurate gradient, making the updates more informed and potentially more 	efficient.
+	- **Parameter Update:** Finally, the parameters are updated using the updated velocity.
+		<img width="317" alt="image" src="https://github.com/user-attachments/assets/746bb2e1-7849-458e-b442-c247eeeedb50">
+		- By considering the future position of the parameters, NAG often converges faster than momentum-based gradient descent.
+		- The look-ahead mechanism provides more informed updates, which can lead to better convergence properties
+
+- **AdaGrad:**
+is an optimization algorithm `designed to adapt the learning rate for each parameter individually based on the historical gradients`. This adaptive nature allows AdaGrad to perform well in scenarios with sparse data and features, where different parameters may have different  degrees of importance and frequency.
+  - Key Concepts
+	1. **Adaptive Learning Rate:** Unlike traditional gradient descent, which uses a single learning rate for all parameters, AdaGrad adjusts the 		learning rate for each parameter dynamically.
+	2. **Accumulation of Squared Gradients:** AdaGrad keeps track of the sum of the squares of the gradients for each parameter. This accumulated value 	is then used to adjust the learning rate.
+  - <img width="446" alt="image" src="https://github.com/user-attachments/assets/4c63dfc5-2e70-498b-b97a-3fb775f250f3">
+  -  **Advantages**
+		- **Adaptivity:** Automatically adjusts learning rates for each parameter, making it effective for problems with sparse features.
+		- **Stability:** Reduces the learning rate over time for frequently updated parameters, which can help stabilize convergence.
+  - **Disadvantages:** 
+  	- **Aggressive Decay:** For some problems, the learning rate might decay too aggressively, causing the learning process to stop too early 	 before reaching the optimal solution
+
+- **RMSProp (Root Mean Square Propagation):** 
+Modifies AdaGrad by `decaying the sum of past gradients`, preventing the `learning rate from decaying too quickly.`<br>
+(is an adaptive learning rate optimization algorithm `designed to address some of the limitations of AdaGrad`, particularly the `issue of rapidly decaying learning rates`. RMSProp aims to maintain a balance by controlling the learning rate decay, which allows for more stable and faster convergence, especially in deep learning applications.)
+![rmsformula](image-14.png)
+
+- **Adam(Adaptive Moment Estimation):**
+is an optimization algorithm that `combines the best properties of the AdaGrad and RMSProp` algorithms to provide an efficient and adaptive learning rate. It is particularly `well-suited for` problems involving `large datasets and highdimensional parameter spaces`.
+
+# 5. The bias-variance trade-off: 
+is a delicate balance between two types of errors:
+
+- Bias: 
+	The difference between the model’s predictions and the true values (high bias leads to underfitting).
+	A model with high bias tends to make simplistic assumptions about the data and may underfit the training data.
+- Variance: 
+	The variability of model predictions for different training datasets (high variance leads to overfitting).
+	A model with high variance is sensitive to small fluctuations in the training data and may overfit the training data.
+
+- An ideal model strikes a balance between bias and variance.   Increasing model complexity reduces bias but increases variance, and vice versa. The goal is to find the sweet spot where both bias and variance are minimized, leading to optimal generalization.
+
+# 6. Regularization Methods
+- **Early stopping:** One more way to reduce overfitting
+    - Early stopping is a regularization technique used in machine learning and deep learning to prevent overfitting during the training of a model.
+    - Monitors the model’s performance on a validation set and stops training when performance starts to degrade.
+    - Prevents the model from overfitting by halting training before it starts to memorize the training data.
+
+
