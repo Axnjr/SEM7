@@ -45,7 +45,7 @@ RNNs share the same weights across all time steps, making them efficient for lon
 ### Key Equations in a Basic RNN For a given time step `𝑡`, Hidden State Update:
 ### `ℎ𝑡 = 𝑓(𝑊𝑥ℎ * 𝑥𝑡 + 𝑊ℎℎ * ℎ𝑡−1 + 𝑏ℎ)`, **Where:** (**xh, hh, hy, t, h are in subscripts**)
 - `ht` is the current hidden state.
-- `𝑊𝑥ℎ` and `𝑊ℎℎ` are the weight matrices for the input-to-hidden and hidden-to-hidden connections 
+- `𝑊𝑥ℎ` and `𝑊ℎℎ` are the weight at recurrent neuron and the weight at input neuron
 - `bh` is the bias term
 - `f` is the activation function (often tanh or ReLU).
 
@@ -440,3 +440,34 @@ reduce bandwidth usage. For example, Facebook uses an autoencoder-based
 approach for compressing images uploaded to their platform, which achieves high
 compression ratios while preserving image quality. This has led to faster loading
 times for images on the platform and reduced data usage for users.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# `UNIT - 2`
+
+# 1. Feedforward Neural Network: 
+is a type of artificial neural network where connections between the nodes do not form cycles. This characteristic differentiates it from recurrent neural networks (RNNs). The network consists of an input layer, one or more hidden layers, and an output layer. Information flows in one direction—from input to output—hence the name “feedforward.”
+Structure of a Feedforward Neural Network
+- **Input Layer:**
+consists of neurons that receive the input data. Each neuron in the input layer represents a feature of the input data.
+- **Hidden Layers:**
+One or more hidden layers are placed between the input and output layers. These layers are responsible for learning the complex patterns in the data. Each neuron in a hidden layer applies a weighted sum of inputs followed by a non-linear activation function.
+- **Output Layer:**
+provides the final output of the network. The number of neurons in this layer corresponds to the number of classes in a classification problem or the number of outputs in a regression problem.
+
+# 2. The learning of a neural network is influenced by:
+
+- **Learning Rate:** Controls the size of weight updates; balancing speed and stability.
+- **Architecture:** Depth and width determine the model’s capacity but can affect overfitting.
+- **Activation Functions:** Enable non-linearity, crucial for learning complex patterns.
+- **Weight Initialization:** Proper initialization aids in stable convergence.
+- **Batch Size:** Influences stability and memory usage; impacts generalization.
+- **Optimizer:** Algorithms like Adam or SGD guide weight updates; affect convergence speed.
+- **Loss Function:** Measures prediction errors, shaping learning goals.
+- **Regularization:** Techniques like dropout prevent overfitting.
+- **Data Quality & Quantity:** Sufficient, relevant data is essential for generalization.
+- **Epochs:** Determines training duration; needs balance to avoid under/overfitting.
+- **Hyperparameter Tuning:** Finding optimal settings (e.g., learning rate, batch size) improves performance.
+
+
+# 
