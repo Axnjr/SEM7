@@ -145,18 +145,22 @@ is an optimization algorithm that combines the best properties of the AdaGrad an
 
 # 7. Activation functions: 
 in neural networks is a mathematical function applied to the output of a neuron. Its primary purpose is to introduce non-linearity into the model, enabling the network to learn and represent complex patterns in the data. Here are four common activation functions:
-- The sigmoid function: 
-maps any input to a value between 0 and 1. It’s often used in binary classification problems. `y = 1 / 1 + e ^ -x`
-	- Pros: Smooth gradient, output range (0, 1).
-	- Cons: Can cause vanishing gradient problems, slow convergence.
-- Tanh function: 
-is very similar to the sigmoid/logistic activation function, and even has the same S-shape with the difference in output range of -1 to 		1. In Tanh, the larger the input (more positive), the closer the output value will be to 1.0, whereas the smaller the input (more 			negative), the closer 	the output will be to - 1.0. `f(x) = (ex - e-x) / (ex +e-x)`
--  ReLU:
+- **The sigmoid function:** 
+`(logistic function)` maps any input to a value between 0 and 1. It’s often used in binary classification problems. `y = 1 / 1 + e ^ -x`
+	- **Pros:** Smooth gradient, output range (0, 1).
+	- **Cons:** Can cause vanishing gradient problems, slow convergence.
+- **Tanh function:** 
+is very similar to the sigmoid/logistic activation function, and even has the same S-shape with the difference in output range of -1 to 1. In Tanh, the larger the input (more positive), the closer the output value will be to `1.0`, whereas the smaller the input (more negative), the closer the output will be to `-1.0`. `f(x) = (e^x - e^-x) / (e^x +e^-x)`
+-  **ReLU:**
 is one of the most popular activation functions. It outputs the input directly if it is positive; otherwise, it outputs zero. `f(x) = max(0, x)`
-	- Pros: Computationally efficient, helps mitigate the vanishing gradient problem.
-	- Cons: Can cause “dying ReLU” problem where neurons can become inactive.
-- Leaky ReLU (Leaky Rectified Linear Unit):
+	- **Pros:** Computationally efficient, helps mitigate the vanishing gradient problem.
+	- **Cons:** Can cause “dying ReLU” problem where neurons can become inactive.
+- **Leaky ReLU (Leaky Rectified Linear Unit):**
 is a variation of the ReLU activation function designed to address the “dying ReLU” problem, where neurons can become inactive and only output zero for any input. `f(x) = max(0.1x, x)`
+	- The amount of leak is determined by the value of `hyper-parameter α`. It’s value is small and generally varies between 0.01 to 0.1-0.2.
+- **Softmax:** 
+Primarily used in the output layer for multi-class classification. It converts the input into probability range between 0 to 1. `f(x) = e^xi / ∑ e^xj`
+
 
 
 # 8. Dropout: 
