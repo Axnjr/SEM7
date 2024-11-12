@@ -176,9 +176,9 @@ The outputs of the remaining active neurons are scaled up to maintain the overal
 In the next iteration, a different set of neurons may be deactivated.
 #### Advantages:
 - Prevents Overfitting: 
-By not allowing the network to rely too heavily on any single neuron, dropout reduces the risk of overfitting to the training data2.
+By not allowing the network to rely too heavily on any single neuron, dropout reduces the risk of overfitting to the training data.
 - Ensemble Effect: 
-Dropout simulates training multiple different neural networks and averaging their predictions, which improves generalization1.
+Dropout simulates training multiple different neural networks and averaging their predictions, which improves generalization.
 - Improved Data Representation: 
 The introduction of noise through dropout helps the network learn more generalized features
 
