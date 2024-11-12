@@ -165,7 +165,6 @@ is a variation of the ReLU activation function designed to address the “dying 
 Primarily used in the output layer for multi-class classification. It converts the input into probability range between 0 to 1. `f(x) = e^xi / ∑ e^xj`
 
 
-
 # 8. Dropout: 
 is a regularization technique used in deep learning to prevent overfitting. During training, dropout randomly deactivates a fraction of neurons in a layer, effectively creating a sparse network. This randomness forces the network to learn more robust features that are not overly reliant on specific neurons.
 - Random Deactivation: 
