@@ -492,18 +492,20 @@ Primarily used in the output layer for multi-class classification. It converts t
 - **Batch Gradient Descent:** 
 Uses the entire training dataset to compute the gradient and update the parameters. It is computationally expensive for large datasets but provides a stable convergence.
 
-- **Mini-Batch Gradient Descent:** 
-A compromise between batch and stochastic gradient descent. It uses a small batch of training examples to compute the gradient and update the parameters. It balances the efficiency and stability of the updates.
-<img width="218" alt="image" src="https://github.com/user-attachments/assets/1f5e8a4b-10be-4422-a000-95870c35e4c8">
-
 - **Stochastic Gradient Descent (SGD):** 
 Updates weights based on the gradient from a single training example at each iteration. It is faster and can escape local minima but introduces more noise in the updates.
 <img width="272" alt="image" src="https://github.com/user-attachments/assets/49d6ac6a-f1d8-4c2f-a4d9-aeb73dbed6a6">
 	<img width="265" alt="image" src="https://github.com/user-attachments/assets/20a34c74-cbb2-41f9-8710-ca3a5e59bde9">
+    
+- **Mini-Batch Gradient Descent:** 
+A compromise between batch and stochastic gradient descent. It uses a small batch of training examples to compute the gradient and update the parameters. It balances the efficiency and stability of the updates.
+<img width="218" alt="image" src="https://github.com/user-attachments/assets/1f5e8a4b-10be-4422-a000-95870c35e4c8">
 
 - **Momentum gradient descent:** 
 enhances the standard gradient descent by adding a `momentum term`. This helps accelerate the convergence of the training process, reduces oscillations and better handle the local minima / smooth out the updates.
 	<img width="350" alt="image" src="https://github.com/user-attachments/assets/f7e9e64a-de87-4de7-b5c8-d7f173dedab7">
+    
+
 
 - **Nesterov Accelerated GD (`NAG`):**
 modifies the Momentum-based Gradient Descent by calculating the gradient `not at the current parameters` but with a `look-ahead step` based on the `velocity`.
