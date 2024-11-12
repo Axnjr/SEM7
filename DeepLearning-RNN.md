@@ -408,13 +408,13 @@ The `sparsity constraint` forces the autoencoder to only activate `specific neur
 - In addition to the reconstruction loss, CAEs add a `regularization term` to the `loss function` based on the `Jacobian matrix` of the `encoder’s output with respect to the input`. The Jacobian measures `how much the hidden layer activations change when the input changes`.
 - This regularization `penalizes large changes in the hidden layer activations for small input changes`, making the latent representation "contractive," or resistant to variations in input.
 ### Benefits of Contractive Autoencoders
-- Robustness to Noise: CAEs learn features that are less affected by small input variations, which helps with denoising and robustness to input perturbations.
-- Smoother Latent Space: The latent space becomes more stable and continuous, where similar inputs map closely in the representation space, which is useful for interpretability and clustering.
-- Feature Learning: CAEs are effective for tasks requiring robust feature extraction from complex data.
+- **Robustness to Noise:** CAEs learn features that are less affected by small input variations, which helps with denoising and robustness to input perturbations.
+- **Smoother Latent Space:** The latent space becomes more stable and continuous, where similar inputs map closely in the representation space, which is useful for interpretability and clustering.
+- **Feature Learning:** CAEs are effective for tasks requiring robust feature extraction from complex data.
 ### Applications
-- Denoising: CAEs help remove small, irrelevant noise by focusing on core patterns in the data.
-- Anomaly Detection: Anomalous inputs may have larger reconstruction errors as they don’t align with the learned stable features.
-- Image and Signal Processing: Commonly used to extract robust features in images or signals where minor variations need to be ignored.
+- **Denoising:** CAEs help remove small, irrelevant noise by focusing on core patterns in the data.
+- **Anomaly Detection:** Anomalous inputs may have larger reconstruction errors as they don’t align with the learned stable features.
+- **Image and Signal Processing:** Commonly used to extract robust features in images or signals where minor variations need to be ignored.
 
 # 7. Applications of `AE's`:
 - **Medical Imaging:**
