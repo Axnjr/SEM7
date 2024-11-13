@@ -396,17 +396,17 @@ is a clustering method `optimized for large datasets` and `robust against outlie
 
 ### Here are the six steps involved in the CURE algorithm:
 
-- Random Sampling: 
+- **Random Sampling:** 
 A random sample of the dataset is selected to reduce the computational complexity.
-- Partitioning: 
+- **Partitioning:** 
 The random sample is partitioned into smaller subsets.
-- Partial Clustering: 
+- **Partial Clustering:** 
 Each partition is partially clustered independently.
-- Outlier Removal: 
+- **Outlier Removal:** 
 Outliers are identified and removed from each partition.
-- Merging: 
+- **Merging:** 
 The partially clustered partitions are merged to form the final clusters.
-- Labeling: 
+- **Labeling:** 
 The remaining data points are assigned to the nearest cluster.
 
 ### Here’s a block diagram to illustrate these steps:
