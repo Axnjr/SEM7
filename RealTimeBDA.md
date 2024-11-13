@@ -343,7 +343,7 @@ are the backbone of clustering algorithms. `Distance measures are mathematical f
 (Clustering is a fundamental concept in data analysis and machine learning, where the goal is to group similar data points into clusters based on their characteristics.)
 ### Common Distance Measures
 - **Euclidean Distance**
-is the most widely used distance measure in clustering. It calculates the straight-line distance between two points in n-dimensional space. The formula for Euclidean distance is:<br>
+is the most widely used distance measure in clustering. It calculates the `straight-line` distance between two points in `n-dimensional space`. The formula for Euclidean distance is:<br>
 `d(p,q)= Σ i=1n​ sqrt((pi​ − qi)^2)`
 where,
   - `p` and `q` are two data points
@@ -382,7 +382,7 @@ It's particularly useful in error detection and correction coding. If two binary
 often referred to as `Levenshtein Distance`, measures how many single-character edits `(insertions, deletions, or substitutions)` are needed to change one string into another. It's vital for applications like spell checking, DNA sequencing, and natural language processing.
 
 # 2. The CURE (Clustering Using Representatives) algorithm:
-is a clustering method `optimized for large datasets` and `robust against outliers`. It improves on traditional hierarchical clustering by supporting `clusters of various shapes and sizes` and `reducing computational complexity`. CURE finds a `middle ground` between `centroid-based` and `all-points extremes`, using `representative points rather than a single centroid`, which helps manage clusters efficiently and handle outliers.
+is a clustering method `optimized for large datasets` and `robust against outliers`. It improves on traditional hierarchical clustering by supporting `clusters of various shapes and sizes` and `reducing computational complexity`. CURE finds a `middle ground` between `centroid-based` and `all-points extremes`, using `set of representative points rather than a single centroid`, which helps manage clusters efficiently and handle outliers.
 
     - is a clustering method designed to handle large datasets and outliers. 
     - It is an improvement over traditional hierarchical clustering methods and works well with clusters of arbitrary shapes and sizes.
