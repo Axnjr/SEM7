@@ -513,29 +513,29 @@ are continuous queries that filter, aggregate, or transform incoming stream data
 
 ### Examples of stream queries include:
 
-- Filtering Events
+- **Filtering Events**
 Selecting only specific events based on certain criteria from a stream of events.
-  - Example: Filtering for error codes from a web server log stream to monitor failures in real time.
+  - **Example:** Filtering for error codes from a web server log stream to monitor failures in real time.
 
-- Windowed Aggregations
+- **Windowed Aggregations**
 Calculating metrics like average, count, or sum over time windows (e.g., sliding or tumbling windows).
-  - Example: Calculating the average CPU usage every 5 minutes from a continuous stream of server metrics.
+  - **Example:** Calculating the average CPU usage every 5 minutes from a continuous stream of server metrics.
 
-- Pattern Matching
+- **Pattern Matching**
 Detecting specific sequences or patterns in event streams, often used for fraud detection.
-  - Example: Identifying sequences where a user logs in from multiple IP addresses within a short period.
+  - **Example:** Identifying sequences where a user logs in from multiple IP addresses within a short period.
 
-- Counting Unique Items
+- **Counting Unique Items**
 Using approximate counting algorithms (like HyperLogLog) to count unique values in high-throughput streams.
-  - Example: Counting unique visitors in real time on a website.
+  - **Example:** Counting unique visitors in real time on a website.
 
-- Anomaly Detection
+- **Anomaly Detection**
 Detecting values that deviate from an expected range in real-time data.
-  - Example: Detecting temperature values from a sensor that fall outside a normal range.
+  - **Example:** Detecting temperature values from a sensor that fall outside a normal range.
 
-- Real-Time Analytics
+- **Real-Time Analytics**
 Continuously monitoring metrics for dashboards.
-  - Example: Real-time dashboard of website traffic, showing the number of active users and page views.
+  - **Example:** Real-time dashboard of website traffic, showing the number of active users and page views.
 
 # 3. Querying large data streams presents several challenges:
 
