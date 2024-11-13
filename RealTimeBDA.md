@@ -539,25 +539,25 @@ Continuously monitoring metrics for dashboards.
 
 # 3. Querying large data streams presents several challenges:
 
-- High Throughput and Low Latency: 
+- **High Throughput and Low Latency:** 
 Data streams often require real-time processing, meaning the system must handle high volumes of data with minimal delay. This necessitates efficient algorithms and optimized hardware.
 
-- Data Heterogeneity: 
+- **Data Heterogeneity:** 
 Streams can come from various sources and in different formats, making it difficult to standardize and process the data uniformly.
 
-- Dynamic and Unbounded Nature: 
+- **Dynamic and Unbounded Nature:** 
 Unlike static datasets, data streams are continuous and potentially infinite. This requires the system to manage memory and storage efficiently, often using techniques like windowing to process manageable chunks of data.
 
-- Complex Query Processing: 
+- **Complex Query Processing:** 
 Queries on data streams can be complex, involving joins, aggregations, and other operations that are computationally intensive. Ensuring these queries run efficiently in real-time is a significant challenge.
 
-- Fault Tolerance and Reliability: 
+- **Fault Tolerance and Reliability:** 
 Ensuring the system can recover from failures without losing data or processing time is crucial. This involves implementing robust fault-tolerance mechanisms.
 
-- Scalability: 
+- **Scalability:** 
 As data volumes grow, the system must scale horizontally (adding more machines) or vertically (upgrading existing machines) to maintain performance.
 
-- Security and Privacy: 
+- **Security and Privacy:** 
 Protecting sensitive data in streams and ensuring compliance with privacy regulations adds another layer of complexity.
 
 # 4. Sampling data in a stream: 
@@ -645,52 +645,64 @@ The observed maximum number of leading zeros, `𝑅`, gives an estimate of the n
 
 ### Example
 Example
-Let’s say we have a stream of elements, and each is hashed to binary values. Assume the hash values for elements in the stream are:
+Suppose we have a stream of elements: `["apple", "banana", "apple", "orange", "banana", "apple", "kiwi", "banana", "kiwi"]`<br>
 
-"apple" → 001010<br>
-"banana" → 000110<br>
-"cherry" → 001001<br>
+- **Hash Each Element:** 
+Use a hash function to map each element to a binary value. Let's say our hash function gives us the following 8-bit binary values (these are just for illustration):
 
-For "apple," the position of the first 1 after leading zeros is 2.<br>
-For "banana," it’s 3.<br>
-For "cherry," it’s 2.
+      apple → 10011000
+      banana → 00101100
+      orange → 11100101
+      kiwi → 00011110
 
-The maximum number of leading `0's` observed is `3`, so `estimate of distinct elements = 2^3 = 8`
+- **Count leading / trailing Zeros:** 
+Now, count the trailing zeros for each hashed value:
+
+      apple (10011000) → 3 trailing zeros
+      banana (00101100) → 2 trailing zeros
+      orange (11100101) → 0 trailing zeros
+      kiwi (00011110) → 1 trailing zero
+
+- The maximum number of leading `0's` observed is `3`, so `estimate of distinct elements = 2^3 = 8`.
+The FM algorithm would estimate that there are about 8 distinct elements, which is close to the actual number of distinct elements (4) in this small example, though generally, `for larger streams, this approximation becomes more accurate`.
 
 ### Advantages:
 
-- Memory-Efficient: 
+- **Memory-Efficient:** 
 Uses minimal memory compared to counting all elements.
-- Scalable: 
+- **Scalable:** 
 Works well with large data streams.
-- Fast: 
+- **Fast:** 
 Only requires hashing and a bitwise operation, making it computationally efficient.
 
 ### Limitations:
 
-- Approximation: 
+- **Approximation:** 
 Provides an estimate, not an exact count.
-- Dependent on Quality of Hashing: 
+- **Dependent on Quality of Hashing:** 
 Needs good hash functions to minimize collisions.
-- Variance: 
+- **Variance:** 
 Can have high variance; thus, combining multiple estimates (e.g., through harmonic mean) is recommended.
 
 # 8. The decaying window algorithm: 
 is a technique used in data stream processing to keep track of recent information while gradually `forgetting` older data. It’s particularly useful in situations where data streams are continuous and unbounded, `and the latest data points are more relevant than the older ones`. The algorithm applies a decay factor to older data so that its influence on the overall calculation diminishes over time.
 ### Key Concepts
 - **Decay Factor:** 
-The algorithm applies a decay factor (usually a number between 0 and 1) that determines how quickly older data fades. A smaller decay factor means older data is weighted less over time, while a larger factor keeps the data `alive` longer.
+The algorithm applies a decay factor (usually a number between 0 and 1) that determines how quickly older data fades. A higher 
+α (close to 1) gives more importance to older data, meaning older points fade slowly. A lower 
+α (closer to 0) causes older points to fade out more quickly.
 - **Exponential Decay:** 
-The decaying window algorithm often relies on exponential decay, where each data point’s weight diminishes exponentially over time. For a given data point at time 
-`𝑡`, the weight could be represented as `𝑤 = 𝛼𝑡`, where 𝛼 is the decay factor.
-
-### To implement a decaying window average, you’d generally follow this formula:
-
-`new_value = 𝛼 × current_value + (1 − 𝛼) × previous_average`<br>
+The decaying window algorithm often relies on `exponential decay`, as it provides a `smooth, gradual decrease in the influence of older data`.
+For a data point that arrived at time `t`, its weight at any future time `t*` can be calculated as:
+`w = 𝛼^ t* - t`
+, where `𝛼` is the `decay factor`.
 
 ### How it Works
 
 - With each new data point, the algorithm `recalculates the moving average` by `forgetting` some of the older data at a rate determined by `𝛼`.
+
+- `new_value = 𝛼 × current_value + (1 − 𝛼) × previous_average`<br>
+
 - Every time a new data point is processed, `older data is multiplied by the decay factor`, reducing its weight in the final computation.
 
 ### Advantages
