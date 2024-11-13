@@ -714,6 +714,24 @@ For a data point that arrived at time `t`, its weight at any future time `t*` ca
 - **Network Monitoring:** To track statistics like packet loss or latency.
 - **Anomaly Detection:** Identifying trends and sudden changes in data to flag unusual behavior.
 
+
+# 9. Misra-Gries Algorithm (Frequent Algorithm)
+This algorithm is designed to find items that appear more than `n / k` times in a stream, where 
+`n` is the total number of items in the stream and `k` is a parameter.
+
+### **How it works:** 
+
+- It maintains a `set` of up to `k − 1` counters for different items. If an item matches an existing counter, it is incremented.
+- if item is new, and there are fewer than `k−1` counters in use `(that is there is still space left in our SET)`.
+add a new counter for this item and set it to 1.
+- if the item is new but there is `no more space` i.e there are already `k−1` counters in use: `THEN: decrement all counters by 1`. 
+This step effectively `removes the effect of one occurrence from each tracked item`, reducing their counts.
+If any `counter reaches zero after this`, remove that item from the list of tracked items.
+- As more items arrive, repeat the above steps for each one
+-  After processing the stream, the items left in the counters are potentially frequent items.
+
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 # `UNIT - 3` 
