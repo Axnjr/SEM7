@@ -52,10 +52,9 @@ PageRank revolutionized the way search engines worked by focusing on link struct
     linked page.
 - Construct the PageRank Matrix with Damping:
     - Define the PageRank matrix `𝑀` with damping factor `𝛼`
-    - same `pageRank` formula.
 - Assign an initial PageRank to each page, typically 1/N, 
 where N is the total number of pages. Update PageRank values 
-using the formula.
+using the `same formula 👆`.
 
 # 3. Efficient computation of PageRank: 
 is crucial for handling large-scale web graphs. Here are a few methods to achieve this: 
