@@ -159,59 +159,19 @@ def reduce(url, ranks):
 
 By leveraging MapReduce, computing PageRank for a massive web graph becomes feasible and efficient, ensuring that the ranking algorithm can keep up with the ever-growing size of the internet.
 
-# 5. Social networks: 
-are the networks that depict the relations between people in the form of a graph for different kinds of analysis. The graph to store the relationships of people is known as Sociogram. All the graph points and lines are stored in the matrix data structure called Sociomatrix. 
-A social network can be represented as a graph where:
-  - Nodes represent individuals or entities.
-  - Edges represent the relationships or connections between these nodes.
-### Types of Graphs
-- Undirected Graphs: 
-Connections have no direction. Example: Friendships on Facebook.
-- Directed Graphs: 
-Connections have a direction. Example: Followers on Twitter.
-- Weighted Graphs: 
-Edges have weights representing the strength or frequency of interactions.
 
-### Key Techniques of Analyzing such social graphs:
-
-- Community Detection: 
-Identifying groups or clusters of nodes that are more densely connected internally than with the rest of the network. Example: 
-Finding interest groups in social media.
-
-- Centrality Measures:
-  - Degree Centrality: Number of connections a node has.
-  - Betweenness Centrality: Number of times a node acts as a bridge along the shortest path between two other nodes.
-  - Closeness Centrality: Measure of how close a node is to all other nodes in the network.
-
-- Link Prediction: 
-Predicting future connections between nodes based on current network structure.
-
-- Sentiment Analysis: 
-Analyzing the sentiment of communications (e.g., tweets, posts) to gauge public opinion or mood.
-
-- Influence Analysis: 
-Identifying influential nodes (people) who can propagate information effectively.
-
-### Applications
-- Marketing: 
-Targeting influential users to spread messages and products.
-- Epidemiology: 
-Understanding how diseases spread through populations.
-- Recommender Systems: 
-Suggesting friends, content, or products based on network analysis.
-
-# 6. Combiners in MapReduce: 
-serve as mini-reducers that process intermediate data before it's sent to the reducers. They can significantly optimize the performance of a MapReduce job by reducing the amount of data transferred across the network. How Combiners Work
-- Map Phase: 
+# 5. Combiners in MapReduce: 
+serve as `mini-reducers` that process intermediate data before it's sent to the `reducers`. They can significantly optimize the performance of a MapReduce job by reducing the amount of data transferred across the network. How Combiners Work
+- **Map Phase:**
 The mapper processes input data and produces intermediate key-value pairs.
 These key-value pairs are then sorted and partitioned by the key.
-- Combine Phase:
+- **Combine Phase:**
 Before the intermediate data is sent to the reducers, combiners aggregate it at the mapper level.
 This reduces the volume of data that needs to be transferred over the network to the reducers.
-- Reduce Phase:
+- **Reduce Phase:**
 The reducers receive the combined data, further aggregating and processing it to produce the final output.
 
-- For example, if we have 1 GBPS(Gigabits per second) of the network in our cluster and we are processing data that is in the range of hundreds of PB(Peta Bytes). Moving such a large dataset over 1GBPS takes too much time to process. The Combiner is used to solve this problem by minimizing the data that got shuffled between Map and Reduce. 
+- **For example**, if we have 1 GBPS(Gigabits per second) of the network in our cluster and we are processing data that is in the range of hundreds of PB(Peta Bytes). Moving such a large dataset over 1GBPS takes too much time to process. The Combiner is used to solve this problem by minimizing the data that got shuffled between Map and Reduce. 
 ![mapreduce combiners example](image-9.png)
 
 ### Advantages of Combiners
@@ -243,7 +203,8 @@ Incorrectly implemented combiners can introduce data inconsistencies, especially
 - Added Complexity: 
 Introduces additional logic to the MapReduce code, making maintenance and debugging more complex.
 
-# 7. Collaborative-based recommendation: 
+
+# 6. Collaborative-based recommendation: 
 also known as collaborative filtering, is a popular technique used in recommender systems to suggest items to users based on the preferences and behaviors of other users. 
 
 ### Types of Collaborative Filtering: 
@@ -299,6 +260,78 @@ Netflix and Spotify use it to recommend movies and music.
 - Social Media: 
 Platforms like Facebook and Twitter use it to recommend friends and content.
 
+
+# 7. Social networks: 
+are the networks that depict the relations between people in the form of a graph for different kinds of analysis. The graph to store the relationships of people is known as Sociogram. All the graph points and lines are stored in the matrix data structure called Sociomatrix. 
+A social network can be represented as a graph where:
+  - Nodes represent individuals or entities.
+  - Edges represent the relationships or connections between these nodes.
+
+### Reasons for Using Social Network Graphs in Big Data Analysis
+
+- **Relationship and Community Analysis**
+Graphs help identify clusters or communities within a network, revealing groups with shared interests or strong connections, which can be valuable for targeted marketing.
+
+- **Influencer and Centrality Detection**
+By analyzing central nodes or highly connected users, businesses can identify influencers or key players who might drive trends, leading to more effective marketing strategies.
+
+- **Sentiment and Behavior Prediction**
+Graphs capture how users engage with each other, allowing analysts to predict sentiment changes or behavioral trends across a network, such as spreading rumors, preferences, or trends.
+
+- **Recommendations**
+Social network graphs are used to improve recommendation engines, as they can suggest friends, groups, or content based on a user's connections and activities.
+
+- **Fraud Detection**
+In financial or commerce-oriented networks, graphs reveal unusual patterns or suspicious relationships between nodes, aiding in fraud detection and cybersecurity.
+
+- **Centrality Measures**:
+  - **Degree Centrality:** Number of connections a node has.
+  - **Betweenness** Centrality: Number of times a node acts as a bridge along the shortest path between two other nodes.
+  - **Closeness** Centrality: Measure of how close a node is to all other nodes in the network.
+
+### Applications
+- Marketing: 
+Targeting influential users to spread messages and products.
+- Epidemiology: 
+Understanding how diseases spread through populations.
+- Recommender Systems: 
+Suggesting friends, content, or products based on network analysis.
+
+
+# 8. The Clique Percolation Method (CPM): 
+is a technique used in `network analysis` to identify `overlapping communities or clusters` within complex networks. Unlike traditional methods that identify non-overlapping groups, CPM is `well-suited for uncovering` overlapping communities, which are common in social networks, where a person can belong to multiple groups (e.g., family, work, and hobby groups).
+
+### How Clique Percolation Works
+
+- **Defining Cliques:**
+In graph theory, a clique is a `subset of nodes where every node is directly connected to every other node`. For example, a "k-clique" is a fully connected subgraph containing `𝑘` nodes.
+
+- **Locating Cliques in the Network:**
+CPM identifies all the k-cliques (groups of 
+`𝑘` fully connected nodes) in the network. These k-cliques serve as the initial `"building blocks"` for detecting communities.
+
+- **Percolating Cliques:**
+  - The method then looks for `adjacent k-cliques` that share `k − 1` nodes. 
+  - If two k-cliques have `k − 1` nodes in common, they are considered connected. 
+  - This connectivity is `"percolative"` , meaning that if a k-clique is connected to another, it can indirectly connect to other k-cliques, forming larger overlapping communities.
+
+- **Forming Communities:**
+By aggregating all k-cliques that are connected through shared nodes, CPM builds clusters or communities. These clusters may overlap, representing the real-world situation where entities belong to multiple groups.
+
+- **Threshold Selection:**
+The choice of `k` affects the community structure. Smaller values of `𝑘` create larger communities, while larger values yield smaller, more tightly connected communities. Selecting an optimal `𝑘` is crucial to accurately represent the network’s community structure.
+
+### Limitations of Clique Percolation
+
+- **Computational Complexity:** High resource demands for larger k-clique detections in large networks.
+- **Sensitivity to k Selection:** Incorrect `k` choice can lead to missed or overly fragmented communities.
+
+### Applications of Clique Percolation
+
+- Social Networks: Detects overlapping groups like friend and professional networks.
+- Biological Networks: Helps find overlapping functional groups in protein interactions.
+- Marketing/Recommendations
+
 <br>
 
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -320,7 +353,7 @@ where,
 - **Cosine similarity**: 
 measures the `cosine` of the angle between two non-zero vectors in an `inner product space`. It's a measure used to determine how similar two vectors are, and it ranges from `-1 to 1`, with 1 indicating that the vectors are identical, and -1 indicating they are diametrically opposed.
 <br>
-Essentially, cosine similarity captures the orientation rather than the magnitude. It’s heavily used in text analysis to compare document similarity, like in search engines or recommendation systems
+Essentially, cosine similarity `captures the orientation rather than the magnitude`. It’s heavily used in text analysis to compare document similarity, like in search engines or recommendation systems
 Here's the formula:<br>
 `cosine similarity = cos(θ) = A ⋅ B / ∥A∥ ∥B∥`
 Where:
@@ -350,15 +383,17 @@ It's particularly useful in error detection and correction coding. If two binary
 often referred to as `Levenshtein Distance`, measures how many single-character edits `(insertions, deletions, or substitutions)` are needed to change one string into another. It's vital for applications like spell checking, DNA sequencing, and natural language processing.
 
 # 2. The CURE (Clustering Using Representatives) algorithm:
-- is a clustering method designed to handle large datasets and outliers. 
-- It is an improvement over traditional hierarchical clustering methods and works well with clusters of arbitrary shapes and sizes.
-- CURE reduces the time complexity of hierarchical clustering while being robust to outliers.
-- It is a hierarchical based clustering technique, that adopts a middle ground between the centroid based and the all-point extremes. 
-- Hierarchical clustering is a type of clustering, that starts with a single point cluster, and moves to merge with another cluster, until the desired number of clusters are formed.
-- It is used for identifying the spherical and non-spherical clusters.
-- It is useful for discovering groups and identifying interesting distributions in the underlying data.
-- Instead of using one point centroid, as in most of data mining algorithms,
-- CURE uses a set of well-defined representative points, for efficiently handling the clusters and eliminating the outliers.
+is a clustering method `optimized for large datasets` and `robust against outliers`. It improves on traditional hierarchical clustering by supporting `clusters of various shapes and sizes` and `reducing computational complexity`. CURE finds a `middle ground` between `centroid-based` and `all-points extremes`, using `representative points rather than a single centroid`, which helps manage clusters efficiently and handle outliers.
+
+    - is a clustering method designed to handle large datasets and outliers. 
+    - It is an improvement over traditional hierarchical clustering methods and works well with clusters of arbitrary shapes and sizes.
+    - CURE reduces the time complexity of hierarchical clustering while being robust to outliers.
+    - It is a hierarchical based clustering technique, that adopts a middle ground between the centroid based and the all-point extremes. 
+    - Hierarchical clustering is a type of clustering, that starts with a single point cluster, and moves to merge with another cluster, until the desired number of clusters are formed.
+    - It is used for identifying the spherical and non-spherical clusters.
+    - It is useful for discovering groups and identifying interesting distributions in the underlying data.
+    - Instead of using one point centroid, as in most of data mining algorithms,
+    - CURE uses a set of well-defined representative points, for efficiently handling the clusters and eliminating the outliers.
 
 ### Here are the six steps involved in the CURE algorithm:
 
