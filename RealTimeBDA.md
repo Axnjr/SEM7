@@ -417,22 +417,22 @@ The remaining data points are assigned to the nearest cluster.
 
 are techniques used to select a subset of individuals or elements from a larger population for research purposes. Here are some common sampling methods:
 
-- Simple Random Sampling: 
+- **Simple Random Sampling:** 
 Every member of the population has an equal chance of being selected. This can be done using random number generators or drawing names from a hat.
 
-- Stratified Sampling: 
+- **Stratified Sampling:** 
 The population is divided into subgroups (strata) based on specific characteristics, and random samples are taken from each stratum.
 
-- Cluster Sampling: 
+- **Cluster Sampling:** 
 The population is divided into clusters, usually based on geographical areas or institutions. Entire clusters are randomly selected, and all members of the chosen clusters are included in the sample.
 
-- Systematic Sampling: 
+- **Systematic Sampling:** 
 Every nth member of the population is selected after a random starting point. For example, selecting every 10th person on a list.
 
-- Convenience Sampling: 
+- **Convenience Sampling:** 
 Samples are taken from a group that is conveniently accessible to the researcher. This method is quick and easy but may not be representative of the entire population.
 
-- Quota Sampling: 
+- **Quota Sampling:** 
 The researcher ensures that certain characteristics are represented in the sample to a predetermined extent. For example, ensuring that the sample includes a specific number of males and females.
 
 # 4.  Data Streams
