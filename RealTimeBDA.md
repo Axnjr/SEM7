@@ -1,6 +1,10 @@
 # 1. PageRank: 
 is an algorithm used by Google Search to rank web pages in their search engine results. It measures the importance of web pages based on 
-the number and quality of links to them. In PageRank, the web is represented as a graph:
+the number and quality of links to them. 
+The PageRank algorithm `outputs a probability distribution` used to represent the `likelihood 
+that a person randomly clicking on links will arrive at any particular page`. PageRank can be 
+calculated for collections of documents of any size
+In PageRank, the web is represented as a graph:
 - Each web page is a node.
 - Each hyperlink from one page to another is a directed edge. 
 Here’s a simplified explanation:
@@ -260,7 +264,40 @@ Netflix and Spotify use it to recommend movies and music.
 Platforms like Facebook and Twitter use it to recommend friends and content.
 
 
-# 7. Social networks: 
+# 7. Content-based filtering:
+recommends items based on the `characteristics or attributes` of the items themselves (e.g., genre, keywords, author, or description). 
+It compares the `user’s preferences` with the `attributes of items in the catalog` to find relevant recommendations. 
+### How it works: 
+- The system creates a user profile based on the features of the items they have 
+interacted with or liked. 
+- It then recommends items that have similar features to those in the user profile. 
+### Advantages: 
+- Can recommend new items that have similar features to what the user has 
+liked before. 
+- Works well for situations where item features are well-defined (e.g., movies 
+with genres, directors, actors). 
+### Disadvantages: 
+
+- The system may suggest items that are too similar to 
+what the user has already seen, leading to a lack of variety. 
+- Requires a significant number of item-specific 
+metadata or features, which may not always be available. 
+
+
+# 8. Knowledge-Based Recommender Systems: 
+make recommendations based on explicit knowledge about users and items. These systems 
+typically work by asking users specific questions about their preferences and using 
+this information to recommend products that best match the user’s needs. 
+### Advantages: 
+- Can provide very accurate recommendations when explicit preferences are 
+available. 
+- Works well for new items or when user interactions are sparse. 
+### Disadvantages: 
+- Requires substantial domain knowledge and user input. 
+- Can be time-consuming for users to specify preferences. 
+
+
+# 8. Social networks: 
 are the networks that depict the relations between people in the form of a graph for different kinds of analysis. The graph to store the relationships of people is known as Sociogram. All the graph points and lines are stored in the matrix data structure called Sociomatrix. 
 A social network can be represented as a graph where:
   - Nodes represent individuals or entities.
@@ -297,7 +334,7 @@ Understanding how diseases spread through populations.
 Suggesting friends, content, or products based on network analysis.
 
 
-# 8. The Clique Percolation Method (CPM): 
+# 9. The Clique Percolation Method (CPM): 
 is a technique used in `network analysis` to identify `overlapping communities or clusters` within complex networks. Unlike traditional methods that identify non-overlapping groups, CPM is `well-suited for uncovering` overlapping communities, which are common in social networks, where a person can belong to multiple groups (e.g., family, work, and hobby groups).
 
 ### How Clique Percolation Works
