@@ -731,6 +731,30 @@ If any `counter reaches zero after this`, remove that item from the list of trac
 -  After processing the stream, the items left in the counters are potentially frequent items.
 
 
+# 10. The DGIM algorithm: 
+is a clever method for counting the `number of "1"s` in a data stream's window with low memory usage. 
+It is particularly `useful for binary streams` (streams of 0s and 1s), where we only care about the `approximate count of 1s` over the last 
+`N` elements in the stream. This algorithm is highly `efficient` in terms of both `memory and computational cost`, making it useful for applications like `monitoring network traffic, counting clicks, or identifying trends in binary event streams`.
+
+- The algorithm maintains information about only the last N items in the stream.
+As new bits arrive, the oldest bit outside the window falls off, and the count is adjusted accordingly.
+
+- The DGIM algorithm represents recent `"1"s` in the stream using `buckets` instead of storing each bit individually.
+
+- Each bucket has two key properties:
+  - **Timestamp:** The time (or position) of the most recent "1" in the bucket.
+  - **Size:** The number of "1"s in the bucket.
+
+- If there are more than two buckets of the same size, the oldest two buckets merge into a new bucket of double the size. This merging process ensures the number of buckets remains limited.
+- To estimate the number of 1s in the last `N` items, sum up the sizes of all buckets within the window.
+- The estimate of the `count has an error of at most 50%`, which is because of the partial inclusion of the oldest bucket in the sliding window. 
+
+### Applications of the DGIM Algorithm
+
+- **Network Monitoring:** Track the occurrence of certain events (like errors or security warnings) within a recent time window.
+- **Clickstream Analysis:** Count recent clicks or views on a webpage.
+- **Sensor Data:** Monitor the occurrence of specific events (e.g., faults or triggers) in recent sensor data.
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
