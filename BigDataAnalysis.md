@@ -364,14 +364,23 @@ Many NoSQL databases support MapReduce, a programming model that allows for proc
 # 12. Explain MapReduce execution pipeline with suitable example.
 MapReduce model has three major and one optional phase.​
 
-- Mapping:  
-It is the first phase of MapReduce programming. Mapping Phase accepts key-value pairs as input as (k, v), where the key represents the Key address of each record and the value represents the entire record content.​The output of the Mapping phase will also be in the key-value format (k’, v’).
+1. Input Splitting: The input data is divided into smaller chunks, or splits, to enable 
+parallel processing. Each split is independently processed in the map phase. 
+2. Mapping: Each split is processed by a map function that transforms the data into 
+intermediate key-value pairs (k’, v’). This is the first main transformation step in the 
+MapReduce pipeline. 
+3. Combining (Optional): A local aggregation step that can occur after mapping, where 
+data is summarized or reduced locally before shuffling. This reduces the data size and 
+optimizes the shuffling process. 
+4. Shuffling and Sorting: The intermediate data is shuffled and sorted by key, grouping 
+all values with the same key together. This prepares the data for efficient processing in 
+the reduce phase. 
+5. Reducing: The reduce function takes each unique key and its grouped list of values, 
+applying an aggregation function to generate the final output. 
+6. Output Writing: The final output from the reduce phase is written to a distributed 
+storage system, completing the MapReduce job. This output is in the form of key
+value pairs and can be used for further processing or analysis. 
 
-- Shuffling and Sorting:  
-The output of various mapping parts (k’, v’), then goes into Shuffling and Sorting phase.​ All the same values are deleted, and different values are grouped together based on same keys.​ The output of the Shuffling and Sorting phase will be key-value pairs again as key and array of values (k, v[ ]).
-
-- Reducer:  
-The output of the Shuffling and Sorting phase (k, v[]) will be the input of the Reducer phase.​ In this phase reducer function’s logic is executed and all the values are Collected against their corresponding keys. ​Reducer stabilize outputs of various mappers and computes the final output.​
 
 # 13. Properties of NoSQL databases:
 - Atomicity: 
