@@ -164,9 +164,26 @@ Morphology is the branch of `linguistics` concerned with the `structure and form
 - **Enhancing Language Models:** Morphological analysis provides detailed insights into word formation, improving the performance of language models used in tasks like speech recognition and text generation.
 - **Facilitating Multilingual - Processing:** It aids in handling the morphological diversity of different languages, making NLP systems more robust and versatile.
 
-Morphological analysis involves breaking down words into their constituent morphemes (the smallest units of meaning) and understanding their structure and formation. Here are some of the key techniques used in morphological analysis:
+## Key techniques used in morphological analysis:
 
-- Stemming
-- Lemmetization
+- **Stemming**
+- **Lemmetization**
 - **Morphological Parsing:**
-involves analyzing the structure of words to identify their morphemes (roots, prefixes, suffixes). It requires knowledge of morphological rules and patterns.
+involves analyzing the structure of words to identify their morphemes (roots, prefixes, suffixes). It requires knowledge of morphological rules and patterns. FSTs are computational models used to represent and analyze the morphological structure of words. They consist of states and transitions, capturing the rules of word formation.
+- **Neural network models:** 
+especially deep learning models, can be trained to perform morphological analysis by learning patterns from large datasets.
+- **Rule-based methods:** 
+rely on manually defined linguistic rules for morphological analysis. These rules can handle specific language patterns and exceptions.
+    - Applications:
+        - Affix Stripping: Removing known prefixes and suffixes to find the root form.
+        - Inflectional Analysis: Identifying grammatical variations like tense, number, and case.
+
+## Morphology Types:
+
+- **Derivational Morphology:** 
+The process of creating new words by adding prefixes or suffixes to a root, often changing the word's meaning or part of speech.
+Example: happy → happiness (adjective → noun).
+- **Inflectional Morphology:**
+The process of adding grammatical information to a word (e.g., tense, number, gender) without changing its core meaning or part of speech.
+Example: walk → walked (verb → past tense verb).
+
