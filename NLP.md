@@ -108,3 +108,47 @@ Requires more computational resources and a comprehensive dictionary.
 Requires accurate POS tagging, which adds to the processing overhead.
 
 
+# 6. The Edit Distance algorithm
+also known as `Levenshtein Distance`, is a way to measure how `different` two strings are by calculating the `minimum number of operations` required to `transform` one string into another. It is widely used in NLP for tasks like `spelling correction, approximate string matching, and fuzzy search`.
+
+## The algorithm allows three basic operations:
+- **Insertion:** Adding a character.
+E.g., Transform "cat" → "cats" (insert 's').
+- **Deletion:** Removing a character.
+E.g., Transform "cats" → "cat" (delete 's').
+- **Substitution:** Replacing one character with another.
+E.g., Transform "cat" → "cut" (substitute 'a' with 'u').
+
+Each operation is assumed to have a cost of 1 (though this can vary in some implementations). 
+
+## Working
+The algorithm use a `dynamic programming` based approch to calculate the `edit distance` efficiently. It uses a `matrix` to compute distances in a `step-by-step manner`.
+
+- **Matrix Setup:**
+Create a table (matrix) where `rows represent the characters of one string` and `columns represent the other`. The table tracks the minimum number of operations required to align substrings.
+
+- **Initialization:**
+    - Fill the first row with incremental costs for `transforming an empty string into the second string` (insertions).
+
+    - Fill the first column with incremental costs for `transforming the first string into an empty string` (deletions).
+
+- **Dynamic Programming Update:** For each cell (i, j) in the matrix: Calculate the minimum cost using formula:
+
+`dp[i][j] = min(dp[i][j - 1] + 1, dp[i - 1][j] + 1, dp[i - 1][j - 1] + cost)`
+
+The value in the `bottom-right cell` of the matrix gives the `total minimum edit distance between the two strings`.
+
+## Applications in NLP
+- **Spelling Correction:**
+Suggest words with a small edit distance from the misspelled word. E.g., "recieve" → "receive" (edit distance = 1).
+- **Plagiarism Detection:**
+Measure similarity between texts by computing edit distances.
+- **DNA Sequence Alignment:**
+Compare biological sequences.
+- **Autocomplete Systems:**
+Rank suggestions based on their edit distances from the input query.
+
+
+# 7. Collocations: 
+are `word pairs` or groups of words that `frequently appear together` in a language, forming a `natural combination`. These combinations are used by native speakers to express ideas more naturally. Understanding collocations is important in Natural Language Processing (NLP) as they often carry specific meanings or contexts that differ from their individual words.  Examples: `strong tea, heavy rain, big mistake`. "Strong tea" sounds natural, while "powerful tea" does not.
+
