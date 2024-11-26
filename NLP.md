@@ -187,3 +187,25 @@ Example: happy → happiness (adjective → noun).
 The process of adding grammatical information to a word (e.g., tense, number, gender) without changing its core meaning or part of speech.
 Example: walk → walked (verb → past tense verb).
 
+
+# 9. The hidden Markov Model (HMM) 
+- is a `statistical model` that is used to describe the `probabilistic relationship` between a `sequence of observations` and a `sequence of hidden states`. 
+- It is `often used` in situations where the `underlying system or process that generates the observations is unknown or hidden`, hence it has the name “Hidden Markov Model.” 
+- It is used to `predict` future observations `or classify` sequences, based on the `underlying hidden process` that generates the data.
+- **An HMM consists of two types of variables:**
+    - **Hidden states:** are the underlying variables that generate the observed data, but they are not directly observable.
+    - **Observations:** are the variables that are measured and observed.
+- The `relationship` between the hidden states and the observations is `modeled` using a `probability distribution`.
+    - **Transition probabilities:** probability of transitioning from one hidden state to another.
+    - **Emission probabilities:** probability of observing an output given a hidden state.
+
+## Steps involved:
+- Identify all possible hidden states and observations.
+- Establish the probability distribution over the initial state.
+- Create the transition matrix that describes the probabilities of moving from one state to another.
+- Create the emission matrix that describes the probabilities of generating each observation from each state.
+- Use algorithms like `Baum-Welch` or `forward-backward` to estimate the parameters iteratively until convergence.
+- Apply the `Viterbi algorithm` to compute the most likely sequence of hidden states based on the observed data.
+- Assess the model's performance using metrics such as accuracy, precision, recall, or F1 score.
+
+
