@@ -60,3 +60,51 @@ The algorithm works by applying a series of rules to remove common suffixes from
 - **Additional Suffixes:** Removes endings like 'al', 'ance', 'er' (e.g., "formalize" → "formal").
 - **Final Adjustments:** Removes or retains 'e' based on its necessity (e.g., "probate" → "probat").
 
+# 4. Segmentation
+It is similar to `tokenization` but we focus on spiltting the sentences or paragraphs by `logical boundries` rather than just words or sentences. 
+
+For example, the paragraph "I love programming. It's both challenging and rewarding." can be segmented into:
+- "I love programming."
+- "It's both challenging and rewarding."
+
+# 5. Lemmatization
+Lemmatization reduces words to their `dictionary base form` (lemma) while `preserving grammatical meaning`. Unlike stemming, it ensures that the output is a valid word. **Example:** for input 
+- `better → good`, `caring → care`
+- in case of `stemming`: `caring → car`
+
+## How Lemmatization Works? Lemmatization involves several steps:
+
+- **Part-of-Speech (POS) Tagging:** 
+Identifying the grammatical category of each word (e.g., noun, verb, adjective).
+
+- **Morphological Analysis:** 
+Analyzing the structure of the word to understand its root form.
+
+- **Dictionary Lookup:** 
+Using a predefined vocabulary to find the lemma of the word. For example, the word “better” would be lemmatized to “good” if it is identified as an adjective, whereas “running” would be lemmatized to “run” if identified as a verb.
+
+## Techniques in Lemmatization
+
+- **Rule-Based Lemmatization:** 
+Uses predefined grammatical rules to transform words. For instance, removing the “-ed” suffix from regular past tense verbs.
+
+- **Dictionary-Based Lemmatization:** 
+Looks up words in a dictionary to find their base forms.
+
+- **Machine Learning-Based Lemmatization:** 
+Employs machine learning models trained on annotated corpora to predict the lemma of a word.
+
+## Benefits:
+- **Accuracy:** 
+Lemmatization provides more accurate results because it considers the context and meaning of words.
+- **Standardization:** 
+Ensures words are reduced to their dictionary form, aiding in tasks like text normalization and information retrieval.
+
+## Limitations:
+
+- **Complexity:** 
+Requires more computational resources and a comprehensive dictionary.
+- **Dependency on POS Tagging:** 
+Requires accurate POS tagging, which adds to the processing overhead.
+
+
