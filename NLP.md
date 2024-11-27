@@ -209,7 +209,7 @@ Example: walk → walked (verb → past tense verb).
 - Assess the model's performance using metrics such as accuracy, precision, recall, or F1 score.
 
 
-# 10. An n-gram language model: 
+# 10. N-gram language model: 
 is a statistical model used in Natural Language Processing (NLP) to `predict the probability` of a `sequence of words in a sentence` or text. It uses a `Markov assumption` to estimate the `likelihood of a word` based only on the `n-1 preceding words`, rather than the entire sentence history.
 
 The n-gram language model is used in spelling correction to predict the most probable word or sentence by analyzing the context and identifying likely sequences of words.
