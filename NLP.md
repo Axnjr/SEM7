@@ -302,3 +302,29 @@ is an approach to Part-of-Speech (POS) tagging that leverages probabilistic mode
 - **Error Propagation:** Errors in probabilities or limited training data can lead to cascading tagging mistakes.
 
 
+# 4. Transformation-Based Tagging (TBL)
+Also known as Brill Tagging, this method combines the benefits of rule-based and machine-learning approaches.
+
+## Key Features:
+- **Error-Driven Learning:** Instead of manually crafting rules, TBL learns rules from a tagged training corpus.
+- **Initial Tagging:** Starts with a baseline tagging (often rule-based or lexicon-based).
+- **Rule Induction:** Learns transformation rules that correct tagging errors iteratively.
+
+## Steps:
+- **Initial Tagging:** Apply a baseline tagger to assign tags (e.g., a simple lexicon-based tagger).
+- **Error Analysis:** Compare the tags with the correct tags in the training data to identify errors.
+- **Rule Generation:** Generate transformation rules to correct the most frequent errors.
+- **Apply Rules:** Iteratively apply the learned rules to refine the tagging.
+
+## Example Rule:
+If a word is tagged as a noun (NN) but is preceded by a determiner and followed by a verb, change the tag to a verb (VB).
+
+## Advantages:
+
+- Adaptable to new languages and domains since rules are learned automatically.
+- Less reliance on extensive hand-crafted rules compared to purely rule-based systems.
+## Disadvantages:
+- Requires a tagged corpus for training.
+- Computationally intensive during the rule-learning phase.
+
+
