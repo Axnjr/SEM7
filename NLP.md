@@ -284,3 +284,21 @@ The rules are applied iteratively to resolve ambiguities and assign the most app
 - Less effective for languages with complex or less rigid grammatical structures.
 
 
+# 3. Stochastic POS Tagging: 
+is an approach to Part-of-Speech (POS) tagging that leverages probabilistic models to assign tags to words in a sequence. Instead of relying on handcrafted rules (as in rule-based systems), it uses statistical methods based on training data to determine the most likely tag for a given word, considering both the word itself and its context.
+
+## Types:
+- N-gram Model
+- HMM
+- CRF
+
+## Advantages:
+- **Robust to Ambiguity:** Probabilities allow handling of ambiguous cases based on context.
+- **Automated Learning:** Does not require manually written rules, reducing human effort.
+- **Scalable:** Can adapt to large corpora and new languages/domains.
+## Disadvantages:
+- **Data Dependency:** Requires a large annotated corpus to train the model.
+- **Computational Cost:** HMM tagging (or other n-gram models) can be computationally expensive for large sequences.
+- **Error Propagation:** Errors in probabilities or limited training data can lead to cascading tagging mistakes.
+
+
