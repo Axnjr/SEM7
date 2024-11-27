@@ -227,3 +227,8 @@ The n-gram language model is used in spelling correction to predict the most pro
 - **Text Generation:** Create coherent text sequences.
 
 
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# `UNIT - 2`
+
+
