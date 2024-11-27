@@ -232,3 +232,23 @@ The n-gram language model is used in spelling correction to predict the most pro
 # `UNIT - 2`
 
 
+# 1. Part-of-Speech (POS) tagging: 
+is a process in Natural Language Processing (NLP) where each word in a text is assigned a specific part of speech, such as noun, verb, adjective, etc., based on its context. This helps in understanding the grammatical structure and meaning of the sentence.
+
+## Different Approaches to POS Tagging
+
+- **Rule-Based Tagging:** 
+Uses a set of hand-written linguistic rules.
+
+- **Statistical Tagging:** 
+leverages probabilistic models like Hidden Markov Models (HMM) and Conditional Random Fields (CRF).
+
+- **Transformation-Based Tagging:** 
+Also known as Brill Tagging, this method combines the benefits of rule-based and machine-learning approaches. it applies transformation rules to improve initial tagging.
+
+- **Neural Network-Based Tagging:** 
+Employs deep learning models like Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM) networks.
+
+- **Hybrid Tagging:** 
+Combines multiple approaches to leverage their strengths.
+
