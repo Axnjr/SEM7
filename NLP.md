@@ -252,3 +252,35 @@ Employs deep learning models like Recurrent Neural Networks (RNN) and Long Short
 - **Hybrid Tagging:** 
 Combines multiple approaches to leverage their strengths.
 
+
+# 2. Rule-Based Tagging: 
+is one of the earliest methods used for Part-of-Speech (POS) tagging. It relies on a set of hand-crafted linguistic rules to assign tags to words. Here’s a detailed explanation:
+
+## How Rule-Based Tagging Works
+
+- **Lexical Lookup:** 
+Initially, each word in the text is assigned a list of possible tags based on a dictionary or lexicon. For example, the word “book” might be tagged as a noun (NN) or a verb (VB).
+
+- **Contextual Rules:** 
+The system then applies a series of contextual rules to narrow down the possible tags. These rules are based on the linguistic context of the words. For example:
+
+    - If a word is preceded by a determiner (like “the” or “a”), it is likely to be a noun.
+
+    - If a word ends in “ing” and is preceded by a verb, it is likely to be a present participle (VBG).
+
+- **Disambiguation:** 
+The rules are applied iteratively to resolve ambiguities and assign the most appropriate tag to each word. For instance:
+“He can fish” vs. “He bought a can of fish.” In the first sentence, “can” is a verb, while in the second, it is a noun.
+
+## Advantages:
+
+- Simple and interpretable.
+- Effective for languages with well-defined grammatical rules.
+
+## Disadvantages:
+
+- Requires extensive manual effort to create and maintain rules.
+- May not handle ambiguous or unseen words well.
+- Less effective for languages with complex or less rigid grammatical structures.
+
+
