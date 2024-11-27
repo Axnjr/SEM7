@@ -328,3 +328,23 @@ If a word is tagged as a noun (NN) but is preceded by a determiner and followed 
 - Computationally intensive during the rule-learning phase.
 
 
+# 5. Issues in POS Tagging
+
+- **Multiple Tags for a Word:**
+    - **Challenge:** Words like "bank" can have multiple possible tags depending on context (e.g., noun or verb).
+    - **Solution Approaches:** 
+        - **Use contextual models:** like n-grams, HMMs. Example: A bigram model might use `P(i | i-1)` to resolve ambiguity based on the previous tag.
+        - **Apply rule-based disambiguation:** Add context-sensitive rules in a rule-based system to prioritize one tag over another. 
+            - Example: If preceded by a determiner `("the")`, tag `"bank" as a noun`.
+        - Leverage machine learning models trained on large corpora.
+
+- **Unknown Words:**
+    - **Challenge:** `Out-of-vocabulary (OOV)` words such as rare terms, slang, or domain-specific jargon lack training data for tagging.
+    - **Solution Approaches:** 
+        - Use morphological analysis (e.g., suffixes like -ing for verbs).
+        - **Contextual Cues:**
+            - Leverage surrounding words and their tags to predict the unknown word's tag.
+            - Example: In `"She quickly zarged the door"`, the structure suggests `zarged` is likely a `verb` (VB).
+
+        - **Probabilistic Models:** Assign tags based on the probabilities of similar known words or fallback to the most frequent tag in the training data.
+        - **Word Embeddings (in Modern Systems):** Use vector representations like `Word2Vec` or `contextual embeddings` like `BERT` to infer the meaning of unknown words based on their context.
