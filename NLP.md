@@ -188,7 +188,7 @@ The process of adding grammatical information to a word (e.g., tense, number, ge
 Example: walk → walked (verb → past tense verb).
 
 
-# 9. The hidden Markov Model (HMM) 
+# 9. The Hidden Markov Model (HMM) 
 - is a `statistical model` that is used to describe the `probabilistic relationship` between a `sequence of observations` and a `sequence of hidden states`. 
 - It is `often used` in situations where the `underlying system or process that generates the observations is unknown or hidden`, hence it has the name “Hidden Markov Model.” 
 - It is used to `predict` future observations `or classify` sequences, based on the `underlying hidden process` that generates the data.
