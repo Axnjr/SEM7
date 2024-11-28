@@ -303,7 +303,7 @@ is an approach to Part-of-Speech (POS) tagging that leverages probabilistic mode
 
 
 # 4. Transformation-Based Tagging (TBL)
-Also known as Brill Tagging, this method combines the benefits of rule-based and machine-learning approaches.
+Also known as Brill Tagging, this method combines the benefits of rule-based and machine-learning approaches.  it applies transformation rules to improve initial tagging
 
 ## Key Features:
 - **Error-Driven Learning:** Instead of manually crafting rules, TBL learns rules from a tagged training corpus.
