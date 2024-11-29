@@ -484,3 +484,26 @@ For example, the word "bank" can mean a financial institution or the edge of a r
 - **Unsupervised Approaches:** Use clustering or similarity measures without labeled data.
 
 
+# 7. Knowledge-Based Approach for WSD `Lesk's Algorithm`
+Lesk's Algorithm is a classic knowledge-based WSD technique. It disambiguates a word by comparing the definitions (or glosses) of its senses with the definitions of the words in its context. The sense with the maximum overlap in terms of shared words is selected.
+
+## Steps in Lesk's Algorithm:
+- **A gloss is the textual definition or explanation of the concept represented by a synset.**
+- **Input:** A target word with its context (surrounding words).
+- **Sense Definitions:** Retrieve meanings `(i.e glosses in terms of WordNet)` of all possible senses of the target word from a lexical resource like `WordNet`.
+- **Context Comparison:** Compare the gloss of each sense with the context.
+- **Sense Selection:** Choose the sense with the `highest word overlap` between its gloss and the context.
+- **Example:** For the sentence: `"He sat on the bank of the river"`:
+    - Senses of `"bank"`:
+        - Financial institution: A place that manages money.
+        - Riverbank: The land alongside a river.
+    - Context words: `"sat," "river," "bank."`
+    - Overlap: Sense 2 has higher overlap ("river"), so it's selected.
+## Advantages:
+- Simple and interpretable.
+- Leverages lexical databases without requiring training data.
+## Limitations:
+- Limited to the quality of the lexical resource.
+- Suffers in contexts with minimal overlap.
+
+
