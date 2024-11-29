@@ -379,3 +379,22 @@ given an `observation sequence: X = (x1, x2, x3 ..)`. The model assigns a probab
 
 # `UNIT - 4`
 
+
+# 1. Semantic analysis: 
+is a subfield of Natural Language Processing (NLP) that focuses on understanding the `meaning of words, phrases, and sentences` in context. It goes beyond syntactic processing (which analyzes the grammatical structure of language) to extract the intended meaning and relationships in textual or spoken data.
+## Key Objectives of Semantic Analysis
+- **Understanding Word Meaning:**
+Identify and interpret the meaning of individual words, considering their context (e.g., "bank" as a financial institution vs. a riverbank).#
+- **Contextual Meaning:**
+Resolve ambiguities and understand the overall meaning of sentences or paragraphs based on linguistic context.#
+- **Extracting Relationships:**
+Identify relationships between entities (e.g., "Paris is the capital of France").#
+- **Structuring Unstructured Data:**
+Convert unstructured text into structured data for better analysis, such as extracting facts or building knowledge graphs.
+
+## Levels of Semantic Analysis
+- Word-Level Semantics
+- Sentence-Level Semantics
+- Discourse-Level Semantics: Explores the meaning of multiple sentences in a broader context.
+- World Knowledge: Uses external knowledge (e.g., databases, ontologies) to enhance understanding. Example: Knowing that "Paris" refers to a city in France, not a person.
+
