@@ -429,3 +429,16 @@ is a branch of linguistics and computational linguistics that focuses on the stu
                 Mary (recipient)
                 Book (item).
 
+
+# 3. WordNet: 
+is a large, publicly available `lexical` database for the English language. It organizes words into `sets of synonyms (called synsets)` and `encodes` relationships between these sets to `represent semantic and lexical` relationships. WordNet is widely used in natural language processing (NLP) tasks like word sense disambiguation, information retrieval, and semantic similarity measurement.
+## Key Terms in WordNet
+- **Synset (Synonym Set):** A synset is a group of words or phrases that are interchangeable in a specific context because they have the same or very similar meanings.
+    - **Example:** The words `car, automobile, and motorcar` belong to the `same synset` because they refer to the same concept.
+- **Gloss:** A gloss is the textual definition or explanation of the concept represented by a synset. Glosses help clarify the meaning of the synset and are often used in tasks like word sense disambiguation.
+    - **Example:** The synset `{car, automobile, motorcar}` has the gloss: `"a motor vehicle with four wheels; usually propelled by an internal combustion engine."`
+
+
+# 4. BabelNet: 
+is a multilingual lexical and semantic network that integrates lexicons, dictionaries, and encyclopedias, such as WordNet and Wikipedia, to create a comprehensive resource for understanding words and concepts across multiple languages.
+
