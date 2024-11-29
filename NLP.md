@@ -442,3 +442,31 @@ is a large, publicly available `lexical` database for the English language. It o
 # 4. BabelNet: 
 is a multilingual lexical and semantic network that integrates lexicons, dictionaries, and encyclopedias, such as WordNet and Wikipedia, to create a comprehensive resource for understanding words and concepts across multiple languages.
 
+
+# 5. Semantic Ambiguity: 
+occurs when a word, phrase, or sentence has more than one meaning or interpretation due to the flexibility or vagueness of its semantics. In other words, the meaning is not clear without additional context or clarification.
+## Types of Semantic Ambiguity
+
+- **Lexical Ambiguity:**
+Ambiguity caused by a word having multiple meanings.
+    - **Example:**
+    "Bank" can mean a financial institution or the side of a river.
+    "Bat" can refer to an animal or a piece of sports equipment.
+- **Structural Ambiguity (Syntactic Ambiguity):**
+Ambiguity caused by the structure or arrangement of words in a sentence.
+    - **Example:**
+    "I saw the man with a telescope."
+    Does this mean I used a telescope to see the man?
+    Or, I saw a man who had a telescope?
+- **Scope Ambiguity:**
+Ambiguity related to the scope of quantifiers or modifiers in a sentence.
+    - **Example:**
+    "Every student read a book."
+    Does this mean every student read the same book?
+    Or, each student read a different book?
+- **Referential Ambiguity:**
+Ambiguity about which entity is being referred to in a sentence.
+    - **Example:**
+    "John told Peter that he was late."
+    Does "he" refer to John or Peter?
+
