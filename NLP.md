@@ -521,3 +521,20 @@ Probabilistic model that uses `Bayes' Theorem` to classify the sense.
 Each rule maps a context feature to a specific sense with a score based on its likelihood.
 
 
+# 9. Unsupervised Method for WSD `HyperLex`:
+HyperLex is an unsupervised method for WSD that `clusters word contexts` based on their `semantic similarity`. It does not require labeled data and instead relies on the distributional hypothesis: words appearing in similar contexts have similar meanings.
+## Steps in HyperLex:
+- **Context Representation:**
+For each occurrence of the target word, extract its context (e.g., surrounding words in a fixed window) and represent it as a vector.
+- **Similarity Measurement:**
+Compute similarity between context vectors using measures like cosine similarity.
+- **Clustering:**
+Apply clustering algorithms (e.g., k-means, hierarchical clustering) to group similar contexts together.
+- **Sense Induction:**
+Each cluster is assumed to represent a distinct sense of the word.
+## Advantages
+- Does not require labeled data or seed examples.
+- Works well for words with distinct senses that have clear contextual differences.
+## Limitations
+- Struggles with subtle sense distinctions.
+- Requires effective context representation and parameter tuning (e.g., number of clusters).
