@@ -374,3 +374,8 @@ given an `observation sequence: X = (x1, x2, x3 ..)`. The model assigns a probab
 - Computationally expensive, especially for large datasets or complex tasks.
 - Require feature engineering unless combined with neural networks in hybrid models.
 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# `UNIT - 4`
+
