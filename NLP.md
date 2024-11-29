@@ -398,3 +398,34 @@ Convert unstructured text into structured data for better analysis, such as extr
 - Discourse-Level Semantics: Explores the meaning of multiple sentences in a broader context.
 - World Knowledge: Uses external knowledge (e.g., databases, ontologies) to enhance understanding. Example: Knowing that "Paris" refers to a city in France, not a person.
 
+
+# 2. Lexical semantics: 
+is a branch of linguistics and computational linguistics that focuses on the study of word meanings and their relationships. It aims to understand how individual words convey meaning, how meanings vary in different contexts, and how words relate to one another in a language.
+## Key Components of Lexical Semantics
+- **Word Meaning:** Investigates the meaning of individual words (lexemes) and how they are understood in isolation or context.
+    - **Example:** The word "bank" can mean a financial institution or the side of a river, depending on the context.
+
+- **Word Relationships:** Explores relationships between words, such as:
+    - **Synonymy:** Words with similar meanings (e.g., "big" and "large").
+    - **Antonymy:** Words with opposite meanings (e.g., "hot" and "cold").
+    - **Hyponymy:** Hierarchical relationships where one word is a subset of another (e.g., "sparrow" is a hyponym of "bird").
+    - **Meronymy:** Part-whole relationships (e.g., "wheel" is a part of "car").
+    - **Polysemy:** A single word having multiple related meanings (e.g., "light" as in "not heavy" and "illumination").
+    - **Homonymy:** Words with the same form but unrelated meanings (e.g., "bat" as in the animal and "bat" used in sports).
+
+- **Word Sense:** Each word can have multiple senses or meanings depending on context.
+    - **Example:** 
+
+            The word "run" can mean:
+            To move quickly on foot.
+            To manage (e.g., "run a business").
+            To operate (e.g., "run a program").
+
+- **Semantic Roles:** Assign roles to words in a sentence to understand their function in conveying meaning.
+    - **Example:** 
+    
+            In "John gave Mary a book," the roles are:
+                John (giver)
+                Mary (recipient)
+                Book (item).
+
