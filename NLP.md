@@ -470,3 +470,17 @@ Ambiguity about which entity is being referred to in a sentence.
     "John told Peter that he was late."
     Does "he" refer to John or Peter?
 
+
+# 6. Word Sense Disambiguation `WSD`: 
+is a subfield of Natural Language Processing (NLP) that deals with `determining the intended meaning` of a word in a `given context`. It is the process of `identifying` the `correct sense` of a word from a `set of possible senses`, based on the `context` in which the word appears. 
+WSD is important for natural language understanding and machine translation, as it can improve the accuracy of these tasks by providing more accurate word meanings. 
+
+For example, the word "bank" can mean a financial institution or the edge of a river, and WSD aims to identify the appropriate meaning based on surrounding words.
+
+## WSD methods can be broadly classified into three types:
+
+- **Knowledge-Based Approaches:** Use dictionaries, thesauri, or lexical databases (e.g., WordNet).
+- **Supervised Approaches:** Use labeled datasets to train machine learning models.
+- **Unsupervised Approaches:** Use clustering or similarity measures without labeled data.
+
+
