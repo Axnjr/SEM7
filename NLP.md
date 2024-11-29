@@ -507,3 +507,17 @@ Lesk's Algorithm is a classic knowledge-based WSD technique. It disambiguates a 
 - Suffers in contexts with minimal overlap.
 
 
+# 8. Supervised Approaches of WSD
+Supervised approaches for WSD require `labeled datasets` where each instance of an ambiguous word is annotated with the correct sense. 
+These methods rely on training a model to classify the correct sense based on features.
+
+## Popular Techniques:
+
+- **Naïve Bayes Classifier:**
+Probabilistic model that uses `Bayes' Theorem` to classify the sense.
+![bayes theoram formula](image-15.png)
+
+- **Decision list:** is a set of rules that are used to assign a sense to a target word based on the context in which it appears.
+Each rule maps a context feature to a specific sense with a score based on its likelihood.
+
+
