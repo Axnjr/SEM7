@@ -348,3 +348,29 @@ If a word is tagged as a noun (NN) but is preceded by a determiner and followed 
 
         - **Probabilistic Models:** Assign tags based on the probabilities of similar known words or fallback to the most frequent tag in the training data.
         - **Word Embeddings (in Modern Systems):** Use vector representations like `Word2Vec` or `contextual embeddings` like `BERT` to infer the meaning of unknown words based on their context.
+
+
+# 6. Conditional Random Fields (CRFs): 
+are `probabilistic` models used for sequence labeling tasks in NLP, such as part-of-speech tagging, named entity recognition (NER), or shallow parsing.
+It is a variant of a `Markov Random Field (MRF)`, which is a type of `undirected graphical` model.
+
+CRFs are an `extension of logistic regression` for structured prediction. Unlike simpler models that predict labels independently, `CRFs consider` the `dependencies` between labels in the sequence. This enables them to `capture the context and relationships` between adjacent labels, which is crucial in many NLP tasks.
+
+## Working:
+CRFs work by modeling the conditional probability of a sequence of `labels: Y = (y1, y2, y3 ..)` 
+given an `observation sequence: X = (x1, x2, x3 ..)`. The model assigns a probability to the entire sequence, considering the relationships between the labels and the input features using the below `formula`:
+![crf_formula](image-13.png)
+
+- **Feature Functions Encodes characteristics of the input and relationships between labels.**
+- The weights `λk` are learned by maximizing the `conditional log-likelihood` of the labeled training data using techniques like `gradient descent` or `quasi-Newton methods`.
+- Algorithms like `Viterbi` are used to find the most probable label sequence `𝑌∗` for a given input `𝑋`
+
+## Advantages:
+
+- Capture contextual dependencies between labels.
+- Allow the use of overlapping and non-independent features.
+
+## Limitations
+- Computationally expensive, especially for large datasets or complex tasks.
+- Require feature engineering unless combined with neural networks in hybrid models.
+
