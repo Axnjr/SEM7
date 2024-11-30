@@ -208,6 +208,7 @@ Example: walk → walked (verb → past tense verb).
 - Apply the `Viterbi algorithm` to compute the most likely sequence of hidden states based on the observed data.
 - Assess the model's performance using metrics such as accuracy, precision, recall, or F1 score.
 
+HMMs are widely used in a variety of applications such as speech recognition, natural language processing, computational biology, and finance.
 
 # 10. N-gram language model: 
 is a statistical model used in Natural Language Processing (NLP) to `predict the probability` of a `sequence of words in a sentence` or text. It uses a `Markov assumption` to estimate the `likelihood of a word` based only on the `n-1 preceding words`, rather than the entire sentence history.
@@ -522,7 +523,7 @@ Each rule maps a context feature to a specific sense with a score based on its l
 
 
 # 9. Unsupervised Method for WSD `HyperLex`:
-HyperLex is an unsupervised method for WSD that `clusters word contexts` based on their `semantic similarity`. It does not require labeled data and instead relies on the distributional hypothesis: words appearing in similar contexts have similar meanings.
+HyperLex is an unsupervised method for WSD that `clusters word contexts` based on their `semantic similarity`. It does not require labeled data and instead relies on the `distributional hypothesis: words appearing in similar contexts have similar meanings`.
 ## Steps in HyperLex:
 - **Context Representation:**
 For each occurrence of the target word, extract its context (e.g., surrounding words in a fixed window) and represent it as a vector.
@@ -538,3 +539,9 @@ Each cluster is assumed to represent a distinct sense of the word.
 ## Limitations
 - Struggles with subtle sense distinctions.
 - Requires effective context representation and parameter tuning (e.g., number of clusters).
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# `UNIT - 5`
+
