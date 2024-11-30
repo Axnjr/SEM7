@@ -545,3 +545,46 @@ Each cluster is assumed to represent a distinct sense of the word.
 
 # `UNIT - 5`
 
+
+# 1. Discourse Reference Resolution
+is the process of `identifying and linking referring expressions` within a text or discourse to the `entities or concepts` they refer to. 
+Here `referring expressions` are Words or phrases that point to entities in the discourse. These include:   
+- Pronouns: he, she, it, they.
+- Definite/Indefinite Noun Phrases: the car, a book.
+- Demonstratives: this, that, those.
+
+## Discourse reference resolution primarily addresses:
+- **Coreferential Entities:** 
+Multiple expressions referring to the same entity. `("Mary loves her cat. She takes care of it.")`
+- **Anaphoric Phrases:** 
+Reference depends on a previous entity. `("The teacher entered. She began to speak.")`
+- **Cataphoric Phrases:** 
+Reference appears before the entity. `("Before she spoke, Jane smiled.")`
+
+## Steps in Discourse Reference Resolution:
+- Detect pronouns, definite noun phrases, or other expressions that may point to entities.
+- List possible antecedents (entities) from the surrounding text.
+- Match each referring expression to the correct antecedent using linguistic and contextual cues.
+- Resolve ambiguity when multiple antecedents are possible by using syntactic, semantic, or contextual information.
+
+## Techniques for Discourse Reference Resolution
+
+- **Rule-Based Approaches:**
+Use hand-crafted rules based on linguistic theories. Example Rules:
+    - **Gender and Number Agreement:** Match pronouns with antecedents of the same gender and number.
+    `"John loves his dog." ("His" matches "John" because both are singular and masculine.)`
+    - **Recency Heuristic:** Prefer the most recently mentioned entity.
+    `"Tom gave Peter a book. He smiled." ("He" likely refers to "Peter", the recent mention.)`
+- **Machine Learning:** Trained models using labeled data with features like context and proximity.
+- **Knowledge-Based:** Uses external resources like knowledge graphs to link references to known entities. 
+Example: "Einstein proposed this theory" to "Albert Einstein" using external knowledge.
+
+## Challenges:
+- Ambiguity: Multiple possible antecedents.
+Example: "The dog chased the cat, and it ran away."
+Does "it" refer to the dog or the cat?
+- Long-Distance Dependencies
+- World Knowledge
+
+This is crucial in Natural Language Processing (NLP) for understanding the meaning and coherence of text, as references are often implicit or ambiguous.
+
