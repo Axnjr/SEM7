@@ -611,3 +611,40 @@ Hobbs' Algorithm is a `syntactic, rule-based` approach to resolving anaphora.  I
 
 Despite its limitations, Hobbs' Algorithm is a foundational approach to anaphora resolution, and it has inspired more sophisticated models that integrate semantic and contextual information.
 
+
+# 3. The Centering Theory Algorithm: 
+is a discourse-level framework in computational linguistics used to `model coherence and resolve anaphora`. It focuses on how entities `(centers)` are `introduced and maintained` across sentences, 
+guiding pronoun resolution and discourse understanding. 
+
+In this algorithm we refer `entities as centers` which are of `two types`:
+- **Forward-looking centers (Cf):** Ranked list of entities in the current statement that may be discussed in the next.
+- **Backward-looking center (Cb):** The entity in the current statement most related to the previous statement (usually the topic).
+
+The term `transitions` in this algorithm `describes the relationship` between the `backward-looking center (Cb) of the current and previous statement and the ranking of forward-looking centers`. 
+The main transitions are:
+- **Continue:** The Cb remains the same, and it is the highest-ranked Cf.
+- **Retain:** The Cb remains the same but is not the highest-ranked Cf.
+- **Smooth Shift:** The Cb changes, but the discourse remains coherent.
+- **Rough Shift:** The Cb changes abruptly, disrupting coherence.
+
+## Steps in the Centering Theory Algorithm
+- **Identify Entities:** 
+Extract entities (noun phrases, pronouns) from the statement to create the set of forward-looking centers (Cf).
+- **Rank Forward-looking Centers:** 
+Prioritize entities in the Cf based on syntactic and semantic factors.
+- **Determine Backward-looking Center (Cb):**
+Identify the most prominent entity in the Cf that links to the previous statement.
+- **Resolve Pronouns:**
+Use transitions and rankings to determine which entity a pronoun refers to. Prefer entities that result in the most coherent transition (e.g., Continue).
+- **Update Context:**
+Adjust the Cf and Cb for the next statement based on the resolved entities.
+
+## Advantages
+- Models coherence at the discourse level.
+- Offers a systematic way to resolve pronouns by leveraging transitions and ranking.
+## Limitations
+- Requires a syntactic and semantic parser to identify and rank centers.
+- Focuses on local coherence and may struggle with long-range dependencies.
+- Ranking rules can vary based on language and implementation.
+
+
