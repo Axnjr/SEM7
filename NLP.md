@@ -653,3 +653,13 @@ Adjust the Cf and Cb for the next statement based on the resolved entities.
 # `UNIT - 6`
 
 
+# 1. Named Entity Recognition `NER`: 
+is a technique in natural language processing (NLP) that focuses on `identifying and classifying` entities. 
+The purpose of `NER` is to automatically `extract` structured information from `unstructured text`, `enabling machines to understand and categorize` entities in a meaningful manner for various 
+applications like text summarization, building knowledge graphs, question answering, and knowledge graph construction.
+
+`NER` is also referred to as entity identification, entity chunking, and entity extraction.
+
+`NER` involves the `identification of key information` in the text and `classification` into a set of `predefined categories`. 
+
+`An entity:` is the thing that is consistently talked about or refer to in the text, such as person names, organizations, locations, time expressions, quantities, percentages and more predefined categories.
