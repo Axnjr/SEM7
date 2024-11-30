@@ -588,3 +588,26 @@ Does "it" refer to the dog or the cat?
 
 This is crucial in Natural Language Processing (NLP) for understanding the meaning and coherence of text, as references are often implicit or ambiguous.
 
+
+# 2. Hobbs Algorithm
+Anaphora resolution is the task of identifying `what a pronoun or a noun` phrase `refers to in a text` (its antecedent). 
+Hobbs' Algorithm is a `syntactic, rule-based` approach to resolving anaphora.  It systematically searches for antecedents of pronouns within a syntactic parse tree of a sentence or a discourse.
+## Key Steps in Hobbs' Algorithm
+- **Start with the Pronoun Node:** Identify the pronoun (or anaphor) whose antecedent you want to resolve. Locate this node in the syntactic parse tree.
+- Traverse upwards to the first node that dominates the pronoun.
+- At this node, examine its left siblings (subtrees to the left of the pronoun). For each sibling, traverse its nodes in a `left-to-right, breadth-first manner`. Look for a `noun phrase` (NP) that could serve as the antecedent.
+- If no antecedent is found among the left siblings:
+    - Move up to the parent node of the current node.
+    - Repeat the search among the left siblings of the parent.
+- **Cross Sentence Boundaries:** If no antecedent is found within the same sentence, move to previous sentences in the discourse and repeat a similar left-to-right search.
+- **Resolution Rules:** When multiple candidates are found, Hobbs' algorithm relies on syntactic and contextual constraints to select the most likely antecedent.
+
+## Advantages
+- Efficient: Uses a systematic and deterministic search.
+- Syntax-based: Leverages the structure of the sentence, making it linguistically grounded.
+## Limitations
+- Does not use semantic or world knowledge, which can result in incorrect resolutions in complex scenarios.
+- Single Pronoun Resolution: Focuses on resolving one pronoun at a time and may miss discourse-level dependencies.
+
+Despite its limitations, Hobbs' Algorithm is a foundational approach to anaphora resolution, and it has inspired more sophisticated models that integrate semantic and contextual information.
+
