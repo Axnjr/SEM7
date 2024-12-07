@@ -18,3 +18,21 @@ of a lesser offense. The criminals are offered a deal:
 3. If both betray each other, they both get 5 years in prison. 
 4. If both remain silent, they each get 1 year for the lesser offense. 
 
+
+# 2. The Matching Pennies game: 
+is a classic example in game theory that illustrates conflict, mixed strategies, and the concept of a zero-sum game. Here's a detailed breakdown:
+
+## Setup of the Game
+
+- Players: Two players (let's call them Player A and Player B).
+- Strategies:
+Each player chooses one of two actions: Heads (H) or Tails (T).
+- Payoffs:
+    - If the two pennies match (both are Heads or both are Tails), Player A wins and takes $1 from Player B.
+    - If the pennies do not match (one is Heads, the other is Tails), Player B wins and takes $1 from Player A.
+- Payoff Matrix
+The payoffs for Player A (Player B's payoffs are the negatives of these, as it's a zero-sum game) are as follows:
+
+                                Player B: Heads (H)      |     Player B: Tails (T)
+        Player A: Heads (H)	         +1 (A wins)	     |          -1 (B wins)
+        Player A: Tails (T)	         -1 (B wins)	     |          +1 (A wins)
