@@ -19,7 +19,7 @@ of a lesser offense. The criminals are offered a deal:
 4. If both remain silent, they each get 1 year for the lesser offense. 
 
 
-# 2. The Matching Pennies game: 
+# 3. The Matching Pennies game: 
 is a classic example in game theory that illustrates conflict, mixed strategies, and the concept of a zero-sum game. Here's a detailed breakdown:
 
 ## Setup of the Game
@@ -45,4 +45,4 @@ The payoffs for Player A (Player B's payoffs are the negatives of these, as it's
     - The optimal strategy for both players is to randomize their choices, selecting Heads or Tails with equal probability (50% each).
     - By doing so, neither player can predict or exploit the other’s choice, ensuring a balance.
 
-# 3. 
+# 4. 
