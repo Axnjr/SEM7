@@ -45,4 +45,30 @@ The payoffs for Player A (Player B's payoffs are the negatives of these, as it's
     - The optimal strategy for both players is to randomize their choices, selecting Heads or Tails with equal probability (50% each).
     - By doing so, neither player can predict or exploit the other’s choice, ensuring a balance.
 
-# 4. 
+# 4. A pure strategy Nash Equilibrium: 
+is a situation in a game where each player chooses a single, specific strategy, and no player can benefit by unilaterally changing their strategy, given that 
+other players stick to their chosen strategies. In other words, it's a stable state where each 
+player's strategy is the best response to the strategies of the others. 
+
+>Example: The Prisoner’s Dilemma
+Consider the classic Prisoner’s Dilemma:
+
+- Players: Two criminals, Alice and Bob.
+Strategies: Each can either Confess © or Stay Silent (S).
+
+- Payoffs:
+If both confess, they each get 5 years in prison.
+If one confesses and the other stays silent, the confessor goes free, and the silent one gets 10 years. If both stay silent, they each get 1 year in prison.
+
+> Finding the Nash Equilibrium
+
+- Alice’s Best Response:
+
+    - If Bob confesses ©, Alice’s best response is to confess © because -5 (confess) is better than -10 (stay silent).
+    - If Bob stays silent (S), Alice’s best response is to confess © because 0 (confess) is better than -1 (stay silent).
+
+- Bob’s Best Response:
+    - If Alice confesses ©, Bob’s best response is to confess © because -5 (confess) is better than -10 (stay silent).
+    - If Alice stays silent (S), Bob’s best response is to confess © because 0 (confess) is better than -1 (stay silent).
+
+Since both Alice and Bob’s best responses are to confess regardless of the other’s choice, (C, C) is a pure strategy Nash Equilibrium. Neither Alice nor Bob can improve their situation by unilaterally changing their strategy.
