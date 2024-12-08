@@ -36,3 +36,13 @@ The payoffs for Player A (Player B's payoffs are the negatives of these, as it's
                                 Player B: Heads (H)      |     Player B: Tails (T)
         Player A: Heads (H)	         +1 (A wins)	     |          -1 (B wins)
         Player A: Tails (T)	         -1 (B wins)	     |          +1 (A wins)
+
+
+## Characteristics of the Game
+- Zero-Sum Game: One player's gain is exactly equal to the other's loss.
+- No Pure Strategy Nash Equilibrium
+- Mixed Strategy Nash Equilibrium:
+    - The optimal strategy for both players is to randomize their choices, selecting Heads or Tails with equal probability (50% each).
+    - By doing so, neither player can predict or exploit the other’s choice, ensuring a balance.
+
+# 3. 
