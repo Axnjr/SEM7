@@ -72,3 +72,8 @@ If one confesses and the other stays silent, the confessor goes free, and the si
     - If Alice stays silent (S), Bob’s best response is to confess © because 0 (confess) is better than -1 (stay silent).
 
 Since both Alice and Bob’s best responses are to confess regardless of the other’s choice, (C, C) is a pure strategy Nash Equilibrium. Neither Alice nor Bob can improve their situation by unilaterally changing their strategy.
+
+
+# `UNIT - 3`
+
+
