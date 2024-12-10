@@ -148,3 +148,28 @@ is a refinement of subgame perfect equilibrium (SPE) for extensive-form games, p
 - Dynamic Games: Studying behavior in multi-stage games with incomplete information.
 
 
+# 6. Extensive games with Imperfect info: 
+
+> are a framework in game theory used to `model or  capture` the `sequential nature of decision-making`. Unlike normal-form games (which represent simultaneous decisions in a matrix), extensive-form games `explicitly account for the order` in which players make their moves, as well as the `information available` to them at `each decision point`. These games are typically represented by a `game tree`, where nodes represent decision points, branches represent possible actions, and terminal nodes represent the outcomes/payoffs for each player.
+
+are a type of games in game theory used to `model or  capture` the `sequential nature of decision-making` where players do not have complete knowledge of the actions previously taken or the state of the game.
+
+## Applications:
+- Economic decision-making (e.g., auctions, negotiations).
+- Strategic interactions in politics or warfare.
+- Games of chance (e.g., poker).
+- Game of Cards
+
+
+# 5. How beliefs are updated in games with imperfect information.
+In games with imperfect information, players update their beliefs about unknown elements (e.g., other players' types or past actions) using `Bayes' rule`. This involves `revising prior probabilities based on new information observed during the game`.
+
+## Key Steps in Belief Updating:
+- Initial Beliefs: Players start with prior probabilities based on the game's structure.
+- Observation: Players observe new actions or signals in the game.
+- Likelihood Assessment: Players calculate the probability of the observation under various possible scenarios.
+- Posterior Beliefs: Using Bayes' rule, players update their beliefs to reflect the new information.
+- Example: 
+    - Poker
+    - Auctions: Bidders update beliefs about opponents’ valuations.
+    - Negotiations: Players adjust expectations based on observed behavior
