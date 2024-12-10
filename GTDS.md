@@ -121,3 +121,11 @@ Modeling elections where candidates have private policy preferences
 Let’s consider a simple sealed-bid auction in which two players (Player 1 and Player 2) are bidding for an object. Each player has a private valuation of the object, which is unknown to the other player. The players bid without knowing each other's valuation and the highest bid wins the auction. If a player wins, they get the object and pay the amount they bid, and if they lose, they get nothing.
 
 
+# 3. The Bayesian Nash Equilibrium `(BNE)` :
+is a refinement of the Nash equilibrium concept, applied to games of `incomplete or imperfect` information. In such games, players have private information about certain aspects of the game, such as their `own payoffs or types`, which are `not directly observable by others`. The `BNE` accounts for this `uncertainty`. 
+
+`BNE` in a Bayesian game is a `strategy profile` where each player `maximizes their expected payoff, considering their beliefs about the other players’ types and strategies.`
+
+SAME EXAPLME AS ABOVE 👆☝️
+
+
