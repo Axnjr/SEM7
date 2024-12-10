@@ -77,3 +77,20 @@ Since both Alice and Bob’s best responses are to confess regardless of the oth
 # `UNIT - 3`
 
 
+# 1. Difference between perfect and imperfect info games
+
+## Games with Perfect Information
+all players are fully aware of the history of the game, including all actions taken by all players up to the current point. There is no hidden information. Examples:
+- Chess
+- Tik-tak-toe
+- Checkers
+
+## Games with Imperfect Information: 
+are games in game theory where at least one player does not have complete knowledge about certain aspects of the game at some point during play. Examples: 
+- Poker
+- Rock Papper Scisssor
+- Economic Markets
+- Auctions
+- Battleship
+
+
