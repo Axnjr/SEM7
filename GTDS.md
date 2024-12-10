@@ -129,3 +129,7 @@ is a refinement of the Nash equilibrium concept, applied to games of `incomplete
 SAME EXAPLME AS ABOVE 👆☝️
 
 
+# 4. A Subgame Perfect Equilibrium `(SPE)`: 
+is a refinement of Nash equilibrium specifically designed for extensive-form games, which involve sequential decision-making. In SPE, players' strategies form a Nash equilibrium in every subgame of the original game, ensuring rationality at every stage of play.
+
+
