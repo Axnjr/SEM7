@@ -148,6 +148,9 @@ is a refinement of subgame perfect equilibrium (SPE) for extensive-form games, p
 - Dynamic Games: Studying behavior in multi-stage games with incomplete information.
 
 
+#  In simpler terms, `NASH EQULLIBRIUM` it's a situation where everyone is doing the best they can, given what everyone else is doing
+
+
 # 6. Extensive games with Imperfect info: 
 
 > are a framework in game theory used to `model or  capture` the `sequential nature of decision-making`. Unlike normal-form games (which represent simultaneous decisions in a matrix), extensive-form games `explicitly account for the order` in which players make their moves, as well as the `information available` to them at `each decision point`. These games are typically represented by a `game tree`, where nodes represent decision points, branches represent possible actions, and terminal nodes represent the outcomes/payoffs for each player.
@@ -173,3 +176,7 @@ In games with imperfect information, players update their beliefs about unknown 
     - Poker
     - Auctions: Bidders update beliefs about opponents’ valuations.
     - Negotiations: Players adjust expectations based on observed behavior
+
+
+# `UNIT - 4`
+
