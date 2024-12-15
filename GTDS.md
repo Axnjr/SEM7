@@ -180,3 +180,17 @@ In games with imperfect information, players update their beliefs about unknown 
 
 # `UNIT - 4`
 
+
+# 1. Define self-interested agents `(SIA)` in the context of non-cooperative game theory. How does their behavior differ from cooperative agents? 
+
+In non-cooperative game theory, self-interested agents are rational decision-makers who act independently to maximize their own utility or payoff, with no explicit agreement to cooperate with others. These agents do not prioritize collective outcomes but rather focus on their individual goals, even if it comes at the expense of others.
+
+## Behavior Compared to Cooperative Agents:
+- Cooperative Agents: These agents work together, often forming coalitions or partnerships, to achieve a collective goal or maximize the total utility of the group. Cooperative game theory typically assumes binding agreements and focuses on the fair distribution of collective payoffs (e.g., Shapley value, core allocations).
+
+- Self-Interested Agents: In contrast, self-interested agents prioritize their individual outcomes and often exploit opportunities to gain an advantage over others. This can lead to competitive or adversarial interactions, with outcomes that may not be socially optimal (e.g., the Prisoner's Dilemma, where individual rationality leads to a suboptimal collective result).
+
+## Example:
+- Self-Interested Scenario: In a market with competing businesses, each company sets prices independently to maximize its profit, potentially undercutting competitors or leading to aggressive pricing strategies.
+- Cooperative Scenario: Businesses in a cartel agree to fix prices to maximize total profit and then share the revenue according to a pre-agreed scheme.
+
