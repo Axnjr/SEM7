@@ -194,3 +194,29 @@ In non-cooperative game theory, self-interested agents are rational decision-mak
 - Self-Interested Scenario: In a market with competing businesses, each company sets prices independently to maximize its profit, potentially undercutting competitors or leading to aggressive pricing strategies.
 - Cooperative Scenario: Businesses in a cartel agree to fix prices to maximize total profit and then share the revenue according to a pre-agreed scheme.
 
+
+# 2. Real world examples of `SIA`'s:
+
+- **Fishing in International Waters**
+    - Scenario: Independent fishing companies decide how much fish to harvest in international waters.
+    - Payoff Structure:
+        - If all fish sustainably, fish stocks remain healthy.
+        - If one overfishes while others fish sustainably, the overfisher profits more.
+        - If all overfish, the fish population collapses, harming everyone.
+    - Outcome: Overfishing often occurs, depleting fish stocks and causing long-term losses.
+
+- **The Cold War and the Arms Race**
+    - Scenario: During the Cold War, the USA and the USSR independently decided how much to invest in nuclear weapons.
+    - Payoff Structure:
+        - If one country invested heavily and the other did not, the investing country gained a strategic advantage.
+        - If both invested heavily, resources were wasted in a security dilemma.
+        - If neither invested, both could allocate resources to other areas.
+    - Outcome: Both countries heavily invested, resulting in mutual deterrence but significant resource costs.
+
+- **The Prisoner’s Dilemma in Corporate Pricing**
+    - Scenario: Two competing companies (e.g., Coca-Cola and Pepsi) must decide independently whether to maintain high prices or cut prices to attract customers.
+    - Payoff Structure:
+        - If both maintain high prices, they enjoy stable profits.
+        - If one lowers prices while the other maintains high prices, the one who lowers prices captures a larger market share.
+        - If both lower prices, they enter a price war, reducing profits for both.
+    - Outcome: Both companies often end up lowering prices, achieving a suboptimal collective outcome.
